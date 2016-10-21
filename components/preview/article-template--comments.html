@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+  <head>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
+    <link rel="dns-prefetch" href="//cloud.24ways.org"/>
+    <link rel="dns-prefetch" href="//media.24ways.org"/>
+
+    <script>
+      // Flag support for JS
+      document.documentElement.className += ' js';
+      if (document.querySelector && window.addEventListener) {
+        document.documentElement.className += ' js-enhanced';
+        var enhanced = true;
+      } else {
+        var enhanced = false;
+      }
+
+      // // Add a script element as a child of the body
+      // function downloadJSAtOnload() {
+      //   var element = document.createElement("script");
+      //   element.src = "//24ways.org/_assets/js/scripts_v37.js";
+      //   document.body.appendChild(element);
+      // }
+      //
+      // // Check for browser support of event handling capability
+      // if (window.addEventListener) {
+      //   window.addEventListener("load", downloadJSAtOnload, false);
+      // } else if (window.attachEvent) {
+      //   window.attachEvent("onload", downloadJSAtOnload);
+      // } else {
+      //   window.onload = downloadJSAtOnload;
+      // }
+    </script>
+
+    <link rel="stylesheet" href="../../assets/styles/app.css"/>
+    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/24ways"/>
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="../../assets/icons/apple-touch-icon.png"/>
+    <link rel="author" href="/humans.txt"/>
+
+    <meta charset="utf-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="application-name" content=""/>
+    <meta name="apple-mobile-web-app-title" content=""/>
+    <meta name="twitter:site" content="@"/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:creator" content="@"/>
+    <meta name="twitter:card" content="summary"/>
+
+    <title>Starting Your <abbr>HTML5</abbr> Project on the Right Foot (and Keeping It There) &#9670; 24 ways</title>
+  </head>
+
+  <body class="year-2013">
+    <header class="c-banner" id="top">
+  <h1 class="c-banner__logo"><a href="/pages/" rel="home">24 ways <span>to impress your friends</span></a></h1>
+</header>
+
+<a class="c-menu" href="#menu">
+  <span class="c-menu__icon"><svg width="48" height="48" viewBox="0 0 240 240">
+  <path d="M180 75V65H60v10h120zm0 25V90H60v10h120zm0 25v-10H60v10h120zm0 25v-10H60v10h120zm0 25v-10H60v10h120z"/>
+</svg>
+</span>
+  <span class="c-menu__label">Jump to menu</span>
+</a>
+
+
+<main class="c-main" role="main">
+
+<article class="article day-01">
+  <header class="article_header">
+    <h1 class="article_title p-name"><a href="/year/article-slug/">Starting Your <abbr>HTML5</abbr> Project on the Right Foot (and Keeping It There)</h1>
+    <p class="article_byline p-author h-card">
+      <a class="u-url" href="#author">
+        <span class="c-avatar">
+  <img class="u-photo" src="https://cloud.24ways.org/authors/drewmclellan280.jpg" width="160" height="160" alt=""/>
+</span>
+
+        <span class="p-name">Drew McLellan</span>
+      </a>
+    <p>
+  </header>
+
+  <section class="c-section" id="comments">
+    <header class="c-section__header">
+      <h1 class="c-section__title">11 Comments</h1>
+    </header>
+    <div class="c-section__main">
+      <p>Comments are ordered by helpfulness, as indicated by you. Help us pick out the gems and discourage asshattery by voting on notable comments.</p>
+      <p>Got something to add? You can leave a comment below.</p>
+
+      <ol class="comments-list">
+
+  <li class="comments-list__item">
+    <article class="c-comment h-entry" id="c0001">
+  <header class="c-comment__header">
+    <h1 class="c-comment__title p-name h-card">
+      <a class="p-author u-url" href="https://adactio.com/">
+        <span class="c-avatar">
+  <img class="u-photo" src="" width="" height="" alt=""/>
+</span>
+
+        Jeremy Keith
+      </a>
+    </h1>
+    <p class="c-comment__meta">
+      <a rel="bookmark" href="#c0001" title="Permalink to this comment"><time class="dt-published" datetime="2012-12-01T12:24:48-00:00">1 December 2012</time></a>
+    </p>
+  </header>
+  <div class="c-comment__main e-content">
+    <p>This is great stuff! I’m terrible at regular expressions—my brain just doesn’t seem to want to remember any of it—but this article contains the clearest description of regular expressions I’ve come across.</p>
+<p>I thought I’d share a useful little rewrite rule that I use for cache-busting JavaScript and CSS files. You know the story: you make a change in your JavaScript or CSS and you want to let the browser know that it should grab the new version instead of using what it’s got in its cache.</p>
+<p>Now, I could potentially just use a query string when I point to my JS and CSS files ( e.g. /js/myscript.js?20131201 ) …but that can cause issues with proxy servers.</p>
+<p>Instead what I what I do is point to files like this: /js/myscript.20131201.js</p>
+<p>Then I need to tell the server to look for the <strong>actual</strong> file in /js/myscript.js</p>
+<p>Here’s the rewrite rule I’m using:</p>
+<pre><code>RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
+</code></pre>
+<p>It’s basically telling the server that, if the JS or CSS file doesn’t actually exist and it matches the pattern of having two dots before the file extension (with only numbers after the first dot), to look at the bit before the first dot, and look at the bit after the second dot, but to ignore the bit in between (the numbers).</p>
+<p>The server serves up the right file, but browsers fetch the new version because, as far as they’re concerned, this looks like a brand new file that they haven’t got in their cache.</p>
+<p>That was a terrible explanation, wasn’t it? I now have even more appreciation for how clearly and concise this article is.</p>
+
+  </div>
+  <footer class="c-comment__footer">
+    <p class="c-comment__vote">
+      This comment was <a href="/vote/up/c0001/">helpful</a> / <a href="/vote/down/c0001/">unhelpful</a>
+    </p>
+  </footer>
+</article>
+
+  </li>
+
+  <li class="comments-list__item">
+    <article class="c-comment c-comment--unhelpful h-entry" id="c0002">
+  <header class="c-comment__header">
+    <h1 class="c-comment__title p-name h-card">
+      <a class="p-author u-url" href="https://paulrobertlloyd.com/">
+        <span class="c-avatar">
+  <img class="u-photo" src="" width="" height="" alt=""/>
+</span>
+
+        Paul Robert Lloyd
+      </a>
+    </h1>
+    <p class="c-comment__meta">
+      <a rel="bookmark" href="#c0002" title="Permalink to this comment"><time class="dt-published" datetime="2012-12-12T12:24:48-00:00">12 December 2012</time></a>
+    </p>
+  </header>
+  <div class="c-comment__main e-content">
+    <p>You’re an idiot! Everything you have written here is wrong!</p>
+
+  </div>
+  <footer class="c-comment__footer">
+    <p class="c-comment__vote">
+      This comment was <a href="/vote/up/c0002/">helpful</a> / <a href="/vote/down/c0002/">unhelpful</a>
+    </p>
+  </footer>
+</article>
+
+  </li>
+
+</ol>
+
+    </div>
+  </section>
+
+  <form id="comment-form" method="post">
+  <fieldset class="c-section">
+    <legend class="c-section__header">
+      <span class="c-section__title">Impress us</span>
+    </legend>
+    <div class="c-section__main">
+      <p>Be friendly / use <a href="http://www.textism.com/tools/textile/">Textile</a></p>
+      <p class="c-field">
+        <label class="c-field__label" for="commentName">Name</label>
+        <input class="c-field__input" id="commentName" name="commentName" type="text" autocorrect="off" required="required"/>
+      </p>
+      <p class="c-field">
+        <label class="c-field__label" for="commentEmail">Email</label>
+        <input class="c-field__input" id="commentEmail" name="commentEmail" type="email" autocorrect="off" required="required"/>
+      </p>
+      <p class="c-field">
+        <label class="c-field__label" for="commentURL">Website</label>
+        <input class="c-field__input" id="commentURL" name="commentURL" type="url" autocorrect="off" placeholder="http://"/>
+      </p>
+      <p class="c-field">
+        <label class="c-field__label" for="commentHTML">Message</label>
+        <textarea class="c-field__input" id="commentHTML" name="commentHTML" cols="25" rows="12" required="required"></textarea>
+      </p>
+      <p class="c-field">
+        <input type="hidden" name="parentID" id="parentID" value="289"/>
+        <input type="hidden" name="parentTitle" id="parentTitle" value="HTML5 Video Bumpers"/>
+        <input class="c-button" type="submit" name="submitComment" id="submitComment" value="Submit"/>
+      </p>
+    </div>
+  </fieldset>
+</form>
+
+</article>
+
+</main>
+
+<nav class="c-navigation" id="menu">
+  <h1 class="u-hidden">Browse 24 ways</h1>
+  
+<div class="c-traverse-nav">
+  
+  <a class="c-traverse-nav__item" rel="prev" href="/2015/how-tabs-should-work/" data-sequence-title="How Tabs Should Work">
+    <span class="c-traverse-nav__icon"><svg width="48" height="48" viewBox="0 0 240 240">
+  <path d="M155 35l-85 85 85 85 7-7-78-78 78-78"/>
+</svg>
+</span>
+    <span class="c-traverse-nav__label">Previous article</span>
+  </a>
+  
+  
+  <a class="c-traverse-nav__item" rel="next" href="/2015/solve-the-hard-problems/" data-sequence-title="Solve the Hard Problems">
+    <span class="c-traverse-nav__icon"><svg width="48" height="48" viewBox="0 0 240 240">
+  <path d="M170 120l-85 85-7-7 78-78-78-78 7-7"/>
+</svg>
+</span>
+    <span class="c-traverse-nav__label">Next article</span>
+  </a>
+  
+</div>
+
+
+  <ul class="c-topics-nav">
+
+  <li class="c-topics-nav__item">
+    <a href="/topics/business/">
+      <svg role="img" width="48" height="48" viewBox="0 0 240 240">
+  <path d="M20 220c-11 0-20-9-20-20V70c0-11 9-20 20-20h60V35c0-10 5-15 15-15h50c10 0 15 5 15 15v15h60c11 0 20 9 20 20v130c0 11-9 20-20 20H20zm0-160c-5.5 0-10 4.5-10 10v130c0 5.5 4.5 10 10 10h200c5.5 0 10-4.5 10-10V70c0-5.5-4.5-10-10-10H20zm130-10V35c0-3-2-5-5-5H95c-3 0-5 2-5 5v15h60zM30 100V90h180v10H30zm0 40v-10h180v10H30zm0 40v-10h180v10H30z"/>
+</svg>
+
+      Business
+    </a>
+  </li>
+
+  <li class="c-topics-nav__item">
+    <a href="/topics/code/">
+      <svg role="img" width="48" height="48" viewBox="0 0 240 240">
+  <path transform="rotate(45 120 120)" d="M115 100H70.5C63 85 47.5 75 30 75 8.5 75-9.5 90-14 110h29l10 10-10 10h-29c4.5 20 22.5 35 44 35 17.5 0 33-10 40.5-25h99.5c7.5 15 22.5 25 40.5 25 21.5 0 39.5-15 44-35h-29l-10-10 10-10h29c-4.5-20-22.5-35-44-35-17.5 0-33 10-40.5 25H125V30h10v-50h-30v50h10v70zm123.5 40c-6.5 9-17 15-28.5 15-16 0-29-10.5-33.5-25H63.5C59 144.5 46 155 30 155c-12 0-22.5-6-28.5-15H20l20-20-20-20H1.5C7.5 91 18 85 30 85c16 0 29 10.5 33.5 25h113c4.5-14.5 17.5-25 33.5-25 12 0 23 6 29 15h-19l-20 20 20 20h19zM115-10h10v30h-10v-30zM99.5 240v-50h-10v-10h25v-40h10v40h25v10H140v50c0 10-7.5 20-20 20-12.5 0-20-10-20.5-20zm11 0c0 7.5 5 10 10 10s10-2.5 10-10v-50h-20v50z"/>
+</svg>
+
+      Code
+    </a>
+  </li>
+
+  <li class="c-topics-nav__item">
+    <a href="/topics/content/">
+      <svg role="img" width="48" height="48" viewBox="0 0 240 240">
+  <path d="M102.5 240l-1.5-2c-2.5-3.5-61-88-61-128s40.5-64 42.5-65L50 0h140l-32.5 45S200 70 200 110s-58.5 124.5-61 128l-1.5 2h-35zm30-10c9-13 57.5-85.5 57.5-120 0-33-35-56-41.5-60H91.5C85 54 50 77 50 110c0 34.5 48.5 106.5 57.5 120h25zM115 129.5c-11.5-2-20-12.5-20-24.5 0-14 11-25 25-25s25 11 25 25c0 12-8.5 22-20 24.5V230h-10V129.5zm5-39.5c-8 0-15 6.5-15 15s6.5 15 15 15 15-6.5 15-15-6.5-15-15-15zM92.5 40h55L170 10H70l22.5 30z"/>
+</svg>
+
+      Content
+    </a>
+  </li>
+
+  <li class="c-topics-nav__item">
+    <a href="/topics/design/">
+      <svg role="img" width="48" height="48" viewBox="0 0 240 240">
+  <path fill-rule="evenodd" d="M140 0h80v240h-80V0zm70 10h-60v30h20v10h-20V70h20v10h-20v20h20v10h-20v20h20v10h-20v20h20v10h-20v20h20v10h-20V230h60V10zM45 230c-14 0-25-11-25-25V60c0-1 35-55 35-55s35 54 35 55v145c0 14-11 25-25 25H45zm-15-25c0 8 7 15 15 15h20c8 0 15-7 15-15v-5H30v5zm0-25v10h50v-10H30zm0-106c0-2 2-4 4-4h2c2 0 4 2 4 4v96H30V74zm20 0c0-2 2-4 4-4h2c2 0 4 2 4 4v96H50V74zm20 0c0-2 2-4 4-4h2c2 0 4 2 4 4v96H70V74zM30.5 60.5S39 58 45 63.5c6-4.5 14-4.5 20 0 6-5.5 14.5-3 14.5-3L69 45H41L30.5 60.5zm24.5-38L47.5 35h15L55 22.5z"/>
+</svg>
+
+      Design
+    </a>
+  </li>
+
+  <li class="c-topics-nav__item">
+    <a href="/topics/process/">
+      <svg role="img" width="48" height="48" viewBox="0 0 240 240">
+  <path d="M210 116v4c0 49.5-40.5 90-90 90-29 0-55-14-71.5-35l7-7c14.5 19.5 38 32 64.5 32 44 0 80-36 80-80v-3.5l-15.5 16-7.5-7.5 28.5-28.5L234 125l-7.5 7.5L210 116zm-180 8v-4c0-49.5 40.5-90 90-90 29 0 54.5 13.5 71 35l-7 7C169 52.5 146 40 120 40c-44 0-80 36-80 80v5l17-17 7 7-28.5 28.5L7 115l7-7 16 16z"/>
+</svg>
+
+      Process
+    </a>
+  </li>
+
+  <li class="c-topics-nav__item">
+    <a href="/topics/ux/">
+      <svg role="img" width="48" height="48" viewBox="0 0 240 240">
+  <path d="M220 240H20c-11 0-20-9-20-20V20C0 9 9 0 20 0h200c11 0 20 9 20 20v200c0 11-9 20-20 20zM20 10c-5 0-10 4-10 10v200c0 5 4 10 10 10h200c5 0 10-4 10-10V20c0-5-4-10-10-10H20zm150 200c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20zm0-30c-5 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10zm-50 30c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20zm0-30c-5 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10zm-50 30c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20zm0-30c-5 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10zm45-30V80h10v70h-10zm0-100V30h10v20h-10zM65 80V30h10v50H65zm0 70v-40h10v40H65zm100 0v-20h10v20h-10zm0-50V30h10v70h-10zM50 110V80h40v30H50zm10-10h20V90H60v10zm90 30v-30h40v30h-40zm-50-50V50h40v30h-40zm10-10h20V60h-20v10zm50 50h20v-10h-20v10z"/>
+</svg>
+
+      UX
+    </a>
+  </li>
+
+</ul>
+
+  <form class="c-search" role="search" id="search" action="/pages/search/">
+  <fieldset class="c-field c-field--search">
+    <legend class="u-hidden">Search 24 ways</legend>
+    <label class="c-field__label" for="q">Keywords</label>
+    <input class="c-field__input" type="search" id="q" name="q" placeholder="e.g. CSS, Design, Research&#8230;"/>
+    <button class="c-field__button" type="submit"><svg class="icon--search" width="48" height="48" viewBox="0 0 240 240" role="img" aria-labelledby="icon--search__title">
+  <title id="icon--search__title">Search</title>
+  <path role="presentation" d="M148 140c7-8 11-19 11-31 0-28-22-50-50-50s-50 22-50 50 22 50 50 50c12 0 24-4 32-12l35 35 7-7-36-36zm-39 9c-22 0-40-18-40-40s18-40 40-40 40 18 40 40-18 40-40 40z"/>
+</svg>
+</button>
+  </fieldset>
+</form>
+
+  <ul class="c-site-nav">
+  <li class="c-site-nav__item"><a href="/archives/">Archives</a></li>
+  <li class="c-site-nav__item"><a href="/topics/">Topics</a></li>
+  <li class="c-site-nav__item"><a href="/authors/">Authors</a></li>
+  <li class="c-site-nav__item"><a href="/about/">About</a></li>
+</ul>
+
+</nav>
+
+<footer class="c-contentinfo">
+  <p class="c-contentinfo__copyright">
+    <small>&#169; 2005-2016 24 ways and our authors. <a href="/about/#colophon">Colophon</a></small>
+  </p>
+  <p class="c-contentinfo__social">
+    <a href="https://feeds.feedburner.com/24ways" rel="alternate">Grab our RSS feed</a>
+    <a href="https://twitter.com/24ways" rel="me">Follow us on Twitter</a>
+  </p>
+</footer>
+
+
+  </body>
+
+  <script src="/assets/scripts/vendor/madrobby/zepto/zepto.js"></script>
+  <script>jQuery = Zepto;</script>
+  <script src="/assets/scripts/vendor/adactio/progresponsive/progresponsive.js"></script>
+  <script src="/assets/scripts/vendor/filamentgroup/ajaxinclude/ajaxinclude.js"></script>
+  <script>
+    // AJAX include comments
+    $("a[data-interaction]").addClass("c-continue-ajax");
+    $("a[data-interaction]").bind( "click", function(e) {
+      e.preventDefault();
+      $("#comments").addClass("c-section-loading");
+      $(this).removeAttr("data-interaction").ajaxInclude();
+    });
+
+    // Corner animation
+    var cornerOver = function(){
+      this.className = this.className.replace(' js-mouseout', '');
+    };
+    var cornerOut = function(){
+      this.className += ' js-mouseout';
+    };
+    var corners = document.querySelectorAll('.c-summary');
+    for (var i = corners.length - 1; i >= 0; i--) {
+      corners[i].addEventListener('js-mouseover', cornerOver, false);
+      corners[i].addEventListener('js-mouseout', cornerOut, false);
+    };
+
+    // Equal height grid cells
+    // http://css-tricks.com/equal-height-blocks-in-rows/
+    if (window.innerWidth > 640) {
+      equalheight = function(container){
+        var currentTallest = 0,
+          currentRowStart = 0,
+          rowDivs = new Array(),
+          $el,
+          topPosition = 0;
+
+        $(container).each(function() {
+          $el = $(this);
+          $($el).height('auto')
+          topPostion = $el.position().top;
+
+          if (currentRowStart != topPostion) {
+            for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+              rowDivs[currentDiv].height(currentTallest);
+            }
+            rowDivs.length = 0; // empty the array
+            currentRowStart = topPostion;
+            currentTallest = $el.height();
+            rowDivs.push($el);
+          } else {
+            rowDivs.push($el);
+            currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+          }
+          for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+            rowDivs[currentDiv].height(currentTallest);
+          }
+        });
+      }
+
+      $(document).ready(function() {
+        equalheight('.c-summary-list .c-summary');
+      });
+
+      $(window).resize(function(){
+        equalheight('.c-summary-list .c-summary');
+      });
+    }
+
+    // Show back to top link when we've scrolled down the page
+    if (window.innerWidth > 504) {
+      $('.c-navigation').append('<a class="c-top-nav" href="#top">Return to the top of this page</a>');
+      $(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 400) {
+            $('.c-top-nav').animate({ opacity: 1 }, 500, 'ease-in')
+          } else {
+            $('.c-top-nav').animate({ opacity: 0 }, 500, 'ease-out')
+          }
+        });
+
+        // http://austinpray.com/blog/zepto-js-smooth-vertical-scrolling/
+        function smoothScroll(el, to, duration) {
+          if (duration < 0) {
+            return;
+          }
+          var difference = to - $(window).scrollTop();
+          var perTick = difference / duration * 10;
+          this.scrollToTimerCache = setTimeout(function() {
+            if (!isNaN(parseInt(perTick, 10))) {
+              window.scrollTo(0, $(window).scrollTop() + perTick);
+              smoothScroll(el, to, duration - 10);
+            }
+          }.bind(this), 10);
+        }
+
+        $('.c-top-nav').on('click', function(e) {
+          e.preventDefault();
+          smoothScroll($(window), $($(e.currentTarget).attr('href')).offset().top, 500);
+        });
+      });
+    }
+  </script>
+</html>
+

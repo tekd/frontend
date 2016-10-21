@@ -1,0 +1,28 @@
+* {
+  font-family: "Lato", sans-serif !important;
+}
+
+a {
+  color: #37a;
+}
+
+a:hover {
+  color: #275c83;
+}
+
+a:active {
+  color: #37a;
+}
+
+.Pen-previewLink svg {
+  fill: currentColor;
+}
+
+.Code * {
+  font-family: "Inconsolata", Consolas, Monaco, monospace, serif !important;
+}
+
+.Header {
+  background-color: #330032;
+  color: #ff0040;
+}

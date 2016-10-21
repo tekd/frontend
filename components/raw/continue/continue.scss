@@ -1,4 +1,4 @@
-.continue {
+.c-continue {
   font-weight: 700;
 
   &::after {
@@ -6,7 +6,7 @@
   }
 }
 
-.continue-ajax {
+.c-continue-ajax {
   &::after {
     content: " \2026";
   }
