@@ -160,11 +160,11 @@
     <code class="Code Code--lang-html">
         
         <pre><span class="hljs-comment">&lt;!-- <span class="hljs-doctag">TODO:</span> Review use of microformats for author preface --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface h-card"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__title p-name"</span>&gt;</span>Preface title
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface  h-card"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__title  p-name"</span>&gt;</span>Preface title
     <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__main"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"lede p-note"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__main  p-note"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Preface content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -178,16 +178,16 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-bab0ec600bde9d898e795ec2550ef64a-panel-view">
     <code class="Code Code--lang-html">
         <pre><span class="hljs-comment">&lt;!-- <span class="hljs-doctag">TODO:</span> Review use of microformats for author preface --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface h-card"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__title p-name"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface  h-card"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__title  p-name"</span>&gt;</span>
     {%- if titleIcon -%}
       {% include titleIcon + ".svg" %}
     {%- endif -%}
     {{ title }}
   <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
   {%- if content -%}
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__main"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"lede p-note"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__main  p-note"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
       {%- if avatar -%}
         {% render "<a href="avatar">@avatar</a>", { img: avatar.img } %}
       {%- endif -%}
@@ -205,9 +205,13 @@
         
             
             <pre>{
-  <span class="hljs-attr">"site_title"</span>: <span class="hljs-string">"24 ways"</span>,
-  <span class="hljs-attr">"site_handle"</span>: <span class="hljs-string">"24ways"</span>,
-  <span class="hljs-attr">"site_description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  },
   <span class="hljs-attr">"topics"</span>: [
     {
       <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Business"</span>,
@@ -268,47 +272,32 @@
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code">
                                 <pre><span class="hljs-selector-class">.c-preface</span> {
-  <span class="hljs-attribute">background-color</span>: darken(<span class="hljs-variable">$c-signature</span>, <span class="hljs-number">5%</span>);
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">4.5rem</span> <span class="hljs-number">1rem</span> <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">background-color</span>: darken(<span class="hljs-variable">$color-brand</span>, <span class="hljs-number">5%</span>);
+  <span class="hljs-attribute">background-image</span>: inline(<span class="hljs-string">'diamond.svg'</span>);
+  <span class="hljs-attribute">background-repeat</span>: repeat;
   <span class="hljs-attribute">overflow</span>: hidden;
-  <span class="hljs-attribute">position</span>: relative;
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
     <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">25%</span>;
   }
-
-  &amp;::before {
-    <span class="hljs-attribute">content</span>: <span class="hljs-string">" "</span>;
-    <span class="hljs-attribute">background</span>: url(<span class="hljs-string">'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyB0cmFuc2Zvcm09InJvdGF0ZSgtNDUgNjggNjgpIHRyYW5zbGF0ZSgtMjcgLTI3KSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iLjI1IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiPjxyZWN0IHdpZHRoPSIxOTAiIGhlaWdodD0iMTkwIi8+PHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjE4MiIgaGVpZ2h0PSIxODIiLz48cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iMTc0IiBoZWlnaHQ9IjE3NCIvPjxyZWN0IHg9IjEyIiB5PSIxMiIgd2lkdGg9IjE2NiIgaGVpZ2h0PSIxNjYiLz48cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSIxNTgiIGhlaWdodD0iMTU4Ii8+PHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIvPjxyZWN0IHg9IjI0IiB5PSIyNCIgd2lkdGg9IjE0MiIgaGVpZ2h0PSIxNDIiLz48cmVjdCB4PSIyOCIgeT0iMjgiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTM0Ii8+PHJlY3QgeD0iMzIiIHk9IjMyIiB3aWR0aD0iMTI2IiBoZWlnaHQ9IjEyNiIvPjxyZWN0IHg9IjM2IiB5PSIzNiIgd2lkdGg9IjExOCIgaGVpZ2h0PSIxMTgiLz48cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSIxMTAiIGhlaWdodD0iMTEwIi8+PHJlY3QgeD0iNDQiIHk9IjQ0IiB3aWR0aD0iMTAyIiBoZWlnaHQ9IjEwMiIvPjxyZWN0IHg9IjQ4IiB5PSI0OCIgd2lkdGg9Ijk0IiBoZWlnaHQ9Ijk0Ii8+PHJlY3QgeD0iNTIiIHk9IjUyIiB3aWR0aD0iODYiIGhlaWdodD0iODYiLz48cmVjdCB4PSI1NiIgeT0iNTYiIHdpZHRoPSI3OCIgaGVpZ2h0PSI3OCIvPjxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjcwIi8+PHJlY3QgeD0iNjQiIHk9IjY0IiB3aWR0aD0iNjIiIGhlaWdodD0iNjIiLz48cmVjdCB4PSI2OCIgeT0iNjgiIHdpZHRoPSI1NCIgaGVpZ2h0PSI1NCIvPjxyZWN0IHg9IjcyIiB5PSI3MiIgd2lkdGg9IjQ2IiBoZWlnaHQ9IjQ2Ii8+PHJlY3QgeD0iNzYiIHk9Ijc2IiB3aWR0aD0iMzgiIGhlaWdodD0iMzgiLz48cmVjdCB4PSI4MCIgeT0iODAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIvPjxyZWN0IHg9Ijg0IiB5PSI4NCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIyIi8+PHJlY3QgeD0iODgiIHk9Ijg4IiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiLz48cmVjdCB4PSI5MiIgeT0iOTIiIHdpZHRoPSI2IiBoZWlnaHQ9IjYiLz48L2c+PC9zdmc+'</span>) repeat;
-    <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;
-  }
 }
 
 <span class="hljs-selector-class">.c-preface__title</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
   @<span class="hljs-keyword">include</span> heading();
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-brand--light</span>;
   <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.5rem</span>;
 
   svg {
     <span class="hljs-attribute">display</span>: inline-block;
     <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">0.25em</span>;
-  }
 
-  @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1rem</span>;
-
-    svg {
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">2em</span>;
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span>;
+    @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">6rem</span>;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">6rem</span>;
       <span class="hljs-attribute">position</span>: absolute;
-      <span class="hljs-attribute">left</span>: -<span class="hljs-number">2.25em</span>;
+      <span class="hljs-attribute">left</span>: -<span class="hljs-number">2.5em</span>;
       <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
     }
   }
@@ -316,51 +305,30 @@
 
 <span class="hljs-selector-class">.c-preface__main</span> {
   <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">color</span>: rgba(white, <span class="hljs-number">0.75</span>);
 
-  @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1rem</span>;
+  <span class="hljs-selector-class">.s-prose</span> <span class="hljs-selector-tag">p</span>:first-of-type {
+    @<span class="hljs-keyword">include</span> lede;
   }
 
   <span class="hljs-selector-class">.c-avatar</span> {
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">25%</span>;
-
-    @<span class="hljs-keyword">media</span> screen and (max-width: 49.9375em), print {
-      <span class="hljs-attribute">float</span>: right;
-      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.5rem</span> -<span class="hljs-number">0.5rem</span> <span class="hljs-number">1.5rem</span> <span class="hljs-number">2rem</span>;
-    }
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">float</span>: right;
+    <span class="hljs-attribute">margin</span>: -<span class="hljs-number">7.5%</span> -<span class="hljs-number">7.5%</span> <span class="hljs-number">0.75rem</span> <span class="hljs-number">0.75rem</span>;
 
     @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-      <span class="hljs-attribute">margin-top</span>: -<span class="hljs-number">10%</span>;
-      <span class="hljs-attribute">position</span>: absolute;
-      <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">left</span>: -<span class="hljs-number">33%</span>;
+      <span class="hljs-attribute">float</span>: left;
+      <span class="hljs-attribute">margin</span>: -<span class="hljs-number">7.5%</span> <span class="hljs-number">0.75rem</span> <span class="hljs-number">0.75rem</span> -<span class="hljs-number">33%</span>;
     }
-  }
-
-  <span class="hljs-selector-class">.lede</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
-    <span class="hljs-attribute">color</span>: rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0.75</span>);
   }
 
   <span class="hljs-selector-tag">a</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0.25</span>);
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid rgba(white, <span class="hljs-number">0.25</span>);
 
     &amp;:hover {
-      <span class="hljs-attribute">border-bottom-color</span>: rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0.75</span>);
+      <span class="hljs-attribute">border-bottom-color</span>: rgba(white, <span class="hljs-number">0.75</span>);
     }
-  }
-}
-
-<span class="hljs-selector-attr">[class*="year-"]</span> {
-  <span class="hljs-selector-class">.c-preface</span> {
-    &amp;::before {
-      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    }
-  }
-
-  <span class="hljs-selector-class">.c-preface__title</span> {
-    <span class="hljs-attribute">color</span>: lighten(<span class="hljs-variable">$c-signature</span>, <span class="hljs-number">10%</span>);
   }
 }
 </pre>
@@ -379,7 +347,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.2 KB</span>
+                    <span class="Meta-value">1.1 KB</span>
                 </li>
             </ul>
         </div>
@@ -532,6 +500,30 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="activity" data-pjax>
+                <span>Activity</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="author" data-pjax>
                 <span>Author</span>
                 
@@ -628,6 +620,54 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="comment-form" data-pjax>
+                <span>Comment Form</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="comments" data-pjax>
+                <span>Comments</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="continue" data-pjax>
                 <span>Continue</span>
                 
@@ -676,8 +716,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="note" data-pjax>
-                <span>Note</span>
+            <a class="Tree-entityLink" href="meta" data-pjax>
+                <span>Meta</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -748,6 +788,30 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="search-form" data-pjax>
+                <span>Search Form</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="section" data-pjax>
                 <span>Section</span>
                 
@@ -774,70 +838,6 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="summary" data-pjax>
                 <span>Summary</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Forms</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="comment-form" data-pjax>
-                <span>Comment Form</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="search-form" data-pjax>
-                <span>Search Form</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -993,110 +993,6 @@
         </li>
         
     
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-lists">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Lists</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="authors-list" data-pjax>
-                <span>Authors List</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="comments-list" data-pjax>
-                <span>Comments List</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="summary-list" data-pjax>
-                <span>Summary List</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-navs">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Navs</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
         
         
         <li class="Tree-item Tree-entity" data-role="item">
@@ -1199,7 +1095,122 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-prose">
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layouts">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Layouts</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Grid</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="grid--ways" data-pjax>
+                <span>Ways</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="grid--authors" data-pjax>
+                <span>Authors</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-scopes">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Scopes</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="note" data-pjax>
+                <span>Note</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-prose">
             <h4 class="Tree-collectionLabel" data-role="toggle">
                 <span>Prose</span>
             </h4>
@@ -1212,8 +1223,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="caps" data-pjax>
-                <span>Caps</span>
+            <a class="Tree-entityLink" href="prose--default" data-pjax>
+                <span>Default</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1236,8 +1247,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="caption" data-pjax>
-                <span>Caption</span>
+            <a class="Tree-entityLink" href="prose--article" data-pjax>
+                <span>Article</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1257,123 +1268,8 @@
         </li>
         
     
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="figure" data-pjax>
-                <span>Figure</span>
-                
 
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="heading" data-pjax>
-                <span>Heading</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="lede" data-pjax>
-                <span>Lede</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="photo-credit" data-pjax>
-                <span>Photo Credit</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="prose" data-pjax>
-                <span>Prose</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
+            </ul>
         </li>
         
     
@@ -1783,6 +1679,101 @@
 
 
     
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">Documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Helpers</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/helpers/sass" data-pjax>
+                <span>Sass helpers</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/helpers/tokens" data-pjax>
+                <span>Design tokens</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-styleguide">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Styleguide</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/styleguide/colour" data-pjax>
+                <span>Colour</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/styleguide/typography" data-pjax>
+                <span>Typography</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/styleguide/iconography" data-pjax>
+                <span>Iconography</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
 
 
     

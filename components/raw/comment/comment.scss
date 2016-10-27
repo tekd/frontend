@@ -1,82 +1,72 @@
 .c-comment {
   background-color: white;
-  padding: 1rem 1rem 1rem 2.5rem;
+  padding-left: 2.5rem;
   position: relative;
-  margin: 0.5rem 0;
+  margin-bottom: 0.75rem;
 
   @media screen {
-    box-shadow: 1px 1px 0 rgba($c-neutral, 0.15);
+    box-shadow: 1px 1px 0 rgba($color-neutral, 0.15);
   }
 
   @media screen and (min-width: 40em) {
     padding-left: 5.5rem;
   }
 
-  .c-avatar {
-    position: absolute;
-    top: 0.6667em;
-    left: 0;
-
-    @media screen and (min-width: 40em) {
-      left: 0.6667em;
-    }
+  &.c-comment--unhelpful {
+    background-color: transparent;
+    box-shadow: 0 0 0 1px rgba($color-neutral, 0.15);
   }
 
-  &[class="summary--unhelpful"] {
-    background-color: transparent;
-    box-shadow: none;
-    border: 1px dotted rgba($c-neutral, 0.2);
+  .c-avatar {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    width: 2.5rem;
+
+    @media screen and (min-width: 40em) {
+      width: 5.5rem;
+    }
   }
 }
 
 .c-comment__header {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+
   @media print {
-    border-top: 1px solid #000;
+    border-top: 1px solid black;
     padding-top: 0.5rem;
   }
 }
 
 .c-comment__title {
   @include title();
+}
 
-  .c-avatar {
-    width: 1.75rem;
-    height: 1.75rem;
+.c-comment__meta {
+  @include caption();
 
-    @media screen and (min-width: 40em) {
-      width: 3rem;
-      height: 3rem;
+  @media screen and (min-width: 30em) {
+    position: absolute;
+    top: 1.3125rem;
+    right: 1rem;
+  }
+
+  a.c-comment__permalink {
+    color: $color-neutral;
+
+    &:hover {
+      color: $color-neutral--dark;
     }
   }
 }
 
 .c-comment__main {
-  @include prose();
+  padding: 0.5rem 0.75rem 0.5rem 0;
 }
 
-.c-comment__meta {
+.c-comment__footer {
   @include caption();
-  margin: 0.5rem 0;
-
-  @media screen and (min-width: 30em) {
-    position: absolute;
-    top: 1.1667em; // 14px
-    right: 1em;
-  }
-
-  a {
-    color: $c-neutral;
-
-    &:hover {
-      color: $c-neutral-dark;
-    }
-  }
-}
-
-.c-comment__vote {
-  @include caption();
-  margin-bottom: 0;
+  border-top: 1px solid $color-neutral--lightest;
+  padding: 0.5rem 0.75rem 0.5rem 0;
   text-align: right;
-  border-top: 1px solid $c-neutral-lightest;
-  padding-top: 0.75rem;
 }

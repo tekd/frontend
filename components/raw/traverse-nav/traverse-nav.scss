@@ -1,5 +1,4 @@
 .c-traverse-nav {
-  @include nav();
   display: none;
 
   @media screen and (min-width: 31.5em) {
@@ -8,42 +7,31 @@
     position: fixed;
     right: 0;
     top: 4.5rem; // 72px
-    z-index: 1000;
   }
 }
 
 .c-traverse-nav__item {
-  text-align: center;
-  width: auto;
   height: 4.5rem;
-  float: none;
+  width: auto;
   display: block;
   position: relative;
-}
 
-.c-traverse-nav__icon {
-  background-color: #fff;
-  padding: 0.75rem;
-  box-shadow: inset 0 -1px 0 $c-neutral-lightest;
-  display: block;
-  position: relative;
-  z-index: 1000;
-}
+  &[rel=prev]::after {
+    content: 'Previously: \A' attr(data-sequence-title);
+  }
 
-.c-traverse-nav__label {
-  font: 0/0 sans;
-  outline: 1px solid red;
-}
+  &[rel=next]::after {
+    content: 'Next: \A' attr(data-sequence-title);
+  }
 
-.js-enhanced .c-traverse-nav {
-  @media screen and (min-width: 31.5em) {
-    .c-nav-traverse__item {
+  .js-enhanced & {
+    @media screen and (min-width: 31.5em) {
       &::after {
-        color: #fff;
-        font: 0.875rem/1.2857 $f-sans; // 14px/18px
+        color: white;
+        font: 0.875rem/1.2857 $font-family-sans; // 14px/18px
         text-align: left;
         white-space: pre-wrap;
-        background-color: rgba(darken($c-signature, 20%), 0.75);
+        background-color: rgba(darken($color-brand, 20%), 0.75);
         padding: 0.5rem 0.75rem;
         display: block;
         position: absolute;
@@ -52,40 +40,34 @@
         left: 0;
         width: 18rem;
         overflow: hidden;
-        transition: all .3s ease-out;
+        transition: all 0.3s ease-out;
       }
 
       &:hover {
-        .c-nav-traverse__icon {
-          color: $c-neutral;
-          background-color: lighten($c-neutral-lightest, 1%);
-        }
-
         &::after {
           left: -18rem;
         }
       }
-
-      &:active {
-        .c-nav-traverse__icon {
-          color: $c-neutral-dark;
-          background-color: darken($c-neutral-lightest, 1%);
-        }
-      }
     }
+  }
 
-    .c-traverse-nav__item[rel="prev"]::after {
-      content: "Previously: \A"attr(data-sequence-title);
-    }
-
-    .c-traverse-nav__item[rel="next"]::after {
-      content: "Next: \A"attr(data-sequence-title);
+  [data-menu=open] & {
+    &::after {
+      display: none;
     }
   }
 }
 
-.js-menu-active .c-nav-traverse {
-  .c-traverse-nav__item::after {
-    display: none;
-  }
+.c-traverse-nav__icon {
+  @include ui-link();
+  background-color: white;
+  display: block;
+  padding: 0.75rem;
+  box-shadow: inset 0 -1px 0 $color-neutral--lightest;
+  position: relative;
+  z-index: $z-index-default;
+}
+
+.c-traverse-nav__label {
+  @include hidden();
 }

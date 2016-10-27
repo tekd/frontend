@@ -1,0 +1,31 @@
+.c-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-grid__item {
+  display: flex;
+  padding: 0.125em;
+  flex-shrink: 0;
+
+  .c-grid--ways & {
+    flex-basis: 16em;
+    flex-grow: 1;
+  }
+
+  .c-grid--authors & {
+    flex-basis: percentage(1/2);
+
+    @media screen and (min-width: 31.5em) {
+      flex-basis: percentage(1/3);
+    }
+
+    @media screen and (min-width: 50em) {
+      flex-basis: percentage(1/4);
+    }
+
+    @media screen and (min-width: 60em) {
+      flex-basis: percentage(1/5);
+    }
+  }
+}

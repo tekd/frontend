@@ -54,7 +54,7 @@
     
     
 
-<div class="Pen" data-behaviour="pen" id="pen-c9d17694984f26226c47f119c65d1ec2">
+<div class="Pen" data-behaviour="pen" id="pen-602c79dda05454ecc999bc21a0e9ee0d">
 
     
 
@@ -81,7 +81,7 @@
 </div>
 
 
-    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-c9d17694984f26226c47f119c65d1ec2">
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-602c79dda05454ecc999bc21a0e9ee0d">
     <div class="Preview-wrapper" data-role="resizer">
         <div class="Preview-resizer">
             
@@ -103,7 +103,7 @@
     <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
 
     <div class="Pen-panel Pen-info" data-role="info">
-    <div class="Browser" data-behaviour="browser" id="browser-c9d17694984f26226c47f119c65d1ec2">
+    <div class="Browser" data-behaviour="browser" id="browser-602c79dda05454ecc999bc21a0e9ee0d">
 
     
 
@@ -112,19 +112,19 @@
         
         
         <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
-            <a href="#browser-c9d17694984f26226c47f119c65d1ec2-panel-html">HTML</a>
+            <a href="#browser-602c79dda05454ecc999bc21a0e9ee0d-panel-html">HTML</a>
         </li>
         
         
         
         <li class="Browser-tab Browser-tab--view" data-role="tab">
-            <a href="#browser-c9d17694984f26226c47f119c65d1ec2-panel-view">View</a>
+            <a href="#browser-602c79dda05454ecc999bc21a0e9ee0d-panel-view">View</a>
         </li>
         
         
         
         <li class="Browser-tab Browser-tab--context" data-role="tab">
-            <a href="#browser-c9d17694984f26226c47f119c65d1ec2-panel-context">Context</a>
+            <a href="#browser-602c79dda05454ecc999bc21a0e9ee0d-panel-context">Context</a>
         </li>
         
         
@@ -136,13 +136,13 @@
         
         
         <li class="Browser-tab Browser-tab--info" data-role="tab">
-            <a href="#browser-c9d17694984f26226c47f119c65d1ec2-panel-info">Info</a>
+            <a href="#browser-602c79dda05454ecc999bc21a0e9ee0d-panel-info">Info</a>
         </li>
         
         
         
         <li class="Browser-tab Browser-tab--notes" data-role="tab">
-            <a href="#browser-c9d17694984f26226c47f119c65d1ec2-panel-notes">Notes</a>
+            <a href="#browser-602c79dda05454ecc999bc21a0e9ee0d-panel-notes">Notes</a>
         </li>
         
         
@@ -152,11 +152,11 @@
 
     
     
-<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-c9d17694984f26226c47f119c65d1ec2-panel-html">
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-602c79dda05454ecc999bc21a0e9ee0d-panel-html">
     <code class="Code Code--lang-html">
         
         <pre><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-gb"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-gb"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-js"</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//fonts.googleapis.com"</span> /&gt;</span>
@@ -165,42 +165,34 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//media.24ways.org"</span> /&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-        <span class="hljs-comment">// Flag support for JS</span>
-        <span class="hljs-built_in">document</span>.documentElement.className += <span class="hljs-string">' js'</span>;
-        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.querySelector &amp;&amp; <span class="hljs-built_in">window</span>.addEventListener) {
-            <span class="hljs-built_in">document</span>.documentElement.className += <span class="hljs-string">' js-enhanced'</span>;
+        <span class="hljs-keyword">var</span> docEl = <span class="hljs-built_in">document</span>.documentElement;
+        docEl.className = docEl.className.replace(<span class="hljs-string">'no-js'</span>, <span class="hljs-string">'has-js'</span>);
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downloadJSAtOnload</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);
+            element.src = <span class="hljs-string">"../../assets/scripts/app.js"</span>;
+            <span class="hljs-built_in">document</span>.body.appendChild(element);
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.querySelector &amp;&amp; docEl.classList &amp;&amp; <span class="hljs-built_in">window</span>.addEventListener) {
+            docEl.className += <span class="hljs-string">' js-enhanced'</span>;
             <span class="hljs-keyword">var</span> enhanced = <span class="hljs-literal">true</span>;
+            <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"load"</span>, downloadJSAtOnload, <span class="hljs-literal">false</span>);
         } <span class="hljs-keyword">else</span> {
             <span class="hljs-keyword">var</span> enhanced = <span class="hljs-literal">false</span>;
         }
-        <span class="hljs-comment">// // Add a script element as a child of the body</span>
-        <span class="hljs-comment">// function downloadJSAtOnload() {</span>
-        <span class="hljs-comment">//   var element = document.createElement("script");</span>
-        <span class="hljs-comment">//   element.src = "//24ways.org/_assets/js/scripts_v37.js";</span>
-        <span class="hljs-comment">//   document.body.appendChild(element);</span>
-        <span class="hljs-comment">// }</span>
-        <span class="hljs-comment">//</span>
-        <span class="hljs-comment">// // Check for browser support of event handling capability</span>
-        <span class="hljs-comment">// if (window.addEventListener) {</span>
-        <span class="hljs-comment">//   window.addEventListener("load", downloadJSAtOnload, false);</span>
-        <span class="hljs-comment">// } else if (window.attachEvent) {</span>
-        <span class="hljs-comment">//   window.attachEvent("onload", downloadJSAtOnload);</span>
-        <span class="hljs-comment">// } else {</span>
-        <span class="hljs-comment">//   window.onload = downloadJSAtOnload;</span>
-        <span class="hljs-comment">// }</span>
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../assets/styles/app.css"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"alternate"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/rss+xml"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://feeds.feedburner.com/24ways"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/x-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../assets/icons/favicon.ico"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"apple-touch-icon-precomposed"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../assets/icons/apple-touch-icon.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"shortcut icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../assets/icons/icon.ico"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/ico"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"apple-touch-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../assets/icons/icon.png"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"mask-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../assets/icons/icon.svg"</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"#f04"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/humans.txt"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"manifest"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/manifest.json"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"alternate"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://feeds.feedburner.com/24ways"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/rss+xml"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../assets/styles/app.css"</span> /&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"robots"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"index, follow"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"application-name"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"24 ways"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"apple-mobile-web-app-title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"24 ways"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:site"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"@24ways"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"24 ways"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span> /&gt;</span>
@@ -210,109 +202,9 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span> &amp;#9670; 24 ways<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"year-2015"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"t-year-2015"</span> <span class="hljs-attr">data-menu</span>=<span class="hljs-string">"closed"</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/scripts/vendor/madrobby/zepto/zepto.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
-    jQuery = Zepto;
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/scripts/vendor/adactio/progresponsive/progresponsive.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/scripts/vendor/filamentgroup/ajaxinclude/ajaxinclude.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-comment">// AJAX include comments</span>
-    $(<span class="hljs-string">"a[data-interaction]"</span>).addClass(<span class="hljs-string">"c-continue-ajax"</span>);
-    $(<span class="hljs-string">"a[data-interaction]"</span>).bind(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-        e.preventDefault();
-        $(<span class="hljs-string">"#comments"</span>).addClass(<span class="hljs-string">"c-section-loading"</span>);
-        $(<span class="hljs-keyword">this</span>).removeAttr(<span class="hljs-string">"data-interaction"</span>).ajaxInclude();
-    });
-    <span class="hljs-comment">// Corner animation</span>
-    <span class="hljs-keyword">var</span> cornerOver = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">this</span>.className = <span class="hljs-keyword">this</span>.className.replace(<span class="hljs-string">' js-mouseout'</span>, <span class="hljs-string">''</span>);
-    };
-    <span class="hljs-keyword">var</span> cornerOut = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">this</span>.className += <span class="hljs-string">' js-mouseout'</span>;
-    };
-    <span class="hljs-keyword">var</span> corners = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.c-summary'</span>);
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = corners.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
-        corners[i].addEventListener(<span class="hljs-string">'js-mouseover'</span>, cornerOver, <span class="hljs-literal">false</span>);
-        corners[i].addEventListener(<span class="hljs-string">'js-mouseout'</span>, cornerOut, <span class="hljs-literal">false</span>);
-    };
-    <span class="hljs-comment">// Equal height grid cells</span>
-    <span class="hljs-comment">// http://css-tricks.com/equal-height-blocks-in-rows/</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.innerWidth &gt; <span class="hljs-number">640</span>) {
-        equalheight = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">container</span>) </span>{
-            <span class="hljs-keyword">var</span> currentTallest = <span class="hljs-number">0</span>,
-                currentRowStart = <span class="hljs-number">0</span>,
-                rowDivs = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(),
-                $el,
-                topPosition = <span class="hljs-number">0</span>;
-            $(container).each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-                $el = $(<span class="hljs-keyword">this</span>);
-                $($el).height(<span class="hljs-string">'auto'</span>)
-                topPostion = $el.position().top;
-                <span class="hljs-keyword">if</span> (currentRowStart != topPostion) {
-                    <span class="hljs-keyword">for</span> (currentDiv = <span class="hljs-number">0</span>; currentDiv &lt; rowDivs.length; currentDiv++) {
-                        rowDivs[currentDiv].height(currentTallest);
-                    }
-                    rowDivs.length = <span class="hljs-number">0</span>; <span class="hljs-comment">// empty the array</span>
-                    currentRowStart = topPostion;
-                    currentTallest = $el.height();
-                    rowDivs.push($el);
-                } <span class="hljs-keyword">else</span> {
-                    rowDivs.push($el);
-                    currentTallest = (currentTallest &lt; $el.height()) ? ($el.height()) : (currentTallest);
-                }
-                <span class="hljs-keyword">for</span> (currentDiv = <span class="hljs-number">0</span>; currentDiv &lt; rowDivs.length; currentDiv++) {
-                    rowDivs[currentDiv].height(currentTallest);
-                }
-            });
-        }
-        $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-            equalheight(<span class="hljs-string">'.c-summary-list .c-summary'</span>);
-        });
-        $(<span class="hljs-built_in">window</span>).resize(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-            equalheight(<span class="hljs-string">'.c-summary-list .c-summary'</span>);
-        });
-    }
-    <span class="hljs-comment">// Show back to top link when we've scrolled down the page</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.innerWidth &gt; <span class="hljs-number">504</span>) {
-        $(<span class="hljs-string">'.c-navigation'</span>).append(<span class="hljs-string">'&lt;a class="c-top-nav" href="#top"&gt;Return to the top of this page&lt;/a&gt;'</span>);
-        $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-            $(<span class="hljs-built_in">window</span>).scroll(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-                <span class="hljs-keyword">if</span> ($(<span class="hljs-keyword">this</span>).scrollTop() &gt; <span class="hljs-number">400</span>) {
-                    $(<span class="hljs-string">'.c-top-nav'</span>).animate({
-                        <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span>
-                    }, <span class="hljs-number">500</span>, <span class="hljs-string">'ease-in'</span>)
-                } <span class="hljs-keyword">else</span> {
-                    $(<span class="hljs-string">'.c-top-nav'</span>).animate({
-                        <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span>
-                    }, <span class="hljs-number">500</span>, <span class="hljs-string">'ease-out'</span>)
-                }
-            });
-            <span class="hljs-comment">// http://austinpray.com/blog/zepto-js-smooth-vertical-scrolling/</span>
-            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">smoothScroll</span>(<span class="hljs-params">el, to, duration</span>) </span>{
-                <span class="hljs-keyword">if</span> (duration &lt; <span class="hljs-number">0</span>) {
-                    <span class="hljs-keyword">return</span>;
-                }
-                <span class="hljs-keyword">var</span> difference = to - $(<span class="hljs-built_in">window</span>).scrollTop();
-                <span class="hljs-keyword">var</span> perTick = difference / duration * <span class="hljs-number">10</span>;
-                <span class="hljs-keyword">this</span>.scrollToTimerCache = setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-                    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isNaN</span>(<span class="hljs-built_in">parseInt</span>(perTick, <span class="hljs-number">10</span>))) {
-                        <span class="hljs-built_in">window</span>.scrollTo(<span class="hljs-number">0</span>, $(<span class="hljs-built_in">window</span>).scrollTop() + perTick);
-                        smoothScroll(el, to, duration - <span class="hljs-number">10</span>);
-                    }
-                }.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">10</span>);
-            }
-            $(<span class="hljs-string">'.c-top-nav'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-                e.preventDefault();
-                smoothScroll($(<span class="hljs-built_in">window</span>), $($(e.currentTarget).attr(<span class="hljs-string">'href'</span>)).offset().top, <span class="hljs-number">500</span>);
-            });
-        });
-    }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></pre>
         
@@ -320,10 +212,10 @@
 </div>
 
     
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-c9d17694984f26226c47f119c65d1ec2-panel-view">
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-602c79dda05454ecc999bc21a0e9ee0d-panel-view">
     <code class="Code Code--lang-html">
         <pre><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-gb"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-gb"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-js"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//fonts.googleapis.com"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//themes.googleusercontent.com"</span>/&gt;</span>
@@ -331,171 +223,64 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//media.24ways.org"</span>/&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-      <span class="hljs-comment">// Flag support for JS</span>
-      <span class="hljs-built_in">document</span>.documentElement.className += <span class="hljs-string">' js'</span>;
-      <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.querySelector &amp;&amp; <span class="hljs-built_in">window</span>.addEventListener) {
-        <span class="hljs-built_in">document</span>.documentElement.className += <span class="hljs-string">' js-enhanced'</span>;
+      <span class="hljs-keyword">var</span> docEl = <span class="hljs-built_in">document</span>.documentElement;
+      docEl.className = docEl.className.replace(<span class="hljs-string">'no-js'</span>, <span class="hljs-string">'has-js'</span>);
+
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downloadJSAtOnload</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);
+        element.src = <span class="hljs-string">"{{ '/assets/scripts/app.js' | path }}"</span>;
+        <span class="hljs-built_in">document</span>.body.appendChild(element);
+      }
+
+      <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.querySelector &amp;&amp; docEl.classList &amp;&amp; <span class="hljs-built_in">window</span>.addEventListener) {
+        docEl.className += <span class="hljs-string">' js-enhanced'</span>;
         <span class="hljs-keyword">var</span> enhanced = <span class="hljs-literal">true</span>;
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"load"</span>, downloadJSAtOnload, <span class="hljs-literal">false</span>);
       } <span class="hljs-keyword">else</span> {
         <span class="hljs-keyword">var</span> enhanced = <span class="hljs-literal">false</span>;
       }
-
-      <span class="hljs-comment">// // Add a script element as a child of the body</span>
-      <span class="hljs-comment">// function downloadJSAtOnload() {</span>
-      <span class="hljs-comment">//   var element = document.createElement("script");</span>
-      <span class="hljs-comment">//   element.src = "//24ways.org/_assets/js/scripts_v37.js";</span>
-      <span class="hljs-comment">//   document.body.appendChild(element);</span>
-      <span class="hljs-comment">// }</span>
-      <span class="hljs-comment">//</span>
-      <span class="hljs-comment">// // Check for browser support of event handling capability</span>
-      <span class="hljs-comment">// if (window.addEventListener) {</span>
-      <span class="hljs-comment">//   window.addEventListener("load", downloadJSAtOnload, false);</span>
-      <span class="hljs-comment">// } else if (window.attachEvent) {</span>
-      <span class="hljs-comment">//   window.attachEvent("onload", downloadJSAtOnload);</span>
-      <span class="hljs-comment">// } else {</span>
-      <span class="hljs-comment">//   window.onload = downloadJSAtOnload;</span>
-      <span class="hljs-comment">// }</span>
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ '/assets/styles/app.css' | path }}"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"alternate"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/rss+xml"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://feeds.feedburner.com/24ways"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/x-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ '/assets/icons/favicon.ico' | path }}"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"apple-touch-icon-precomposed"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ '/assets/icons/apple-touch-icon.png' | path }}"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"shortcut icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ '/assets/icons/icon.ico' | path }}"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/ico"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"apple-touch-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ '/assets/icons/icon.png' | path }}"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/png"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"mask-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ '/assets/icons/icon.svg' | path }}"</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"{{ site.theme_color }}"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/humans.txt"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"manifest"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/manifest.json"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"alternate"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ site.feed }}"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/rss+xml"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ '/assets/styles/app.css' | path }}"</span>/&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"robots"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"index, follow"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"application-name"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ site_title }}"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"apple-mobile-web-app-title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ site_title }}"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:site"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"@{{ site_handle }}"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ site_title }}"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ site_description }}"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:creator"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"@{{ site_handle }}"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:site"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"@{{ site.handle }}"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ site.title }}"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ site.description }}"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:creator"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"@{{ site.handle }}"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"twitter:card"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"summary"</span>/&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{{ _target.context.title }} &amp;#9670; 24 ways<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"{{ _target.context.theme if _target.context.theme else "</span><span class="hljs-attr">year-2015</span>" }}"&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"t-{{ _target.context.theme if _target.context.theme else "</span><span class="hljs-attr">year-2015</span>" }}" <span class="hljs-attr">data-menu</span>=<span class="hljs-string">"closed"</span>&gt;</span>
     {{ yield }}
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/scripts/vendor/madrobby/zepto/zepto.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">jQuery = Zepto;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/scripts/vendor/adactio/progresponsive/progresponsive.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/scripts/vendor/filamentgroup/ajaxinclude/ajaxinclude.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-comment">// AJAX include comments</span>
-    $(<span class="hljs-string">"a[data-interaction]"</span>).addClass(<span class="hljs-string">"c-continue-ajax"</span>);
-    $(<span class="hljs-string">"a[data-interaction]"</span>).bind( <span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-      e.preventDefault();
-      $(<span class="hljs-string">"#comments"</span>).addClass(<span class="hljs-string">"c-section-loading"</span>);
-      $(<span class="hljs-keyword">this</span>).removeAttr(<span class="hljs-string">"data-interaction"</span>).ajaxInclude();
-    });
-
-    <span class="hljs-comment">// Corner animation</span>
-    <span class="hljs-keyword">var</span> cornerOver = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-      <span class="hljs-keyword">this</span>.className = <span class="hljs-keyword">this</span>.className.replace(<span class="hljs-string">' js-mouseout'</span>, <span class="hljs-string">''</span>);
-    };
-    <span class="hljs-keyword">var</span> cornerOut = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-      <span class="hljs-keyword">this</span>.className += <span class="hljs-string">' js-mouseout'</span>;
-    };
-    <span class="hljs-keyword">var</span> corners = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.c-summary'</span>);
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = corners.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
-      corners[i].addEventListener(<span class="hljs-string">'js-mouseover'</span>, cornerOver, <span class="hljs-literal">false</span>);
-      corners[i].addEventListener(<span class="hljs-string">'js-mouseout'</span>, cornerOut, <span class="hljs-literal">false</span>);
-    };
-
-    <span class="hljs-comment">// Equal height grid cells</span>
-    <span class="hljs-comment">// http://css-tricks.com/equal-height-blocks-in-rows/</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.innerWidth &gt; <span class="hljs-number">640</span>) {
-      equalheight = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">container</span>)</span>{
-        <span class="hljs-keyword">var</span> currentTallest = <span class="hljs-number">0</span>,
-          currentRowStart = <span class="hljs-number">0</span>,
-          rowDivs = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(),
-          $el,
-          topPosition = <span class="hljs-number">0</span>;
-
-        $(container).each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-          $el = $(<span class="hljs-keyword">this</span>);
-          $($el).height(<span class="hljs-string">'auto'</span>)
-          topPostion = $el.position().top;
-
-          <span class="hljs-keyword">if</span> (currentRowStart != topPostion) {
-            <span class="hljs-keyword">for</span> (currentDiv = <span class="hljs-number">0</span> ; currentDiv &lt; rowDivs.length ; currentDiv++) {
-              rowDivs[currentDiv].height(currentTallest);
-            }
-            rowDivs.length = <span class="hljs-number">0</span>; <span class="hljs-comment">// empty the array</span>
-            currentRowStart = topPostion;
-            currentTallest = $el.height();
-            rowDivs.push($el);
-          } <span class="hljs-keyword">else</span> {
-            rowDivs.push($el);
-            currentTallest = (currentTallest &lt; $el.height()) ? ($el.height()) : (currentTallest);
-          }
-          <span class="hljs-keyword">for</span> (currentDiv = <span class="hljs-number">0</span> ; currentDiv &lt; rowDivs.length ; currentDiv++) {
-            rowDivs[currentDiv].height(currentTallest);
-          }
-        });
-      }
-
-      $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        equalheight(<span class="hljs-string">'.c-summary-list .c-summary'</span>);
-      });
-
-      $(<span class="hljs-built_in">window</span>).resize(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-        equalheight(<span class="hljs-string">'.c-summary-list .c-summary'</span>);
-      });
-    }
-
-    <span class="hljs-comment">// Show back to top link when we've scrolled down the page</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.innerWidth &gt; <span class="hljs-number">504</span>) {
-      $(<span class="hljs-string">'.c-navigation'</span>).append(<span class="hljs-string">'&lt;a class="c-top-nav" href="#top"&gt;Return to the top of this page&lt;/a&gt;'</span>);
-      $(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-        $(<span class="hljs-built_in">window</span>).scroll(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-          <span class="hljs-keyword">if</span> ($(<span class="hljs-keyword">this</span>).scrollTop() &gt; <span class="hljs-number">400</span>) {
-            $(<span class="hljs-string">'.c-top-nav'</span>).animate({ <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span> }, <span class="hljs-number">500</span>, <span class="hljs-string">'ease-in'</span>)
-          } <span class="hljs-keyword">else</span> {
-            $(<span class="hljs-string">'.c-top-nav'</span>).animate({ <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span> }, <span class="hljs-number">500</span>, <span class="hljs-string">'ease-out'</span>)
-          }
-        });
-
-        <span class="hljs-comment">// http://austinpray.com/blog/zepto-js-smooth-vertical-scrolling/</span>
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">smoothScroll</span>(<span class="hljs-params">el, to, duration</span>) </span>{
-          <span class="hljs-keyword">if</span> (duration &lt; <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span>;
-          }
-          <span class="hljs-keyword">var</span> difference = to - $(<span class="hljs-built_in">window</span>).scrollTop();
-          <span class="hljs-keyword">var</span> perTick = difference / duration * <span class="hljs-number">10</span>;
-          <span class="hljs-keyword">this</span>.scrollToTimerCache = setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-            <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isNaN</span>(<span class="hljs-built_in">parseInt</span>(perTick, <span class="hljs-number">10</span>))) {
-              <span class="hljs-built_in">window</span>.scrollTo(<span class="hljs-number">0</span>, $(<span class="hljs-built_in">window</span>).scrollTop() + perTick);
-              smoothScroll(el, to, duration - <span class="hljs-number">10</span>);
-            }
-          }.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">10</span>);
-        }
-
-        $(<span class="hljs-string">'.c-top-nav'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-          e.preventDefault();
-          smoothScroll($(<span class="hljs-built_in">window</span>), $($(e.currentTarget).attr(<span class="hljs-string">'href'</span>)).offset().top, <span class="hljs-number">500</span>);
-        });
-      });
-    }
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></pre>
     </code>
 </div>
 
     
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-c9d17694984f26226c47f119c65d1ec2-panel-context">
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-602c79dda05454ecc999bc21a0e9ee0d-panel-context">
     <code class="Code Code--lang-json">
         
             
             <pre>{
-  <span class="hljs-attr">"site_title"</span>: <span class="hljs-string">"24 ways"</span>,
-  <span class="hljs-attr">"site_handle"</span>: <span class="hljs-string">"24ways"</span>,
-  <span class="hljs-attr">"site_description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  },
   <span class="hljs-attr">"topics"</span>: [
     {
       <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Business"</span>,
@@ -535,7 +320,7 @@
 
 
     
-    <div class="Browser-panel" data-role="tab-panel" id="browser-c9d17694984f26226c47f119c65d1ec2-panel-info">
+    <div class="Browser-panel" data-role="tab-panel" id="browser-602c79dda05454ecc999bc21a0e9ee0d-panel-info">
     <ul class="Meta">
         <li class="Meta-item">
             <strong class="Meta-key">Handle:</strong>
@@ -564,7 +349,7 @@
         </li>
         <li class="Meta-item">
             <strong class="Meta-key">Filesystem Path:</strong>
-            <span class="Meta-value">src/components/_preview.html</span>
+            <span class="Meta-value">src/components/_partials/_preview.html</span>
         </li>
         
         
@@ -572,7 +357,7 @@
 </div>
 
     
-    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-c9d17694984f26226c47f119c65d1ec2-panel-notes">
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-602c79dda05454ecc999bc21a0e9ee0d-panel-notes">
     <div class="Prose Prose--condensed">
         
         <p class="Browser-isEmptyNote">There are no notes for this item.</p>
@@ -618,6 +403,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="activity" data-pjax>
+                <span>Activity</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -718,6 +527,54 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="comment-form" data-pjax>
+                <span>Comment Form</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="comments" data-pjax>
+                <span>Comments</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="continue" data-pjax>
                 <span>Continue</span>
                 
@@ -766,8 +623,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="note" data-pjax>
-                <span>Note</span>
+            <a class="Tree-entityLink" href="meta" data-pjax>
+                <span>Meta</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -838,6 +695,30 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="search-form" data-pjax>
+                <span>Search Form</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="section" data-pjax>
                 <span>Section</span>
                 
@@ -864,70 +745,6 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="summary" data-pjax>
                 <span>Summary</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Forms</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="comment-form" data-pjax>
-                <span>Comment Form</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="search-form" data-pjax>
-                <span>Search Form</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1083,110 +900,6 @@
         </li>
         
     
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-lists">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Lists</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="authors-list" data-pjax>
-                <span>Authors List</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="comments-list" data-pjax>
-                <span>Comments List</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="summary-list" data-pjax>
-                <span>Summary List</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-navs">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Navs</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
         
         
         <li class="Tree-item Tree-entity" data-role="item">
@@ -1289,7 +1002,122 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-prose">
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layouts">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Layouts</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Grid</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="grid--ways" data-pjax>
+                <span>Ways</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="grid--authors" data-pjax>
+                <span>Authors</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-scopes">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Scopes</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="note" data-pjax>
+                <span>Note</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-prose">
             <h4 class="Tree-collectionLabel" data-role="toggle">
                 <span>Prose</span>
             </h4>
@@ -1302,8 +1130,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="caps" data-pjax>
-                <span>Caps</span>
+            <a class="Tree-entityLink" href="prose--default" data-pjax>
+                <span>Default</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1326,8 +1154,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="caption" data-pjax>
-                <span>Caption</span>
+            <a class="Tree-entityLink" href="prose--article" data-pjax>
+                <span>Article</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1347,123 +1175,8 @@
         </li>
         
     
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="figure" data-pjax>
-                <span>Figure</span>
-                
 
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="heading" data-pjax>
-                <span>Heading</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="lede" data-pjax>
-                <span>Lede</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="photo-credit" data-pjax>
-                <span>Photo Credit</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="prose" data-pjax>
-                <span>Prose</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
+            </ul>
         </li>
         
     
@@ -1873,6 +1586,101 @@
 
 
     
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">Documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-helpers">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Helpers</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/helpers/sass" data-pjax>
+                <span>Sass helpers</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/helpers/tokens" data-pjax>
+                <span>Design tokens</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-styleguide">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Styleguide</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/styleguide/colour" data-pjax>
+                <span>Colour</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/styleguide/typography" data-pjax>
+                <span>Typography</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../docs/styleguide/iconography" data-pjax>
+                <span>Iconography</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
 
 
     

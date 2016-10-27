@@ -1,0 +1,40 @@
+.c-meta {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1em;
+  border-top: 1px solid $color-neutral--alpha-2;
+  border-bottom: 1px solid $color-neutral--alpha-2;
+  padding: 0.75rem 0;
+
+  @media screen and (min-width: 50em) {
+    flex-flow: column nowrap;
+    border: 0;
+    padding: 0;
+  }
+}
+
+.c-meta__item {
+  @include caption();
+  flex: 0 0 auto;
+
+  @media screen and (max-width: 24.9375em) {
+    .dt-published span {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 49.9375em) {
+    &:not(:last-child)::after {
+      content: '•';
+      margin: 0 0.5rem;
+      opacity: 0.5;
+    }
+  }
+
+  @media screen and (min-width: 50em) {
+    text-align: right;
+    box-shadow: 0 -1px 0 $color-neutral--alpha-1;
+    padding: 0.75rem 0 1.5rem;
+    display: block;
+  }
+}
