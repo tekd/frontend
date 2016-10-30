@@ -172,6 +172,7 @@
             <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);
             element.src = <span class="hljs-string">"../../assets/scripts/app.js"</span>;
             <span class="hljs-built_in">document</span>.body.appendChild(element);
+            <span class="hljs-built_in">document</span>.body.dataset.menu = <span class="hljs-string">'closed'</span>;
         }
         <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.querySelector &amp;&amp; docEl.classList &amp;&amp; <span class="hljs-built_in">window</span>.addEventListener) {
             docEl.className += <span class="hljs-string">' js-enhanced'</span>;
@@ -202,7 +203,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span> &amp;#9670; 24 ways<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"t-year-2015"</span> <span class="hljs-attr">data-menu</span>=<span class="hljs-string">"closed"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"t-year-2015"</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
@@ -230,6 +231,7 @@
         <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);
         element.src = <span class="hljs-string">"{{ '/assets/scripts/app.js' | path }}"</span>;
         <span class="hljs-built_in">document</span>.body.appendChild(element);
+        <span class="hljs-built_in">document</span>.body.dataset.menu = <span class="hljs-string">'closed'</span>;
       }
 
       <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.querySelector &amp;&amp; docEl.classList &amp;&amp; <span class="hljs-built_in">window</span>.addEventListener) {
@@ -261,7 +263,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{{ _target.context.title }} &amp;#9670; 24 ways<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"t-{{ _target.context.theme if _target.context.theme else "</span><span class="hljs-attr">year-2015</span>" }}" <span class="hljs-attr">data-menu</span>=<span class="hljs-string">"closed"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"t-{{ _target.context.theme if _target.context.theme else "</span><span class="hljs-attr">year-2015</span>" }}"&gt;</span>
     {{ yield }}
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></pre>

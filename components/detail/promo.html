@@ -258,7 +258,7 @@
                             <code class="Code Code--lang-SCSS FileBrowser-code">
                                 <pre><span class="hljs-selector-class">.c-promo</span> {
   <span class="hljs-attribute">display</span>: block;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.75rem</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-small</span>;
 }
 
 <span class="hljs-selector-class">.c-promo__image</span> {
@@ -267,12 +267,12 @@
 }
 
 <span class="hljs-selector-class">.c-promo__message</span> {
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-small</span>;
   <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-text</span>;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.5rem</span>;
 }
 
 <span class="hljs-selector-class">.c-promo__url</span> {
-  @<span class="hljs-keyword">include</span> caption();
+  @<span class="hljs-keyword">include</span> typeset(label, 1);
 }
 </pre>
                             </code>
@@ -290,7 +290,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">224 Bytes</span>
+                    <span class="Meta-value">243 Bytes</span>
                 </li>
             </ul>
         </div>

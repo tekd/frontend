@@ -349,13 +349,16 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre><span class="hljs-selector-class">.c-summary</span> {
-  <span class="hljs-attribute">background-color</span>: white;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
-  <span class="hljs-attribute">position</span>: relative;
+                                <pre>$_summary__author-size: <span class="hljs-variable">$size-xlarge</span>;
+
+<span class="hljs-selector-class">.c-summary</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-direction</span>: column;
   <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">padding</span>: (<span class="hljs-variable">$space-large</span> - <span class="hljs-variable">$space-xsmall</span>);
+  <span class="hljs-attribute">background-color</span>: white;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">1px</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$prose-color--shadow</span>;
 
   @<span class="hljs-keyword">media</span> print {
     <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">0</span>;
@@ -364,74 +367,62 @@
     <span class="hljs-attribute">page-break-inside</span>: avoid;
   }
 
-  @<span class="hljs-keyword">media</span> screen {
-    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">1px</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> rgba(<span class="hljs-variable">$color-neutral</span>, <span class="hljs-number">0.15</span>);
-  }
-
   <span class="hljs-selector-tag">a</span> {
     <span class="hljs-attribute">position</span>: relative;
     <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
   }
 
   <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.c-summary__link</span> {
-    <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">200%</span>;
-    <span class="hljs-attribute">white-space</span>: nowrap;
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">overflow</span>: hidden;
     <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">white-space</span>: nowrap;
+    <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">200%</span>;
   }
 }
 
 <span class="hljs-selector-class">.c-summary__header</span> {
-  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">3rem</span>;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.75rem</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-large</span>;
 
   @<span class="hljs-keyword">media</span> print {
     <span class="hljs-attribute">border-top</span>: <span class="hljs-number">1px</span> solid black;
-    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">0.5rem</span>;
+    <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$space-medium</span>;
   }
 }
 
 <span class="hljs-selector-class">.c-summary__title</span> {
-  @<span class="hljs-keyword">include</span> title();
-  <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">2.5rem</span>;
-
-  <span class="hljs-selector-class">.c-avatar</span> {
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">1.75rem</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-number">1.75rem</span>;
-
-    @<span class="hljs-keyword">media</span> screen and (min-width: 40em) {
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">3rem</span>;
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">3rem</span>;
-    }
-  }
+  @<span class="hljs-keyword">include</span> typeset(title, 1);
+  <span class="hljs-attribute">padding-right</span>: $_summary__author-size;
 }
 
 <span class="hljs-selector-class">.c-summary__main</span> {
-  @<span class="hljs-keyword">include</span> summary();
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.75rem</span>;
+  @<span class="hljs-keyword">include</span> typeset(prose, 1);
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-medium</span>;
 
   <span class="hljs-selector-tag">a</span> {
-    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+    <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.025em</span>;
+    <span class="hljs-attribute">text-transform</span>: uppercase;
     <span class="hljs-attribute">color</span>: inherit;
   }
 }
 
 <span class="hljs-selector-class">.c-summary__footer</span> {
-  <span class="hljs-attribute">margin-top</span>: auto;
+  @<span class="hljs-keyword">media</span> screen {
+    <span class="hljs-attribute">margin-top</span>: auto;
+  }
 }
 
 <span class="hljs-selector-class">.c-summary__meta</span> {
-  @<span class="hljs-keyword">include</span> caption();
+  @<span class="hljs-keyword">include</span> typeset(label, 1);
   <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-neutral</span>;
 
   <span class="hljs-selector-class">.dt-published</span> {
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">1.5em</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$space-medium</span>;
   }
 }
 
@@ -447,7 +438,8 @@
     <span class="hljs-attribute">position</span>: absolute;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">border</span>: solid <span class="hljs-number">2.25em</span>;
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
+    <span class="hljs-attribute">border</span>: solid ($_summary__author-size / <span class="hljs-number">2</span>);
     <span class="hljs-attribute">border-color</span>: transparent transparent white white;
   }
 
@@ -457,8 +449,8 @@
     <span class="hljs-attribute">position</span>: absolute;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-number">4.5em</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">4.5em</span>;
+    <span class="hljs-attribute">height</span>: $_summary__author-size;
+    <span class="hljs-attribute">width</span>: $_summary__author-size;
     <span class="hljs-attribute">background</span>: inline(<span class="hljs-string">'corner.svg'</span>) -<span class="hljs-number">0.5em</span> <span class="hljs-number">0</span> no-repeat;
     <span class="hljs-attribute">background-size</span>: size(<span class="hljs-string">'corner.svg'</span>);
   }
@@ -473,8 +465,8 @@
 
   <span class="hljs-selector-tag">img</span> {
     <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">height</span>: <span class="hljs-number">4.5em</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">4.5em</span>;
+    <span class="hljs-attribute">height</span>: $_summary__author-size;
+    <span class="hljs-attribute">width</span>: $_summary__author-size;
   }
 
   <span class="hljs-selector-tag">span</span> {
@@ -484,34 +476,34 @@
 
 @keyframes corner-forward {
   from {
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">0.5em</span>;
     <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
+    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">0.5em</span>;
   }
 
   to {
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">50.5em</span>;
     <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
+    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">50.5em</span>;
   }
 }
 
 @keyframes corner-reverse {
   from {
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">50.5em</span>;
     <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
+    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">50.5em</span>;
   }
 
   to {
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">0.5em</span>;
     <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
+    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">0.5em</span>;
   }
 }
 
 <span class="hljs-selector-class">.c-summary</span>:hover {
   <span class="hljs-selector-class">.c-summary__author</span> {
     &amp;::after {
+      <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
       <span class="hljs-attribute">animation</span>: corner-forward <span class="hljs-number">0.15s</span> steps(<span class="hljs-number">10</span>);
       <span class="hljs-attribute">animation-fill-mode</span>: forwards;
-      <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
     }
   }
 }
@@ -519,25 +511,25 @@
 &amp;<span class="hljs-selector-class">.js-mouseout</span> {
   <span class="hljs-selector-class">.c-summary__author</span> {
     &amp;::before {
-      <span class="hljs-attribute">animation</span>: corner-reverse <span class="hljs-number">0.15s</span> steps(<span class="hljs-number">10</span>);
       <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
+      <span class="hljs-attribute">animation</span>: corner-reverse <span class="hljs-number">0.15s</span> steps(<span class="hljs-number">10</span>);
     }
   }
 }
 
 <span class="hljs-selector-class">.c-summary--countdown</span> {
   <span class="hljs-selector-class">.c-summary__header</span> {
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">2rem</span>;
+    <span class="hljs-attribute">padding-left</span>: (<span class="hljs-variable">$size-medium</span> + <span class="hljs-variable">$space-xsmall</span>);
   }
 
   <span class="hljs-selector-class">.dt-published</span> {
-    @<span class="hljs-keyword">include</span> title();
+    @<span class="hljs-keyword">include</span> typeset(title, 1, initial);
     <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">top</span>: <span class="hljs-number">1rem</span>;
-    <span class="hljs-attribute">left</span>: <span class="hljs-number">1rem</span>;
+    <span class="hljs-attribute">top</span>: <span class="hljs-variable">$space-large</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-variable">$space-large</span>;
 
     @<span class="hljs-keyword">media</span> print {
-      <span class="hljs-attribute">top</span>: <span class="hljs-number">1.5rem</span>;
+      <span class="hljs-attribute">top</span>: <span class="hljs-number">1.75rem</span>;
     }
 
     <span class="hljs-selector-tag">span</span> {
@@ -561,7 +553,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3 KB</span>
+                    <span class="Meta-value">3.1 KB</span>
                 </li>
             </ul>
         </div>

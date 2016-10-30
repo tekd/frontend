@@ -247,21 +247,22 @@
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code">
                                 <pre><span class="hljs-selector-class">.c-button</span> {
-  @<span class="hljs-keyword">include</span> label();
-  <span class="hljs-attribute">color</span>: white;
-  <span class="hljs-attribute">text-align</span>: center;
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-link</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.875rem</span> <span class="hljs-number">1.5em</span>;
+  @<span class="hljs-keyword">include</span> typeset(label, 2);
   <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-variable">$space-large</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-ui-link</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">color</span>: white;
 
   &amp;:hover {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-ui-link--hover</span>;
     <span class="hljs-attribute">color</span>: white;
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-link--hover</span>;
   }
 
   &amp;:active {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-ui-link--active</span>;
     <span class="hljs-attribute">color</span>: white;
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-link--active</span>;
   }
 
   @<span class="hljs-keyword">media</span> print {
@@ -288,7 +289,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">390 Bytes</span>
+                    <span class="Meta-value">450 Bytes</span>
                 </li>
             </ul>
         </div>

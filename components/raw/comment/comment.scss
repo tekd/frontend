@@ -1,72 +1,69 @@
-.c-comment {
-  background-color: white;
-  padding-left: 2.5rem;
-  position: relative;
-  margin-bottom: 0.75rem;
+$_comment-avatar--small: $size-large;
+$_comment-avatar--large: $size-xlarge;
 
-  @media screen {
-    box-shadow: 1px 1px 0 rgba($color-neutral, 0.15);
-  }
+.c-comment {
+  position: relative;
+  margin-bottom: $space-large;
+  padding: $space-large;
+  padding-left: $_comment-avatar--small;
+  background-color: white;
+  box-shadow: 1px 1px 0 $prose-color--shadow;
 
   @media screen and (min-width: 40em) {
-    padding-left: 5.5rem;
+    padding-left: $_comment-avatar--large;
   }
 
   &.c-comment--unhelpful {
     background-color: transparent;
-    box-shadow: 0 0 0 1px rgba($color-neutral, 0.15);
+    box-shadow: 0 0 0 1px $prose-color--shadow;
   }
 
   .c-avatar {
     position: absolute;
-    top: -0.5rem;
-    left: -0.5rem;
-    width: 2.5rem;
+    top: 0;
+    left: ($space-large * -1);
+    width: $size-large;
 
     @media screen and (min-width: 40em) {
-      width: 5.5rem;
+      width: $size-xlarge;
     }
   }
 }
 
 .c-comment__header {
-  padding: 0.5rem 0.75rem 0.5rem 0;
+  margin-bottom: $space-large;
 
   @media print {
     border-top: 1px solid black;
-    padding-top: 0.5rem;
+    padding-top: $space-small;
   }
 }
 
 .c-comment__title {
-  @include title();
+  @include typeset(title, 1);
 }
 
 .c-comment__meta {
-  @include caption();
+  @include typeset(label, 1);
 
   @media screen and (min-width: 30em) {
     position: absolute;
-    top: 1.3125rem;
-    right: 1rem;
+    top: 1.75rem;
+    right: $space-large;
   }
 
   a.c-comment__permalink {
-    color: $color-neutral;
-
-    &:hover {
-      color: $color-neutral--dark;
-    }
+    @include ui-link;
   }
 }
 
 .c-comment__main {
-  padding: 0.5rem 0.75rem 0.5rem 0;
+  margin-bottom: $space-large;
 }
 
 .c-comment__footer {
-  @include caption();
-  border-top: 1px solid $color-neutral--lightest;
-  padding: 0.5rem 0.75rem 0.5rem 0;
+  @include typeset(label, 1);
+  border-top: 1px solid $prose-color--shadow;
+  padding-top: $space-medium;
   text-align: right;
 }

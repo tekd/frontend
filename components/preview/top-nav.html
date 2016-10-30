@@ -16,6 +16,7 @@
         var element = document.createElement("script");
         element.src = "../../assets/scripts/app.js";
         document.body.appendChild(element);
+        document.body.dataset.menu = 'closed';
       }
 
       if (document.querySelector && docEl.classList && window.addEventListener) {
@@ -47,13 +48,13 @@
     <title> &#9670; 24 ways</title>
   </head>
 
-  <body class="t-year-2015" data-menu="closed">
+  <body class="t-year-2015">
     <a class="c-top-nav" href="#top" data-scroll>
-  <span class="c-top-nav__icon"><svg width="48" height="48" viewBox="0 0 240 240">
-  <path d="M60 100v10h120v-10H60zm4 66l56-56 56 56-7 7-49-49-49 49-7-7z"/>
+  <svg class="c-top-nav__icon" width="40" height="40" viewBox="0 0 200 200" role="img" aria-labelledby="c-top-nav__label">
+  <title id="c-top-nav__label">Return to the top of this page</title>
+  <path d="M40 80v10h120V80H40zm4 66l56-56 56 56-7 7-49-49-49 49-7-7z"/>
 </svg>
-</span>
-  <span class="c-top-nav__label">Return to the top of this page</span>
+
 </a>
 
   </body>

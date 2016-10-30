@@ -249,22 +249,15 @@
                             <code class="Code Code--lang-SCSS FileBrowser-code">
                                 <pre><span class="hljs-selector-class">.s-note</span> {
   <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.25</span>;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1.5rem</span>;
-  <span class="hljs-attribute">border</span>: solid rgba(black, <span class="hljs-number">0.33</span>);
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-large</span>;
+  <span class="hljs-attribute">border</span>: solid <span class="hljs-variable">$prose-color--rule</span>;
   <span class="hljs-attribute">border-width</span>: <span class="hljs-number">1px</span> <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25rem</span> <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-number">0</span>;
 
-  @<span class="hljs-keyword">media</span> screen and (max-width: 50em) {
-    &amp;:first-of-type {
-      <span class="hljs-attribute">border-top</span>: <span class="hljs-number">0</span> none;
-      <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">0.25rem</span>;
-    }
-  }
-
-  <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-selector-tag">p</span>:not(:last-child) {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$space-medium</span>;
     <span class="hljs-attribute">color</span>: lighten(<span class="hljs-variable">$color-text</span>, <span class="hljs-number">10%</span>);
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.75rem</span> <span class="hljs-number">0</span>;
   }
 }
 </pre>
@@ -283,7 +276,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">362 Bytes</span>
+                    <span class="Meta-value">265 Bytes</span>
                 </li>
             </ul>
         </div>

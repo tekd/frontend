@@ -16,6 +16,7 @@
         var element = document.createElement("script");
         element.src = "../../assets/scripts/app.js";
         document.body.appendChild(element);
+        document.body.dataset.menu = 'closed';
       }
 
       if (document.querySelector && docEl.classList && window.addEventListener) {
@@ -47,7 +48,7 @@
     <title> &#9670; 24 ways</title>
   </head>
 
-  <body class="t-year-2015" data-menu="closed">
+  <body class="t-year-2015">
     <a class="c-promo" href="http://grabaperch.com/?ref=24w01">
   <img class="c-promo__image" src="/assets/images/logo-perch.png" alt="Perch - A really little CMS" width="152" height="64"/>
   <p class="c-promo__message">The easiest way to publish <strong>fast, flexible HTML5 websites</strong> your clients will love.</p>

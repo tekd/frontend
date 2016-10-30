@@ -16,6 +16,7 @@
         var element = document.createElement("script");
         element.src = "../../assets/scripts/app.js";
         document.body.appendChild(element);
+        document.body.dataset.menu = 'closed';
       }
 
       if (document.querySelector && docEl.classList && window.addEventListener) {
@@ -47,7 +48,7 @@
     <title> &#9670; 24 ways</title>
   </head>
 
-  <body class="t-year-2015" data-menu="closed">
+  <body class="t-year-2015">
     <ul class="c-meta"><li class="c-meta__item"><time class="dt-published" datetime="2012-12-01T00:00:00-00:00">1 Dec<span>ember</span> 2012</time></li><li class="c-meta__item">Published in <a href="/topics/code/">Code</a></li><li class="c-meta__item"><a href="#comments">8 comments</a></li></ul>
 
   </body>

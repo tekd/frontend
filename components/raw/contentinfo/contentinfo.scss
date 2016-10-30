@@ -1,18 +1,30 @@
 .c-contentinfo {
-  @include caption();
+  @include typeset(label, 1);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0.75rem 1rem; // 8px 16px
+  padding: $space-small $space-medium;
 
-  @media print {
-    a {
+  @media screen and (min-width: 31.5em) {
+    margin-right: $navigation-width--large;
+  }
+
+  a {
+    @include ui-link;
+
+    @media print {
       display: none;
     }
   }
 }
 
+.c-contentinfo__copyright {
+  @media screen and (max-width: 31.4375em) {
+    margin-bottom: $space-xsmall;
+  }
+}
+
 .c-contentinfo__copyright,
 .c-contentinfo__social a:not(:last-child) {
-  margin-right: 1em;
+  margin-right: $space-medium;
 }

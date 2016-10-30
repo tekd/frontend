@@ -1,4 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Inconsolata|Lato:400,400italic,700|Merriweather:400");
 .sample {
   margin: 0 -0.25em;
   display: -webkit-box;
@@ -12,14 +11,14 @@
   padding: 0.75em 0 0.5em;
   font-weight: bolder;
   line-height: 1.2;
-  color: #3e3e47;
+  color: #3f3f46;
 }
 
 .sample var {
   display: block;
   font: 0.75em/1em 'Hack', 'Consolas', 'Monaco', monospace;
   font-style: normal;
-  color: #3e3e47;
+  color: #3f3f46;
 }
 
 .color {
@@ -53,8 +52,8 @@
   padding-bottom: 0.5rem;
   overflow: hidden;
   white-space: nowrap;
-  color: #3e3e47;
-  border-bottom: 1px solid rgba(62, 62, 71, 0.2);
+  color: #3f3f46;
+  border-bottom: 1px solid rgba(63, 63, 70, 0.2);
 }
 
 .font span::before {
@@ -74,7 +73,7 @@
   height: 3rem;
   width: 3rem;
   margin-right: 0.5em;
-  color: #3e3e47;
+  color: #3f3f46;
 }
 
 a {
@@ -82,11 +81,11 @@ a {
 }
 
 a:hover {
-  color: #265980;
+  color: #257;
 }
 
 a:active {
-  color: #39c;
+  color: #3be;
 }
 
 .Pen-previewLink svg {
@@ -94,7 +93,7 @@ a:active {
 }
 
 .Header {
-  background-color: #330032;
+  background-color: #601;
   color: #f04;
 }
 

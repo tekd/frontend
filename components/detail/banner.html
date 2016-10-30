@@ -160,7 +160,9 @@
     <code class="Code Code--lang-html">
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__logo"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pages/"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"home"</span>&gt;</span>24 ways <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>to impress your friends<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__title"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__home"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pages/"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"home"</span>&gt;</span>24 ways <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>to impress your friends<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></pre>
         
     </code>
@@ -170,7 +172,9 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-48fdd1700a4bbcdb26eea67e9f307e1a-panel-view">
     <code class="Code Code--lang-html">
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"top"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__logo"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pages/"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"home"</span>&gt;</span>24 ways <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>to impress your friends<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__title"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__home"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pages/"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"home"</span>&gt;</span>24 ways <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>to impress your friends<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></pre>
     </code>
 </div>
@@ -246,75 +250,73 @@
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code">
                                 <pre><span class="hljs-selector-class">.c-banner</span> {
-  <span class="hljs-attribute">text-transform</span>: uppercase;
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-brand--dark</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.875em</span> <span class="hljs-number">1em</span>; <span class="hljs-comment">// 14px 16px</span>
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">3rem</span>; <span class="hljs-comment">// 48px</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-variable">$space-large</span>;
+  <span class="hljs-attribute">background-color</span>: palette(primary, dark);
+  <span class="hljs-attribute">transition-duration</span>: <span class="hljs-variable">$banner-duration</span>;
+  <span class="hljs-attribute">transition-timing-function</span>: ease-out;
+
+  <span class="hljs-selector-attr">[data-menu=closed]</span> &amp; {
+    <span class="hljs-attribute">transition-delay</span>: <span class="hljs-variable">$navigation-duration</span>;
+  }
 
   @<span class="hljs-keyword">media</span> screen and (max-width: 31.4375em) {
     <span class="hljs-attribute">position</span>: fixed;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
-    <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.1s</span> ease-out;
+    <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-modal</span> + <span class="hljs-number">1</span>);
+    <span class="hljs-attribute">transition-property</span>: background-color;
+
+    <span class="hljs-selector-tag">body</span><span class="hljs-selector-attr">[data-menu=open]</span> &amp; {
+      <span class="hljs-attribute">background-color</span>: white;
+    }
   }
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">4.5rem</span>; <span class="hljs-comment">// 72px</span>
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">1.5rem</span> <span class="hljs-number">1rem</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-number">4.5rem</span>; <span class="hljs-comment">// 72px</span>
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$navigation-width--large</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-large</span>;
   }
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
     <span class="hljs-attribute">padding-left</span>: calc(<span class="hljs-number">25%</span> - <span class="hljs-number">1rem</span>);
   }
-
-  <span class="hljs-selector-class">.js-enhanced</span> &amp; {
-    @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
-      <span class="hljs-attribute">filter</span>: brightness(<span class="hljs-number">1</span>);
-
-      <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">transition</span>: color <span class="hljs-number">0.1s</span> ease-out;
-      }
-    }
-  }
-
-  <span class="hljs-selector-tag">body</span><span class="hljs-selector-attr">[data-menu=open]</span> &amp; {
-    @<span class="hljs-keyword">media</span> screen and (max-width: 31.4375em) {
-      <span class="hljs-attribute">background-color</span>: white;
-      <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.1s</span> ease-out;
-
-      <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-neutral</span>;
-        <span class="hljs-attribute">transition</span>: color <span class="hljs-number">0.1s</span> ease-out;
-      }
-    }
-
-    @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
-      <span class="hljs-attribute">filter</span>: brightness(<span class="hljs-number">0.75</span>);
-    }
-  }
 }
 
-<span class="hljs-selector-class">.c-banner__logo</span> {
+<span class="hljs-selector-class">.c-banner__title</span> {
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.25em</span>;
-  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
-  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">line-height</span>: (<span class="hljs-number">16</span>/<span class="hljs-number">20</span>);
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5em</span>;
+    <span class="hljs-attribute">line-height</span>: (<span class="hljs-number">24</span>/<span class="hljs-number">24</span>);
   }
+}
 
-  <span class="hljs-selector-tag">a</span> {
+<span class="hljs-selector-class">.c-banner__home</span> {
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">color</span>: white;
+
+  &amp;:hover {
     <span class="hljs-attribute">color</span>: white;
   }
 
+  @<span class="hljs-keyword">media</span> screen and (max-width: 31.4375em) {
+    <span class="hljs-attribute">transition-property</span>: color <span class="hljs-variable">$banner-duration</span> ease-out;
+
+    <span class="hljs-selector-attr">[data-menu=open]</span> &amp; {
+      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$navigation-color--text</span>;
+    }
+
+    <span class="hljs-selector-attr">[data-menu=closed]</span> &amp; {
+      <span class="hljs-attribute">transition-delay</span>: <span class="hljs-variable">$navigation-duration</span>;
+    }
+  }
+
   <span class="hljs-selector-tag">span</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-brand--light</span>;
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.6667em</span>;
     <span class="hljs-attribute">text-transform</span>: lowercase;
+    <span class="hljs-attribute">white-space</span>: nowrap;
+    <span class="hljs-attribute">color</span>: palette(primary, light);
   }
 }
 </pre>
@@ -333,7 +335,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.3 KB</span>
+                    <span class="Meta-value">1.4 KB</span>
                 </li>
             </ul>
         </div>

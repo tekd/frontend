@@ -270,35 +270,36 @@
                                 <pre><span class="hljs-selector-class">.c-site-nav</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-direction</span>: row;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$navigation-color--offset</span>;
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
     <span class="hljs-attribute">flex-direction</span>: column;
     <span class="hljs-attribute">position</span>: fixed;
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">4.5rem</span>; <span class="hljs-comment">// 72px</span>
+    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$navigation-width--large</span>;
   }
 }
 
 <span class="hljs-selector-class">.c-site-nav__item</span> {
   <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
-  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$color-neutral--lightest</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$navigation-color--offset</span>;
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
-    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$color-neutral--lightest</span>;
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$navigation-color--offset</span>;
   }
 }
 
 <span class="hljs-selector-class">.c-site-nav__label</span> {
-  @<span class="hljs-keyword">include</span> ui-link();
-  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.8125em</span>; <span class="hljs-comment">// 13px</span>
-  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.2308</span>; <span class="hljs-comment">// 16px</span>
+  @<span class="hljs-keyword">include</span> ui-link(<span class="hljs-variable">$background</span>: true);
+  @<span class="hljs-keyword">include</span> typeset(label, 1);
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span>;
   <span class="hljs-attribute">text-align</span>: center;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span> <span class="hljs-number">0.5rem</span>; <span class="hljs-comment">// 16px 8px</span>
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-small</span>;
     <span class="hljs-attribute">text-align</span>: left;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.625rem</span> <span class="hljs-number">0.5rem</span>; <span class="hljs-comment">// 10px 8px</span>
   }
 }
 </pre>
@@ -317,7 +318,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">665 Bytes</span>
+                    <span class="Meta-value">704 Bytes</span>
                 </li>
             </ul>
         </div>

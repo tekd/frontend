@@ -16,6 +16,7 @@
         var element = document.createElement("script");
         element.src = "../../assets/scripts/app.js";
         document.body.appendChild(element);
+        document.body.dataset.menu = 'closed';
       }
 
       if (document.querySelector && docEl.classList && window.addEventListener) {
@@ -47,7 +48,7 @@
     <title> &#9670; 24 ways</title>
   </head>
 
-  <body class="t-year-2015" data-menu="closed">
+  <body class="t-year-2015">
     <div class="s-note">
   <p><strong>A note from the editors:</strong> While brilliant for its time, this article no longer reflects modern best practices.</p>
 

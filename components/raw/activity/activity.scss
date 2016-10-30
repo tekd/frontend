@@ -1,27 +1,27 @@
 @keyframes loading {
   0% {
-    border-top-color: $color-brand;
+    border-top-color: palette(primary);
   }
 
   25% {
-    border-right-color: $color-brand;
+    border-right-color: palette(primary);
   }
 
   50% {
-    border-bottom-color: $color-brand;
+    border-bottom-color: palette(primary);
   }
 
   75% {
-    border-left-color: $color-brand;
+    border-left-color: palette(primary);
   }
 }
 
 .c-activity {
   display: block;
-  height: 2rem;
-  width: 2rem;
-  margin: 0.75rem auto;
-  border: $border-width-thicker double $color-neutral--alpha-2;
+  height: $size-medium;
+  width: $size-medium;
+  margin: $space-medium auto;
+  border: $border-width-thicker double $prose-color--rule;
   animation: 2s loading infinite;
   transform: rotate(45deg);
 }

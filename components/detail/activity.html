@@ -247,28 +247,28 @@
                             <code class="Code Code--lang-SCSS FileBrowser-code">
                                 <pre>@keyframes loading {
   0% {
-    <span class="hljs-attribute">border-top-color</span>: <span class="hljs-variable">$color-brand</span>;
+    <span class="hljs-attribute">border-top-color</span>: palette(primary);
   }
 
   25% {
-    <span class="hljs-attribute">border-right-color</span>: <span class="hljs-variable">$color-brand</span>;
+    <span class="hljs-attribute">border-right-color</span>: palette(primary);
   }
 
   50% {
-    <span class="hljs-attribute">border-bottom-color</span>: <span class="hljs-variable">$color-brand</span>;
+    <span class="hljs-attribute">border-bottom-color</span>: palette(primary);
   }
 
   75% {
-    <span class="hljs-attribute">border-left-color</span>: <span class="hljs-variable">$color-brand</span>;
+    <span class="hljs-attribute">border-left-color</span>: palette(primary);
   }
 }
 
 <span class="hljs-selector-class">.c-activity</span> {
   <span class="hljs-attribute">display</span>: block;
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">2rem</span>;
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">2rem</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.75rem</span> auto;
-  <span class="hljs-attribute">border</span>: <span class="hljs-variable">$border-width-thicker</span> double <span class="hljs-variable">$color-neutral--alpha-2</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-variable">$size-medium</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-variable">$size-medium</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$space-medium</span> auto;
+  <span class="hljs-attribute">border</span>: <span class="hljs-variable">$border-width-thicker</span> double <span class="hljs-variable">$prose-color--rule</span>;
   <span class="hljs-attribute">animation</span>: <span class="hljs-number">2s</span> loading infinite;
   <span class="hljs-attribute">transform</span>: rotate(<span class="hljs-number">45deg</span>);
 }
@@ -288,7 +288,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">439 Bytes</span>
+                    <span class="Meta-value">472 Bytes</span>
                 </li>
             </ul>
         </div>

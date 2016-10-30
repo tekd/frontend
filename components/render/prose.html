@@ -1,7 +1,7 @@
 
 
 <div class="s-prose">
-  <p class="lede">Video is a bigger part of the web experience than ever before. With native browser support for HTML5 video elements freeing us from the tyranny of plugins, and the availability of faster internet connections to the workplace, home and mobile networks, it's now pretty straightforward to publish video in a way that can be consumed in all sorts of ways on all sorts of different web devices.</p>
+  <p class="lede">Video is a bigger part of the web experience than ever before. With native browser support for HTML5 video elements freeing us from the tyranny of plugins, and the availability of faster internet connections to the workplace, home and mobile networks, it’s now pretty straightforward to publish video in a way that can be consumed in all sorts of ways on all sorts of different web devices.</p>
 <p>I recently worked on a project where the client had shot some dedicated video shorts to publish on their site. They also had some five-second motion graphics produced to top and tail the videos with context and branding. This pretty common requirement is a great idea on the web, where a user might land at your video having followed a link and be viewing a page without much context.</p>
 <blockquote>
 <p>[I]t appears probable that the progenitors of man, either the males or females or both sexes, before acquiring the power of expressing their mutual love in articulate language, endeavoured to charm each other with musical notes and rhythm.</p>
@@ -12,8 +12,9 @@
   <img src="http://media.24ways.org/2013/baxter/indexcards.jpg" alt="Index cards">
   <figcaption>Index cards represent each feature the rental property software would launch with.</figcaption>
 </figure>
-<h2>Adding bumpers to a video</h2>
+<h2>Heading 2</h2>
 <p>The simplest way to add bumpers to a video would be to edit them on to the start and end of the video file itself. Cooking the bumpers into the video file is easy, but should you ever want to update them it can become a real headache. If the branding needs updating, for example, you’d need to re-edit and re-encode all your videos. Not a fun task.</p>
+<h3>Heading 3</h3>
 <p>What if the bumpers could be added dynamically? That would enable you to use the same bumper for multiple videos (decreasing download time for users who might watch more than one) and to update the bumpers whenever you wanted. You could change them seasonally, update them for special promotions, run different advertising slots, perform multivariate testing, or even target different bumpers to different users.</p>
 <blockquote>
 <p>The responsive projects I’ve worked on have had a lot of success combining design and development into one hybrid phase, bringing the two teams into one highly collaborative group.</p>
@@ -21,21 +22,20 @@
 <p><cite><a href="http://markdotto.com/2011/09/20/good-design-is-constant-contact/">Mark Otto</a></cite></p>
 </blockquote>
 <p>The trade-off, of course, is that if you dynamically add your bumpers, there’s a chance that a user in a given circumstance might not see the bumper. For example, if the main video feature was uploaded to YouTube, you’d have no way to control the playback. As always, you need to weigh up the pros and cons and make your choice.</p>
-<h2><abbr title="Hyper Text Markup Language 5">HTML5</abbr> bumpers</h2>
+<h4>Heading 4</h4>
 <p>If you wanted to dynamically add bumpers to your <abbr title="Hyper Text Markup Language 5">HTML5</abbr> video, how would you go about it? That was the question I found myself needing to answer for this particular client project.</p>
+<h5>Heading 5</h5>
 <p>My initial thought was to treat it just like an image slideshow. If I were building a slideshow that moved between images, I’d use <abbr title="Cascading Style Sheets">CSS</abbr> absolute positioning with <code>z-index</code> to stack the images up on top of each other in a pile, with the first image on top. To transition to the second image, I’d use JavaScript to fade the top image out, revealing the second image beneath it.</p>
 <figure>
   <img src="http://media.24ways.org/2012/mclellan/stack.png" alt="Video layers stacked up" />
 </figure>
 <p>Now that video is just a native object in the <span class="caps">DOM</span>, just like an image, why not do the same? Stack the videos up with the opening bumper on top, listen for the video’s <code>onended</code> event, and fade it out to reveal the main feature behind. Good idea, right?</p>
-<h3>Wrong</h3>
 <p>Remember that this is the web. It’s never going to be that easy. The problem here is that many non-desktop devices use native, dedicated video players. Think about watching a video on a mobile phone – when you play the video, the phone often goes full-screen in its native player, leaving the web page behind. There’s no opportunity to fade or switch <code>z-index</code>, as the video isn’t being viewed in the page. Your page is left powerless. Powerless!</p>
 <figure>
   <img src="http://media.24ways.org/2012/mclellan/media-player.jpg" alt="iOS full-screen media player" />
 </figure>
 <p>So what can we do? What can we control?</p>
 <hr />
-<h3>Right</h3>
 <p>Those of us with particularly long memories might recall a time before <abbr title="Cascading Style Sheets">CSS</abbr>, when we’d have to use JavaScript to perform image rollovers. As <abbr title="Cascading Style Sheets">CSS</abbr> background images weren’t a practical reality, we would use lots of <code>&lt;img&gt;</code> elements, and perform a rollover by modifying the <code>src</code> attribute of the image.</p>
 <p>Turns out, this old trick of modifying the source can help us out with video, too. In most cases, modifying the <code>src</code> attribute of a <code>&lt;video&gt;</code> element, or perhaps more likely the <code>src</code> attribute of a <code>source</code> element, will swap from one video to another.</p>
 <h2>Swappin’ it</h2>

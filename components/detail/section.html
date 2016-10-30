@@ -166,7 +166,7 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/topic/code/"</span>&gt;</span>Code<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"48"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"48"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 240 240"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 240 240"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">"rotate(45 120 120)"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M115 100H70.5C63 85 47.5 75 30 75 8.5 75-9.5 90-14 110h29l10 10-10 10h-29c4.5 20 22.5 35 44 35 17.5 0 33-10 40.5-25h99.5c7.5 15 22.5 25 40.5 25 21.5 0 39.5-15 44-35h-29l-10-10 10-10h29c-4.5-20-22.5-35-44-35-17.5 0-33 10-40.5 25H125V30h10v-50h-30v50h10v70zm123.5 40c-6.5 9-17 15-28.5 15-16 0-29-10.5-33.5-25H63.5C59 144.5 46 155 30 155c-12 0-22.5-6-28.5-15H20l20-20-20-20H1.5C7.5 91 18 85 30 85c16 0 29 10.5 33.5 25h113c4.5-14.5 17.5-25 33.5-25 12 0 23 6 29 15h-19l-20 20 20 20h19zM115-10h10v30h-10v-30zM99.5 240v-50h-10v-10h25v-40h10v40h25v10H140v50c0 10-7.5 20-20 20-12.5 0-20-10-20.5-20zm11 0c0 7.5 5 10 10 10s10-2.5 10-10v-50h-20v50z"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Poetry? Not likely (though <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2006/gravity-defying-page-corners/"</span>&gt;</span>Dan Cederholm wrote some doggerel<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> back in 2006). Here are articles on hypertext markup language, its attributes and other minutiae; crafty <span class="hljs-tag">&lt;<span class="hljs-name">s</span>&gt;</span>hacks<span class="hljs-tag">&lt;/<span class="hljs-name">s</span>&gt;</span> tips for your
@@ -1077,7 +1077,6 @@
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-direction</span>: column;
   <span class="hljs-attribute">justify-content</span>: space-between;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span> <span class="hljs-number">0</span>;
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
     <span class="hljs-attribute">flex-direction</span>: row;
@@ -1085,32 +1084,30 @@
 }
 
 <span class="hljs-selector-class">.c-section__header</span> {
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>; <span class="hljs-comment">// 16px</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-variable">$space-large</span>;
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
     <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">20%</span>;
     <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$color-neutral--alpha-2</span>;
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$prose-color--rule</span>;
     <span class="hljs-attribute">text-align</span>: right;
   }
 
   @<span class="hljs-keyword">media</span> print {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">1em</span>; <span class="hljs-comment">// 0 16px</span>
+    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">2px</span> solid black;
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">0</span>;
   }
 }
 
 <span class="hljs-selector-class">.c-section__title</span> {
-  @<span class="hljs-keyword">include</span> label();
-
-  @<span class="hljs-keyword">media</span> print {
-    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">2px</span> solid black;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 16px 0</span>
-  }
+  @<span class="hljs-keyword">include</span> typeset(label, 2);
+  <span class="hljs-attribute">text-transform</span>: uppercase;
 }
 
 <span class="hljs-selector-class">.c-section__main</span> {
-  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$color-neutral--alpha-2</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-large</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-variable">$space-large</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$prose-color--rule</span>;
 
   @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
     <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">75%</span>;
@@ -1126,34 +1123,29 @@
   @<span class="hljs-keyword">media</span> screen and (min-width: 80em) {
     <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">25%</span>;
   }
-
-  @<span class="hljs-keyword">media</span> print {
-    <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">0</span>;
-  }
 }
 
 <span class="hljs-comment">// Section - Sponsor</span>
 <span class="hljs-selector-class">.c-article</span> <span class="hljs-selector-class">.c-section--sponsor</span> {
   @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
     <span class="hljs-attribute">flex-direction</span>: column;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">position</span>: absolute;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">56rem</span>;
     <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">width</span>: <span class="hljs-number">20%</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
 
     <span class="hljs-selector-class">.c-section__title</span> {
-      @<span class="hljs-keyword">include</span> caption();
+      @<span class="hljs-keyword">include</span> typeset(label, 2);
     }
 
     <span class="hljs-selector-class">.c-section__main</span> {
-      <span class="hljs-attribute">box-shadow</span>: none;
       <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">box-shadow</span>: none;
     }
 
     <span class="hljs-selector-class">.c-promo</span> {
-      @<span class="hljs-keyword">include</span> caption();
+      @<span class="hljs-keyword">include</span> typeset(caption);
       <span class="hljs-attribute">text-align</span>: right;
     }
   }
@@ -1168,9 +1160,9 @@
 
   svg {
     <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">4em</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-number">4em</span>;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.5rem</span> <span class="hljs-number">1rem</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$size-xlarge</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-variable">$size-xlarge</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$space-small</span> <span class="hljs-variable">$space-large</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
   }
 }
 
