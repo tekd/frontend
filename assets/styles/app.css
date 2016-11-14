@@ -448,12 +448,12 @@ mark {
 }
 
 .c-button:hover {
-  background-color: #601;
+  background-color: #f04;
   color: white;
 }
 
 .c-button:active {
-  background-color: #f04;
+  background-color: #601;
   color: white;
 }
 
@@ -540,11 +540,11 @@ mark {
 }
 
 .c-comment__meta a.c-comment__permalink:hover {
-  color: #601;
+  color: #f04;
 }
 
 .c-comment__meta a.c-comment__permalink:active {
-  color: #f04;
+  color: #601;
 }
 
 .c-comment__main {
@@ -1180,8 +1180,8 @@ mark {
   line-height: 0.95;
   font-size: 1.25rem;
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 1.25rem;
+  left: 1.25rem;
 }
 
 @media print {
@@ -1310,11 +1310,11 @@ mark {
 }
 
 .c-contentinfo a:hover {
-  color: #601;
+  color: #f04;
 }
 
 .c-contentinfo a:active {
-  color: #f04;
+  color: #601;
 }
 
 @media print {
@@ -1379,11 +1379,11 @@ mark {
     box-shadow: inset 0 -1px 0 #efeff0;
   }
   .c-menu:hover {
-    color: #601;
+    color: #f04;
     background-color: #f2f2f2;
   }
   .c-menu:active {
-    color: #f04;
+    color: #601;
     background-color: #ececee;
   }
 }
@@ -1545,7 +1545,7 @@ mark {
 }
 
 @media screen and (min-width: 31.5em) {
-  .js-enhanced .c-search {
+  [data-menu] .c-search {
     position: absolute;
     top: 0;
     left: 0;
@@ -1641,12 +1641,12 @@ mark {
 }
 
 .c-site-nav__label:hover {
-  color: #601;
+  color: #f04;
   background-color: #f2f2f2;
 }
 
 .c-site-nav__label:active {
-  color: #f04;
+  color: #601;
   background-color: #ececee;
 }
 
@@ -1672,12 +1672,12 @@ mark {
 }
 
 .c-top-nav:hover {
-  color: #601;
+  color: #f04;
   background-color: #f2f2f2;
 }
 
 .c-top-nav:active {
-  color: #f04;
+  color: #601;
   background-color: #ececee;
 }
 
@@ -1704,7 +1704,7 @@ mark {
   }
 }
 
-.js-enhanced .c-topics-nav {
+[data-menu] .c-topics-nav {
   overflow: hidden;
 }
 
@@ -1752,12 +1752,12 @@ mark {
 }
 
 .c-topics-nav__label:hover {
-  color: #601;
+  color: #f04;
   background-color: #f2f2f2;
 }
 
 .c-topics-nav__label:active {
-  color: #f04;
+  color: #601;
   background-color: #ececee;
 }
 
@@ -1786,12 +1786,12 @@ mark {
 }
 
 .c-traverse-nav__item:hover {
-  color: #601;
+  color: #f04;
   background-color: #f2f2f2;
 }
 
 .c-traverse-nav__item:active {
-  color: #f04;
+  color: #601;
   background-color: #ececee;
 }
 
@@ -1985,19 +1985,18 @@ mark {
 .c-grid__item {
   display: -webkit-box;
   display: flex;
+  flex-basis: 16em;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
   flex-shrink: 0;
   margin-top: 0.25rem;
   margin-left: 0.25rem;
 }
 
-.c-grid--ways .c-grid__item {
-  flex-basis: 16em;
-  -webkit-box-flex: 1;
-          flex-grow: 1;
-}
-
 .c-grid--authors .c-grid__item {
   flex-basis: 50%;
+  -webkit-box-flex: 0;
+          flex-grow: 0;
 }
 
 @media screen and (min-width: 31.5em) {
