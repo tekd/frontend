@@ -250,10 +250,10 @@
     {%- if component -%}
       {% render "@" + component, config %}
     {%- else -%}
+    {%- if icon -%}
+      {% include icon + ".svg" %}
+    {%- endif -%}
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
-      {%- if icon -%}
-        {% include icon + ".svg" %}
-      {%- endif -%}
       {{ content | markdown }}
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     {%- endif -%}
@@ -271,7 +271,14 @@
         <pre>{
   <span class="hljs-attr">"id"</span>: <span class="hljs-string">"comments"</span>,
   <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Comments"</span>,
-  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"&lt;a class=\"c-continue\" href=\"/components/preview/article-template--comments\" data-replace data-interaction data-target=\"#comments\"&gt;View 11 readers’ comments&lt;/a&gt;\n"</span>
+  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"&lt;a class=\"c-continue\" href=\"/components/preview/article-template--comments\" data-replace data-interaction data-target=\"#comments\"&gt;View 11 readers’ comments&lt;/a&gt;\n"</span>,
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  }
 }</pre>
     </code>
     
@@ -439,7 +446,7 @@
 
 <span class="hljs-comment">// Section - Topic</span>
 <span class="hljs-selector-class">.c-section--topic</span> {
-  <span class="hljs-selector-class">.s-prose</span> {
+  <span class="hljs-selector-class">.c-section__main</span> {
     <span class="hljs-attribute">display</span>: flex;
     <span class="hljs-attribute">flex-direction</span>: row;
   }
@@ -1100,30 +1107,6 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="top-nav" data-pjax>
-                <span>Top Nav</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="topics-nav" data-pjax>
                 <span>Topics Nav</span>
                 
@@ -1288,6 +1271,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="embed" data-pjax>
+                <span>Embed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

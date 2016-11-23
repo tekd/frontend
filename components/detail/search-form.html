@@ -53,6 +53,10 @@
 
     
     
+        
+        
+        
+    
 
 <div class="Pen" data-behaviour="pen" id="pen-09f18f165505c1644c90c9c455a77890">
 
@@ -85,14 +89,16 @@
     <div class="Preview-wrapper" data-role="resizer">
         <div class="Preview-resizer">
             
-             <iframe
-                class="Preview-iframe"
-                data-role="window"
-                src="../preview/search-form"
-                sandbox="allow-same-origin allow-scripts"
-                 style=""
-                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
-            </iframe>
+<div class="Error Error--render">
+    <h4 class="Error-title">Error rendering component</h4>
+    <div class="Error-message Prose">
+        <p>(unknown path)
+  Error: template not found: @field--search</p>
+
+    </div>
+</div>
+
+            
         </div>
         <div class="Preview-handle" data-role="resize-handle"></div>
         <div class="Preview-overlay"></div>
@@ -210,17 +216,9 @@
     <code class="Code Code--lang-html">
         
         
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/search/"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-field c-field--search"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-field__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"q"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-field__icon"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"48"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"48"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 240 240"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"c-field__icon--search"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">title</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c-field__icon--search"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M148 140c7-8 11-19 11-31 0-28-22-50-50-50s-50 22-50 50 22 50 50 50c12 0 24-4 32-12l35 35 7-7-36-36zm-39 9c-22 0-40-18-40-40s18-40 40-40 40 18 40 40-18 40-40 40z"</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-field__input"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"q"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"e.g. CSS, Design, Research&amp;#8230;"</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></pre>
+        
+        <pre><span class="hljs-comment">&lt;!-- Error rendering component: (unknown path)
+  Error: template not found: @field--search --&gt;</span></pre>
         
     </code>
 </div>
@@ -229,7 +227,7 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-09f18f165505c1644c90c9c455a77890-panel-view">
     <code class="Code Code--lang-">
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/search/"</span>&gt;</span>
-  {%- include "<a href="field--search">@field--search</a>" -%}
+  {%- include "@field--search" -%}
 <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
 </pre>
     </code>
@@ -239,8 +237,16 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-09f18f165505c1644c90c9c455a77890-panel-context">
     
     
-    <code class="Code Code--lang-js">
-        <pre><span class="hljs-comment">/* No context defined for this component. */</span></pre>
+    <code class="Code Code--lang-json">
+        <pre>{
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  }
+}</pre>
     </code>
     
 </div>
@@ -283,15 +289,6 @@
             <strong class="Meta-key">Filesystem Path:</strong>
             <span class="Meta-value">src/components/common/search-form/search-form.html</span>
         </li>
-        
-        <li class="Meta-item">
-            <strong class="Meta-key">References <em class="Meta-count">(1)</em>:</strong>
-            <span class="Meta-value Meta-value--linkList">
-            
-                <a href="field--search">@<span>field--search</span></a>
-            
-            </span>
-        </li class="Meta-item">
         
         
     </ul>
@@ -844,30 +841,6 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="top-nav" data-pjax>
-                <span>Top Nav</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="topics-nav" data-pjax>
                 <span>Topics Nav</span>
                 
@@ -1032,6 +1005,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="embed" data-pjax>
+                <span>Embed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

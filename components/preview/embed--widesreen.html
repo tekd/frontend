@@ -16,7 +16,7 @@
         var element = document.createElement("script");
         element.src = "../../assets/scripts/app.js";
         document.body.appendChild(element);
-        document.body.dataset.menu = 'closed';
+        document.body.dataset.menuExpanded = 'false';
       }
 
       if (document.querySelector && docEl.classList && window.addEventListener) {
@@ -30,34 +30,28 @@
 
     <link rel="shortcut icon" href="../../assets/icons/icon.ico" type="image/ico"/>
     <link rel="apple-touch-icon" href="../../assets/icons/icon.png" type="image/png"/>
-    <link rel="mask-icon" href="../../assets/icons/icon.svg" color=""/>
+    <link rel="mask-icon" href="../../assets/icons/icon.svg" color="#f04"/>
     <link rel="author" href="/humans.txt"/>
     <link rel="manifest" href="/manifest.json"/>
-    <link rel="alternate" href="" type="application/rss+xml"/>
+    <link rel="alternate" href="https://feeds.feedburner.com/24ways" type="application/rss+xml"/>
     <link rel="stylesheet" href="../../assets/styles/app.css"/>
 
     <meta charset="utf-8"/>
     <meta name="robots" content="index, follow"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="twitter:site" content="@"/>
-    <meta name="twitter:title" content=""/>
-    <meta name="twitter:description" content=""/>
-    <meta name="twitter:creator" content="@"/>
+    <meta name="twitter:site" content="@24ways"/>
+    <meta name="twitter:title" content="24 ways"/>
+    <meta name="twitter:description" content="24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."/>
+    <meta name="twitter:creator" content="@24ways"/>
     <meta name="twitter:card" content="summary"/>
 
     <title> &#9670; 24 ways</title>
   </head>
 
   <body class="t-year-2015">
-    <p class="c-field c-field--search">
-  <label class="c-field__label" for="q"><svg class="c-field__icon" width="48" height="48" viewBox="0 0 240 240" role="img" aria-labelledby="c-field__icon--search">
-  <title id="c-field__icon--search">Search</title>
-  <path role="presentation" d="M148 140c7-8 11-19 11-31 0-28-22-50-50-50s-50 22-50 50 22 50 50 50c12 0 24-4 32-12l35 35 7-7-36-36zm-39 9c-22 0-40-18-40-40s18-40 40-40 40 18 40 40-18 40-40 40z"/>
-</svg>
-</label>
-  <input class="c-field__input" type="search" name="q" placeholder="e.g. CSS, Design, Research&#8230;"/>
-  <button class="c-button" type="submit">Search</button>
-</p>
+    <div class="s-embed s-embed--widescreen">
+  <iframe src="https://www.youtube-nocookie.com/embed/rGkQDrUcX18" frameborder="0" allowfullscreen></iframe>
+</div>
 
   </body>
 </html>

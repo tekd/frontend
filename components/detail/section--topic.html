@@ -228,10 +228,10 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__header"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/topic/code/"</span>&gt;</span>Code<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 240 240"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 240 240"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">"rotate(45 120 120)"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M115 100H70.5C63 85 47.5 75 30 75 8.5 75-9.5 90-14 110h29l10 10-10 10h-29c4.5 20 22.5 35 44 35 17.5 0 33-10 40.5-25h99.5c7.5 15 22.5 25 40.5 25 21.5 0 39.5-15 44-35h-29l-10-10 10-10h29c-4.5-20-22.5-35-44-35-17.5 0-33 10-40.5 25H125V30h10v-50h-30v50h10v70zm123.5 40c-6.5 9-17 15-28.5 15-16 0-29-10.5-33.5-25H63.5C59 144.5 46 155 30 155c-12 0-22.5-6-28.5-15H20l20-20-20-20H1.5C7.5 91 18 85 30 85c16 0 29 10.5 33.5 25h113c4.5-14.5 17.5-25 33.5-25 12 0 23 6 29 15h-19l-20 20 20 20h19zM115-10h10v30h-10v-30zM99.5 240v-50h-10v-10h25v-40h10v40h25v10H140v50c0 10-7.5 20-20 20-12.5 0-20-10-20.5-20zm11 0c0 7.5 5 10 10 10s10-2.5 10-10v-50h-20v50z"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Poetry? Not likely (though <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2006/gravity-defying-page-corners/"</span>&gt;</span>Dan Cederholm wrote some doggerel<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> back in 2006). Here are articles on hypertext markup language, its attributes and other minutiae; crafty <span class="hljs-tag">&lt;<span class="hljs-name">s</span>&gt;</span>hacks<span class="hljs-tag">&lt;/<span class="hljs-name">s</span>&gt;</span> tips for your
                 cascading style sheets; JavaScript legerdemain; and tinkering with application programming interfaces.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
@@ -253,10 +253,10 @@
     {%- if component -%}
       {% render "@" + component, config %}
     {%- else -%}
+    {%- if icon -%}
+      {% include icon + ".svg" %}
+    {%- endif -%}
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
-      {%- if icon -%}
-        {% include icon + ".svg" %}
-      {%- endif -%}
       {{ content | markdown }}
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     {%- endif -%}
@@ -278,7 +278,14 @@
     <span class="hljs-string">"topic"</span>
   ],
   <span class="hljs-attr">"icon"</span>: <span class="hljs-string">"topic-code"</span>,
-  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Poetry? Not likely (though [Dan Cederholm wrote some doggerel](/2006/gravity-defying-page-corners/) back in 2006). Here are articles on hypertext markup language, its attributes and other minutiae; crafty ~~hacks~~ tips for your cascading style sheets; JavaScript legerdemain; and tinkering with application programming interfaces.\n"</span>
+  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Poetry? Not likely (though [Dan Cederholm wrote some doggerel](/2006/gravity-defying-page-corners/) back in 2006). Here are articles on hypertext markup language, its attributes and other minutiae; crafty ~~hacks~~ tips for your cascading style sheets; JavaScript legerdemain; and tinkering with application programming interfaces.\n"</span>,
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  }
 }</pre>
     </code>
     
@@ -446,7 +453,7 @@
 
 <span class="hljs-comment">// Section - Topic</span>
 <span class="hljs-selector-class">.c-section--topic</span> {
-  <span class="hljs-selector-class">.s-prose</span> {
+  <span class="hljs-selector-class">.c-section__main</span> {
     <span class="hljs-attribute">display</span>: flex;
     <span class="hljs-attribute">flex-direction</span>: row;
   }
@@ -1115,30 +1122,6 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="top-nav" data-pjax>
-                <span>Top Nav</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="topics-nav" data-pjax>
                 <span>Topics Nav</span>
                 
@@ -1303,6 +1286,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="embed" data-pjax>
+                <span>Embed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

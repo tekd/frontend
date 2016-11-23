@@ -226,15 +226,15 @@
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"prev"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/how-tabs-should-work/"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"How Tabs Should Work"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__icon"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 200 200"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"c-traverse-nav--prev__label"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">title</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c-traverse-nav--prev__label"</span>&gt;</span>Previous article<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__icon"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 200 200"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M50 100l85 85 7-7-78-78 78-78-7-7"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Previous article<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"next"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/solve-the-hard-problems/"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"Solve the Hard Problems"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__icon"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 200 200"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"c-traverse-nav--next__label"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">title</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c-traverse-nav--next__label"</span>&gt;</span>Next article<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Next article<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__icon"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 200 200"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M150 100l-85 85-7-7 78-78-78-78 7-7"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 
@@ -252,10 +252,12 @@
   {%- if traverse.prev -%}
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"prev"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ traverse.prev.url }}"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"{{ traverse.prev.title }}"</span>&gt;</span>
     {% include "prev.svg" %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Previous {{ traverse.type }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   {%- endif -%}
   {%- if traverse.next -%}
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"next"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ traverse.next.url }}"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"{{ traverse.next.title }}"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Next {{ traverse.type }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     {% include "next.svg" %}
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   {%- endif -%}
@@ -281,6 +283,13 @@
       <span class="hljs-attr">"url"</span>: <span class="hljs-string">"/2015/solve-the-hard-problems/"</span>,
       <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Solve the Hard Problems"</span>
     }
+  },
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
   }
 }</pre>
     </code>
@@ -378,11 +387,16 @@
     }
   }
 
-  <span class="hljs-selector-attr">[data-menu=open]</span> &amp; {
+  <span class="hljs-selector-attr">[data-menu-expanded=true]</span> &amp; {
     &amp;::after {
       <span class="hljs-attribute">display</span>: none;
     }
   }
+}
+
+<span class="hljs-selector-class">.c-traverse-nav__icon</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">2.5rem</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2.5rem</span>;
 }
 </pre>
                             </code>
@@ -1003,30 +1017,6 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="top-nav" data-pjax>
-                <span>Top Nav</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="topics-nav" data-pjax>
                 <span>Topics Nav</span>
                 
@@ -1191,6 +1181,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="embed" data-pjax>
+                <span>Embed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

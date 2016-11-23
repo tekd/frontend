@@ -16,7 +16,7 @@
         var element = document.createElement("script");
         element.src = "../../assets/scripts/app.js";
         document.body.appendChild(element);
-        document.body.dataset.menu = 'closed';
+        document.body.dataset.menuExpanded = 'false';
       }
 
       if (document.querySelector && docEl.classList && window.addEventListener) {
@@ -30,38 +30,36 @@
 
     <link rel="shortcut icon" href="../../assets/icons/icon.ico" type="image/ico"/>
     <link rel="apple-touch-icon" href="../../assets/icons/icon.png" type="image/png"/>
-    <link rel="mask-icon" href="../../assets/icons/icon.svg" color=""/>
+    <link rel="mask-icon" href="../../assets/icons/icon.svg" color="#f04"/>
     <link rel="author" href="/humans.txt"/>
     <link rel="manifest" href="/manifest.json"/>
-    <link rel="alternate" href="" type="application/rss+xml"/>
+    <link rel="alternate" href="https://feeds.feedburner.com/24ways" type="application/rss+xml"/>
     <link rel="stylesheet" href="../../assets/styles/app.css"/>
 
     <meta charset="utf-8"/>
     <meta name="robots" content="index, follow"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="twitter:site" content="@"/>
-    <meta name="twitter:title" content=""/>
-    <meta name="twitter:description" content=""/>
-    <meta name="twitter:creator" content="@"/>
+    <meta name="twitter:site" content="@24ways"/>
+    <meta name="twitter:title" content="24 ways"/>
+    <meta name="twitter:description" content="24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."/>
+    <meta name="twitter:creator" content="@24ways"/>
     <meta name="twitter:card" content="summary"/>
 
     <title> &#9670; 24 ways</title>
   </head>
 
   <body class="t-year-2015">
-    <a class="c-menu" href="#menu">
-  <svg class="c-menu__icon" width="40" height="40" viewBox="0 0 200 200" role="img" aria-labelledby="c-menu__label">
-  <title id="c-menu__label">Jump to menu</title>
-  <g role="presentation">
-    <rect class="c-menu__line" width="120" height="10" x="40" y="45"/>
-    <rect class="c-menu__line" width="120" height="10" x="40" y="70"/>
-    <rect class="c-menu__line" width="120" height="10" x="40" y="95"/>
-    <rect class="c-menu__line" width="120" height="10" x="40" y="95"/>
-    <rect class="c-menu__line" width="120" height="10" x="40" y="120"/>
-    <rect class="c-menu__line" width="120" height="10" x="40" y="145"/>
-  </g>
+    <a class="c-menu" href="#navigation">
+  <svg class="c-menu__icon" width="20" height="20" viewBox="0 0 200 200" role="img">
+  <rect class="c-menu__line" width="120" height="10" x="40" y="45"/>
+  <rect class="c-menu__line" width="120" height="10" x="40" y="70"/>
+  <rect class="c-menu__line" width="120" height="10" x="40" y="95"/>
+  <rect class="c-menu__line" width="120" height="10" x="40" y="95"/>
+  <rect class="c-menu__line" width="120" height="10" x="40" y="120"/>
+  <rect class="c-menu__line" width="120" height="10" x="40" y="145"/>
 </svg>
 
+  <span class="u-hidden">Jump to menu</span>
 </a>
 
   </body>

@@ -295,7 +295,14 @@
   <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Dan Mall"</span>,
   <span class="hljs-attr">"datetime"</span>: <span class="hljs-string">"2010-12-15T00:00:00-00:00"</span>,
   <span class="hljs-attr">"comments"</span>: <span class="hljs-number">11</span>,
-  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"[Dan Mall](http://danielmall.com/) breathes life into web standards-based animation. By striving for more than just mechanical movement, we can create more believable animated effects to enhance our users' experience.\n"</span>
+  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"[Dan Mall](http://danielmall.com/) breathes life into web standards-based animation. By striving for more than just mechanical movement, we can create more believable animated effects to enhance our users' experience.\n"</span>,
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  }
 }</pre>
     </code>
     
@@ -412,7 +419,6 @@
     <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">white-space</span>: nowrap;
     <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">200%</span>;
   }
@@ -451,7 +457,7 @@
 
 <span class="hljs-selector-class">.c-summary__meta</span> {
   @<span class="hljs-keyword">include</span> typeset(label, 1);
-  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-neutral</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-neutral--dark</span>;
 
   <span class="hljs-selector-class">.dt-published</span> {
     <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$space-medium</span>;
@@ -1190,30 +1196,6 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="top-nav" data-pjax>
-                <span>Top Nav</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="topics-nav" data-pjax>
                 <span>Topics Nav</span>
                 
@@ -1378,6 +1360,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="embed" data-pjax>
+                <span>Embed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

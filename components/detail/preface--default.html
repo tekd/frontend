@@ -270,7 +270,14 @@
     <code class="Code Code--lang-json">
         <pre>{
   <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Preface title"</span>,
-  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Preface content"</span>
+  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Preface content"</span>,
+  <span class="hljs-attr">"site"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+    <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+    <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+    <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  }
 }</pre>
     </code>
     
@@ -303,7 +310,8 @@
                             <code class="Code Code--lang-SCSS FileBrowser-code">
                                 <pre><span class="hljs-selector-class">.c-preface</span> {
   <span class="hljs-attribute">overflow</span>: hidden;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-xxlarge</span> <span class="hljs-variable">$space-large</span> <span class="hljs-variable">$space-medium</span>;
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">9rem</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-xlarge</span> <span class="hljs-variable">$space-large</span> <span class="hljs-variable">$space-medium</span>;
   <span class="hljs-attribute">background-color</span>: palette(primary, dark);
   <span class="hljs-attribute">background-image</span>: inline(<span class="hljs-string">'diamond.svg'</span>);
   <span class="hljs-attribute">background-repeat</span>: repeat;
@@ -374,7 +382,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1 KB</span>
+                    <span class="Meta-value">1.1 KB</span>
                 </li>
             </ul>
         </div>
@@ -1017,30 +1025,6 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="top-nav" data-pjax>
-                <span>Top Nav</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="topics-nav" data-pjax>
                 <span>Topics Nav</span>
                 
@@ -1205,6 +1189,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="embed" data-pjax>
+                <span>Embed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

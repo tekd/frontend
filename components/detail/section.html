@@ -229,10 +229,10 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__header"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/topic/code/"</span>&gt;</span>Code<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 240 240"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 240 240"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">"rotate(45 120 120)"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M115 100H70.5C63 85 47.5 75 30 75 8.5 75-9.5 90-14 110h29l10 10-10 10h-29c4.5 20 22.5 35 44 35 17.5 0 33-10 40.5-25h99.5c7.5 15 22.5 25 40.5 25 21.5 0 39.5-15 44-35h-29l-10-10 10-10h29c-4.5-20-22.5-35-44-35-17.5 0-33 10-40.5 25H125V30h10v-50h-30v50h10v70zm123.5 40c-6.5 9-17 15-28.5 15-16 0-29-10.5-33.5-25H63.5C59 144.5 46 155 30 155c-12 0-22.5-6-28.5-15H20l20-20-20-20H1.5C7.5 91 18 85 30 85c16 0 29 10.5 33.5 25h113c4.5-14.5 17.5-25 33.5-25 12 0 23 6 29 15h-19l-20 20 20 20h19zM115-10h10v30h-10v-30zM99.5 240v-50h-10v-10h25v-40h10v40h25v10H140v50c0 10-7.5 20-20 20-12.5 0-20-10-20.5-20zm11 0c0 7.5 5 10 10 10s10-2.5 10-10v-50h-20v50z"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Poetry? Not likely (though <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2006/gravity-defying-page-corners/"</span>&gt;</span>Dan Cederholm wrote some doggerel<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> back in 2006). Here are articles on hypertext markup language, its attributes and other minutiae; crafty <span class="hljs-tag">&lt;<span class="hljs-name">s</span>&gt;</span>hacks<span class="hljs-tag">&lt;/<span class="hljs-name">s</span>&gt;</span> tips for your
                 cascading style sheets; JavaScript legerdemain; and tinkering with application programming interfaces.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
@@ -462,10 +462,10 @@
     {%- if component -%}
       {% render "@" + component, config %}
     {%- else -%}
+    {%- if icon -%}
+      {% include icon + ".svg" %}
+    {%- endif -%}
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
-      {%- if icon -%}
-        {% include icon + ".svg" %}
-      {%- endif -%}
       {{ content | markdown }}
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     {%- endif -%}
@@ -479,8 +479,170 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-47feefd554ec9a84d781068890e58c44-panel-context">
     
     
-    <code class="Code Code--lang-js">
-        <pre><span class="hljs-comment">/* No context defined for this component. */</span></pre>
+    <code class="Code Code--lang-json">
+        <pre>{
+  <span class="hljs-attr">"@section--topic"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"code"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"[Code](/topic/code/)"</span>,
+    <span class="hljs-attr">"mods"</span>: [
+      <span class="hljs-string">"topic"</span>
+    ],
+    <span class="hljs-attr">"icon"</span>: <span class="hljs-string">"topic-code"</span>,
+    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Poetry? Not likely (though [Dan Cederholm wrote some doggerel](/2006/gravity-defying-page-corners/) back in 2006). Here are articles on hypertext markup language, its attributes and other minutiae; crafty ~~hacks~~ tips for your cascading style sheets; JavaScript legerdemain; and tinkering with application programming interfaces.\n"</span>,
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  },
+  <span class="hljs-attr">"@section--archive"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">2013</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"[2013](/2013/)"</span>,
+    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Scourge of browser vendors everywhere, WaSP buzzed its last in March. Dave Shea's CSS Zen Garden celebrated its tenth anniversary in May, and Google Glass was released. Ever broad in its interests, 24 ways tamed Grunt, URLs and GitHub Pages, encouraged readers to write and publish books, and leavened all that with goodies on project management, web typography and SVG.\n"</span>,
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  },
+  <span class="hljs-attr">"@section--author"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"author"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"About the author"</span>,
+    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Drew McLellan is lead developer on your favourite content management systems, [Perch and Perch Runway](https://grabaperch.com/). He is Director and Senior Developer at edgeofmyseat.com in Bristol, England, and is formerly Group Lead at the Web Standards Project. When not publishing 24 ways, Drew keeps a [personal site](http://allinthehead.com/) covering web development issues and themes, [takes photos](http://flickr.com/drewm/), [tweets a lot](http://twitter.com/drewm) and tries to stay upright on his bicycle.\n\n&lt;span class=\"caption\"&gt;Photo: [James Duncan Davidson](http://duncandavidson.com/)&lt;/span&gt;\n\n&lt;a class=\"c-continue\" href=\"/authors/drewmclellan/\"&gt;More articles by Drew&lt;/a&gt;\n"</span>,
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  },
+  <span class="hljs-attr">"@section--sponsor"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"sponsor"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Brought to you&amp;nbsp;by"</span>,
+    <span class="hljs-attr">"mods"</span>: [
+      <span class="hljs-string">"sponsor"</span>
+    ],
+    <span class="hljs-attr">"component"</span>: <span class="hljs-string">"promo"</span>,
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  },
+  <span class="hljs-attr">"@section--comments"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"comments"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Comments"</span>,
+    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"&lt;a class=\"c-continue\" href=\"/components/preview/article-template--comments\" data-replace data-interaction data-target=\"#comments\"&gt;View 11 readers’ comments&lt;/a&gt;\n"</span>,
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  },
+  <span class="hljs-attr">"@section--related"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"related"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Related articles"</span>,
+    <span class="hljs-attr">"mods"</span>: [
+      <span class="hljs-string">"related"</span>
+    ],
+    <span class="hljs-attr">"component"</span>: <span class="hljs-string">"grid"</span>,
+    <span class="hljs-attr">"config"</span>: {
+      <span class="hljs-attr">"items"</span>: [
+        {
+          <span class="hljs-attr">"theme"</span>: <span class="hljs-string">"day-15"</span>,
+          <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/2015/grid-flexbox-box-alignment-our-new-system-for-layout/"</span>,
+          <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Grid, Flexbox, Box Alignment: Our New System for Layout"</span>,
+          <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Rachel Andrew"</span>,
+          <span class="hljs-attr">"datetime"</span>: <span class="hljs-string">"2010-12-15T00:00:00-00:00"</span>,
+          <span class="hljs-attr">"comments"</span>: <span class="hljs-number">6</span>,
+          <span class="hljs-attr">"content"</span>: <span class="hljs-string">"[Rachel Andrew](https://rachelandrew.co.uk/) unwraps the new paradigms of web layout, comparing their features and showing how they can free us from grid-based, `div`-infested frameworks. Beautifully wrapped boxes look lovely under the Christmas tree, but we need to think and break out of them.\n"</span>,
+          <span class="hljs-attr">"site"</span>: {
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+            <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+            <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+            <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+            <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+          }
+        },
+        {
+          <span class="hljs-attr">"theme"</span>: <span class="hljs-string">"day-15"</span>,
+          <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/2015/grid-flexbox-box-alignment-our-new-system-for-layout/"</span>,
+          <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Grid, Flexbox, Box Alignment: Our New System for Layout"</span>,
+          <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Rachel Andrew"</span>,
+          <span class="hljs-attr">"datetime"</span>: <span class="hljs-string">"2010-12-15T00:00:00-00:00"</span>,
+          <span class="hljs-attr">"comments"</span>: <span class="hljs-number">6</span>,
+          <span class="hljs-attr">"content"</span>: <span class="hljs-string">"[Rachel Andrew](https://rachelandrew.co.uk/) unwraps the new paradigms of web layout, comparing their features and showing how they can free us from grid-based, `div`-infested frameworks. Beautifully wrapped boxes look lovely under the Christmas tree, but we need to think and break out of them.\n"</span>,
+          <span class="hljs-attr">"site"</span>: {
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+            <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+            <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+            <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+            <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+          }
+        },
+        {
+          <span class="hljs-attr">"theme"</span>: <span class="hljs-string">"day-15"</span>,
+          <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/2015/grid-flexbox-box-alignment-our-new-system-for-layout/"</span>,
+          <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Grid, Flexbox, Box Alignment: Our New System for Layout"</span>,
+          <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Rachel Andrew"</span>,
+          <span class="hljs-attr">"datetime"</span>: <span class="hljs-string">"2010-12-15T00:00:00-00:00"</span>,
+          <span class="hljs-attr">"comments"</span>: <span class="hljs-number">6</span>,
+          <span class="hljs-attr">"content"</span>: <span class="hljs-string">"[Rachel Andrew](https://rachelandrew.co.uk/) unwraps the new paradigms of web layout, comparing their features and showing how they can free us from grid-based, `div`-infested frameworks. Beautifully wrapped boxes look lovely under the Christmas tree, but we need to think and break out of them.\n"</span>,
+          <span class="hljs-attr">"site"</span>: {
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+            <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+            <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+            <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+            <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+          }
+        }
+      ]
+    },
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  },
+  <span class="hljs-attr">"@section--authors"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"a"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"A"</span>,
+    <span class="hljs-attr">"component"</span>: <span class="hljs-string">"grid--authors"</span>,
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  },
+  <span class="hljs-attr">"@section--loading"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"loading"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Loading"</span>,
+    <span class="hljs-attr">"mods"</span>: [
+      <span class="hljs-string">"loading"</span>
+    ],
+    <span class="hljs-attr">"component"</span>: <span class="hljs-string">"activity"</span>,
+    <span class="hljs-attr">"site"</span>: {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"24 ways"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"24ways"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
+      <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
+      <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+    }
+  }
+}</pre>
     </code>
     
 </div>
@@ -647,7 +809,7 @@
 
 <span class="hljs-comment">// Section - Topic</span>
 <span class="hljs-selector-class">.c-section--topic</span> {
-  <span class="hljs-selector-class">.s-prose</span> {
+  <span class="hljs-selector-class">.c-section__main</span> {
     <span class="hljs-attribute">display</span>: flex;
     <span class="hljs-attribute">flex-direction</span>: row;
   }
@@ -1318,30 +1480,6 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="top-nav" data-pjax>
-                <span>Top Nav</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="topics-nav" data-pjax>
                 <span>Topics Nav</span>
                 
@@ -1506,6 +1644,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="embed" data-pjax>
+                <span>Embed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

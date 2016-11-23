@@ -1,6 +1,7 @@
 .c-preface {
   overflow: hidden;
-  padding: $space-xxlarge $space-large $space-medium;
+  min-height: 9rem;
+  padding: $space-xlarge $space-large $space-medium;
   background-color: palette(primary, dark);
   background-image: inline('diamond.svg');
   background-repeat: repeat;
