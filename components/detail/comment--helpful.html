@@ -384,26 +384,24 @@ RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-CSS FileBrowser-code">
-                                <pre>:root {
-  --comment-avatar--small: map(sizes, large);
-  --comment-avatar--large: map(sizes, xlarge);
-}
+                                <pre>$comment-avatar--small: map(sizes, large);
+$comment-avatar--large: map(sizes, xlarge);
 
 .c-comment {
   position: relative;
   margin-bottom: map(spaces, large);
   padding: map(spaces, large);
-  padding-left: var(--comment-avatar--small);
+  padding-left: $comment-avatar--small;
   background-color: white;
-  box-shadow: 1px 1px 0 var(--prose-color--shadow);
+  box-shadow: 1px 1px 0 $prose-color--shadow;
 
   @media (--from-medium-screen) {
-    padding-left: var(--comment-avatar--large);
+    padding-left: $comment-avatar--large;
   }
 
   &amp;.c-comment--unhelpful {
     background-color: transparent;
-    box-shadow: 0 0 0 1px var(--prose-color--shadow);
+    box-shadow: 0 0 0 1px $prose-color--shadow;
   }
 
   .c-avatar {
@@ -434,22 +432,10 @@ RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
 .c-comment__meta {
   @apply --typeset-label;
 
-  @media --from-small-screen {
+  @media (--from-small-screen) {
     position: absolute;
     top: 1.75rem;
     right: map(spaces, large);
-  }
-
-  a.c-comment__permalink {
-    color: var(--color-ui-link);
-
-    &amp;:hover {
-      color: var(--color-ui-link--hover);
-    }
-
-    &amp;:active {
-      color: var(--color-ui-link--active);
-    }
   }
 }
 
@@ -459,7 +445,7 @@ RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
 
 .c-comment__footer {
   @apply --typeset-label;
-  border-top: 1px solid var(--prose-color--shadow);
+  border-top: 1px solid $prose-color--shadow;
   padding-top: map(spaces, medium);
   text-align: right;
 }
@@ -479,7 +465,7 @@ RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.5 KB</span>
+                    <span class="Meta-value">1.3 KB</span>
                 </li>
             </ul>
         </div>

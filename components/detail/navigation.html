@@ -431,22 +431,22 @@
                             <code class="Code Code--lang-CSS FileBrowser-code">
                                 <pre>.c-navigation {
   z-index: map(layers, modal);
-  background-color: var(--navigation-color);
+  background-color: $navigation-color;
 
   [data-menu-expanded] &amp; {
     position: fixed;
-    transition-duration: var(--navigation-duration);
+    transition-duration: $navigation-duration;
     transition-timing-function: ease-out;
   }
 
   [data-menu-expanded=true] &amp; {
-    transition-delay: var(--banner-duration);
+    transition-delay: $banner-duration;
   }
 
   @media (--upto-medium-screen) {
     [data-menu-expanded] &amp; {
       overflow: hidden;
-      top: var(--banner-height--small);
+      top: $banner-height--small;
       width: 100%;
       transition-property: max-height;
     }
@@ -457,30 +457,30 @@
 
     [data-menu-expanded=true] &amp; {
       max-height: 32rem;
-      box-shadow: 0 8px 8px 0 var(--navigation-color--shadow);
+      box-shadow: 0 8px 8px 0 $navigation-color--shadow;
     }
   }
 
   @media (--from-medium-screen) {
     .no-js &amp; {
-      margin-right: var(--navigation-width--large);
+      margin-right: $navigation-width--large;
     }
 
     [data-menu-expanded] &amp; {
       top: 0;
       right: 0;
       bottom: 0;
-      padding: 0 var(--navigation-width--large) 0 0;
+      padding: 0 $navigation-width--large 0 0;
       transition-property: width;
     }
 
     [data-menu-expanded=false] &amp; {
-      width: var(--navigation-width--large);
+      width: $navigation-width--large;
     }
 
     [data-menu-expanded=true] &amp; {
       width: 22.5em;
-      box-shadow: 0 0 8px 0 var(--navigation-color--shadow);
+      box-shadow: 0 0 8px 0 $navigation-color--shadow;
     }
   }
 
@@ -499,7 +499,7 @@
 
   @media (--from-medium-screen) {
     height: 100%;
-    box-shadow: inset -1px 0 0 var(--navigation-color--offset);
+    box-shadow: inset -1px 0 0 $navigation-color--offset;
   }
 }
 
@@ -514,9 +514,9 @@
   left: 0;
   opacity: 0;
   z-index: map(layers, backdrop);
-  transition: opacity var(--navigation-duration) ease-in;
-  background-color: var(--navigation-color--backdrop);
-  backdrop-filter: blur(1px);
+  transition: opacity $navigation-duration ease-in;
+  background-color: $navigation-color--backdrop;
+  backdrop-filter: blur(2px);
   pointer-events: none;
 }
 

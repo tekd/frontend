@@ -401,7 +401,7 @@ server.on('listening', () =&gt; {
 .token.operator,
 .token.prolog,
 .token.punctuation {
-  color: var(--color-neutral--dark);
+  color: map(colors, neutral, dark);
 }
 
 .token.comment {
