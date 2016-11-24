@@ -259,6 +259,52 @@
     <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
     <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
     <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  },
+  <span class="hljs-attr">"theme"</span>: {
+    <span class="hljs-attr">"year"</span>: [
+      <span class="hljs-number">348</span>,
+      <span class="hljs-number">344</span>,
+      <span class="hljs-number">340</span>,
+      <span class="hljs-number">336</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">328</span>,
+      <span class="hljs-number">324</span>,
+      <span class="hljs-number">320</span>,
+      <span class="hljs-number">316</span>,
+      <span class="hljs-number">312</span>,
+      <span class="hljs-number">308</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">300</span>,
+      <span class="hljs-number">296</span>,
+      <span class="hljs-number">292</span>,
+      <span class="hljs-number">288</span>
+    ],
+    <span class="hljs-attr">"day"</span>: [
+      <span class="hljs-number">360</span>,
+      <span class="hljs-number">353</span>,
+      <span class="hljs-number">346</span>,
+      <span class="hljs-number">339</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">325</span>,
+      <span class="hljs-number">318</span>,
+      <span class="hljs-number">311</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">397</span>,
+      <span class="hljs-number">290</span>,
+      <span class="hljs-number">283</span>,
+      <span class="hljs-number">276</span>,
+      <span class="hljs-number">269</span>,
+      <span class="hljs-number">262</span>,
+      <span class="hljs-number">255</span>,
+      <span class="hljs-number">248</span>,
+      <span class="hljs-number">241</span>,
+      <span class="hljs-number">234</span>,
+      <span class="hljs-number">227</span>,
+      <span class="hljs-number">220</span>,
+      <span class="hljs-number">213</span>,
+      <span class="hljs-number">206</span>,
+      <span class="hljs-number">199</span>
+    ]
   }
 }</pre>
     </code>
@@ -276,294 +322,296 @@
             <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
             <select class="FileBrowser-select" id="filebrowser-select">
                 
-                <option value="file-273cc8b0d78f890ad121127d03d2511c">prose.scss</option>
+                <option value="file-faf05cee348c9c5e887856742c77ddb5">prose.css</option>
                 
             </select>
         </div>
 
         
-        <div class="FileBrowser-item is-active" id="file-273cc8b0d78f890ad121127d03d2511c" data-role="resource-preview">
+        <div class="FileBrowser-item is-active" id="file-faf05cee348c9c5e887856742c77ddb5" data-role="resource-preview">
             <ul class="Meta">
                 <li class="Meta-item">
                     <strong class="Meta-key">Content:</strong>
                     <span class="Meta-value">
                         <div class="FileBrowser-itemPreview">
                             
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre><span class="hljs-selector-class">.s-prose</span> {
-  @<span class="hljs-keyword">include</span> typeset(prose, 2);
+                            <code class="Code Code--lang-CSS FileBrowser-code">
+                                <pre>.s-prose {
+  @apply --typeset-prose;
 
-  <span class="hljs-selector-class">.caps</span> {
-    <span class="hljs-attribute">font-variant</span>: lining-nums small-caps;
-    <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.0625em</span>;
+  .caps {
+    font-variant: lining-nums small-caps;
   }
 
-  <span class="hljs-selector-class">.caption</span> {
-    @<span class="hljs-keyword">include</span> typeset(caption);
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.9</span>;
+  .caption {
+    @apply --typeset-caption;
+    opacity: 0.9;
   }
 
-  <span class="hljs-selector-class">.lede</span> {
-    @<span class="hljs-keyword">include</span> typeset(lede);
-    <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">top</span>: (<span class="hljs-variable">$space-xsmall</span> * -<span class="hljs-number">1</span>);
+  .lede {
+    @apply --typeset-lede;
+    position: relative;
+    top: calc(map(spaces, xsmall) * -1);
   }
 
   &gt; * {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.75em</span>;
+    margin-bottom: 0.75em;
   }
 
-  <span class="hljs-selector-tag">strong</span>,
-  <span class="hljs-selector-tag">dt</span> {
-    <span class="hljs-attribute">color</span>: initial;
+  strong,
+  dt {
+    font-family: map(fonts, family-sans);
+    color: initial;
+    opacity: 0.8;
   }
 
-  <span class="hljs-selector-tag">ol</span>,
-  <span class="hljs-selector-tag">ul</span> {
-    <span class="hljs-attribute">list-style-position</span>: inside;
+  ol,
+  ul {
+    list-style-position: inside;
 
-    @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-      <span class="hljs-attribute">list-style-position</span>: outside;
+    @media (--from-large-screen) {
+      list-style-position: outside;
     }
   }
 
-  <span class="hljs-selector-tag">ol</span> <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">list-style-type</span>: decimal;
+  ol li {
+    list-style-type: decimal;
   }
 
-  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">list-style</span>: none outside;
-    <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">1em</span>;
+  ul li {
+    list-style: none outside;
+    position: relative;
+    padding-left: 1em;
 
-    @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-      <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
+    @media (--from-large-screen) {
+      padding-left: 0;
     }
 
     &amp;::before {
-      <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color-text</span>;
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">0.4375em</span>;
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">0.4375em</span>;
-      <span class="hljs-attribute">position</span>: absolute;
-      <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">top</span>: <span class="hljs-number">0.5em</span>;
-      <span class="hljs-attribute">transform</span>: rotate(<span class="hljs-number">45deg</span>);
-      <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>;
+      content: '';
+      background-color: var(--color-text);
+      width: 0.4375em;
+      height: 0.4375em;
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      transform: rotate(45deg);
+      transform-origin: 50% 50%;
 
-      @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-        <span class="hljs-attribute">left</span>: -<span class="hljs-number">1.125em</span>;
+      @media (--from-large-screen) {
+        left: -1.125em;
       }
     }
 
-    <span class="hljs-selector-tag">li</span> {
-      <span class="hljs-attribute">list-style-type</span>: circle;
+    li {
+      list-style-type: circle;
     }
   }
 
-  <span class="hljs-selector-tag">dt</span> {
-    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+  dt {
+    font-weight: 700;
   }
 
-  <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.25em</span>;
+  li {
+    margin-bottom: 0.25em;
   }
 
-  <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">li</span>,
-  <span class="hljs-selector-tag">dd</span> {
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2em</span>;
+  li li,
+  dd {
+    margin-left: 2em;
   }
 
-  <span class="hljs-selector-tag">li</span> &gt; *,
-  <span class="hljs-selector-tag">dd</span> &gt; * {
-    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
+  li &gt; *,
+  dd &gt; * {
+    margin-top: 0;
   }
 
-  <span class="hljs-selector-tag">pre</span>,
-  <span class="hljs-selector-tag">code</span> {
-    <span class="hljs-attribute">outline</span>: <span class="hljs-number">0.125em</span> solid rgba(white, <span class="hljs-number">0.5</span>);
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">0.25em</span>;
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0.25em</span>;
-    <span class="hljs-attribute">background-color</span>: rgba(white, <span class="hljs-number">0.5</span>);
+  pre,
+  code {
+    margin: -0.125em 0.125em;
+    padding: 0.0625em 0.125em;
+    background-color: color(white a(50%));
+    font-variant: lining-nums tabular-nums;
   }
 
-  <span class="hljs-selector-tag">pre</span> {
-    <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0.25em</span>;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0</span>;
+  pre {
+    margin: 1em -0.5em;
+    padding: 0.25em 0.5em;
 
-    <span class="hljs-selector-tag">code</span> {
-      <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">background-color</span>: transparent;
-      <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+    code {
+      margin: 0;
+      background-color: transparent;
+      padding: 0;
     }
   }
 }
 
-<span class="hljs-selector-class">.s-prose--article</span> {
-  @<span class="hljs-keyword">include</span> typeset(prose, fluid);
+.s-prose--article {
+  @apply --typescale-prose;
 
-  <span class="hljs-selector-tag">pre</span> {
-    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.875em</span>;
-    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.5</span>;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">1em</span> -<span class="hljs-number">0.25em</span> <span class="hljs-number">2em</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">0.25em</span>;
+  .lede {
+    color: var(--color-year--dark);
   }
 
-  <span class="hljs-selector-tag">blockquote</span> {
-    <span class="hljs-attribute">border-left</span>: <span class="hljs-number">0.25rem</span> solid <span class="hljs-variable">$prose-color--rule</span>;
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1.5em</span>;
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">1em</span>;
+  blockquote {
+    border-left: 0.25rem solid var(--prose-color--rule);
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1em;
 
-    <span class="hljs-selector-tag">p</span> {
-      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.25em</span>;
-      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.25</span>;
-      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.75em</span>;
+    p {
+      font-size: 1.125em;
+      line-height: 1.25;
+      margin-bottom: 0.75em;
     }
 
-    <span class="hljs-selector-tag">footer</span>,
-    <span class="hljs-selector-tag">cite</span> {
-      @<span class="hljs-keyword">include</span> typeset(caption);
-    }
-  }
-
-  <span class="hljs-selector-tag">figure</span>,
-  <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.image</span> { <span class="hljs-comment">// ! Legacy</span>
-    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$space-large</span> (<span class="hljs-variable">$space-large</span> * -<span class="hljs-number">1</span>);
-
-    @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-      <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">margin-right</span>: -<span class="hljs-number">7.6667%</span>;
-    }
-
-    @<span class="hljs-keyword">media</span> screen and (min-width: 60em) {
-      <span class="hljs-attribute">margin-right</span>: -<span class="hljs-number">25%</span>;
-    }
-
-    <span class="hljs-selector-tag">img</span> {
-      <span class="hljs-attribute">display</span>: block;
-      <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
+    footer,
+    cite {
+      @apply --typeset-caption;
     }
   }
 
-  <span class="hljs-selector-tag">figcaption</span>,
-  <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.image</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.caption</span> { <span class="hljs-comment">// ! Legacy</span>
-    @<span class="hljs-keyword">include</span> typeset(caption);
-    <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$prose-color--rule</span>;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$space-large</span>;
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$space-large</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-number">0</span>;
+  figure,
+  p.image { /* ! Legacy */
+    margin: map(spaces, large) calc(map(spaces, large) * -1);
 
-    @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    @media (--from-large-screen) {
+      margin-left: 0;
+      margin-right: -7.6667%;
+    }
+
+    @media (--from-xlarge-screen) {
+      margin-right: -25%;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
   }
 
-  <span class="hljs-selector-tag">a</span> {
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$prose-color--rule</span>;
+  figcaption,
+  p.image span.caption { /* ! Legacy */
+    @apply --typeset-caption;
+    display: block;
+    border-bottom: 1px solid var(--prose-color--rule);
+    margin-right: map(spaces, large);
+    margin-left: map(spaces, large);
+    padding: map(spaces, medium) 0;
 
-    @<span class="hljs-keyword">media</span> print {
-      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> dotted <span class="hljs-number">#999</span>;
+    @media (--from-large-screen) {
+      margin: 0;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid var(--prose-color--rule);
+
+    @media print {
+      border-bottom: 1px dotted #999;
 
       &amp;::after {
-        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.75em</span>;
-        <span class="hljs-attribute">content</span>: <span class="hljs-string">' ['</span> attr(href) <span class="hljs-string">']'</span>;
+        font-size: 0.75em;
+        content: ' [' attr(href) ']';
       }
     }
   }
 
-  <span class="hljs-selector-tag">h2</span>,
-  <span class="hljs-selector-tag">h3</span>,
-  <span class="hljs-selector-tag">h4</span>,
-  <span class="hljs-selector-tag">h5</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span> <span class="hljs-number">0</span> <span class="hljs-number">0.25em</span>;
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply --typeset-heading;
+    margin: 2em 0 0.25em;
   }
 
-  <span class="hljs-selector-tag">h2</span> {
-    @<span class="hljs-keyword">include</span> typeset(heading, 3);
-    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+  h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-year--dark);
   }
 
-  <span class="hljs-selector-tag">h3</span> {
-    @<span class="hljs-keyword">include</span> typeset(heading, 2);
-    <span class="hljs-attribute">color</span>: palette(primary, dark);
+  h3,
+  h4 {
+    color: var(--color-day--dark);
   }
 
-  <span class="hljs-selector-tag">h4</span> {
-    @<span class="hljs-keyword">include</span> typeset(heading, 1);
-    <span class="hljs-attribute">color</span>: rgba(palette(primary, dark), <span class="hljs-number">0.9</span>);
-    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+  h3 {
+    font-size: 1.25em;
   }
 
-  <span class="hljs-selector-tag">h5</span> {
-    @<span class="hljs-keyword">include</span> typeset(heading, 1);
-    <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.025em</span>;
-    <span class="hljs-attribute">text-transform</span>: uppercase;
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.9</span>;
+  h4 {
+    font-size: 1em;
+    font-weight: 700;
   }
 
-  <span class="hljs-selector-tag">hr</span> {
-    <span class="hljs-attribute">text-align</span>: center;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span> <span class="hljs-number">0</span> <span class="hljs-number">4em</span>;
+  h5 {
+    font-size: 1em;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  hr {
+    text-align: center;
+    margin: 2em 0 4em;
 
     &amp;::after {
-      <span class="hljs-attribute">color</span>: rgba(<span class="hljs-variable">$color-text</span>, <span class="hljs-number">0.25</span>);
-      <span class="hljs-attribute">content</span>: <span class="hljs-string">'\25C6 \25C6 \25C6'</span>;
-      <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-variable">$space-medium</span>;
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+      color: color(var(--color-text) a(25%));
+      content: '\25C6 \25C6 \25C6';
+      letter-spacing: map(spaces, medium);
+      height: 0;
     }
   }
 
-  <span class="hljs-selector-tag">table</span> {
-    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">1.5em</span> <span class="hljs-number">0</span> <span class="hljs-number">1.5em</span> -<span class="hljs-number">0.5em</span>; <span class="hljs-comment">// 24px 0 24px -8px</span>
+  table {
+    font-size: 1rem;
+    margin: 1.5em 0 1.5em -0.5em; /* 24px 0 24px -8px */
 
-    <span class="hljs-selector-tag">ol</span>,
-    <span class="hljs-selector-tag">ul</span> {
-      <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1.5em</span>;
+    ol,
+    ul {
+      margin-left: 1.5em;
     }
   }
 
-  <span class="hljs-selector-tag">caption</span> {
-    @<span class="hljs-keyword">include</span> typeset(caption);
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-neutral</span>;
-    <span class="hljs-selector-tag">caption</span>-side: bottom;
-    <span class="hljs-attribute">text-align</span>: left;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">1rem</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 16px 0</span>
+  caption {
+    @apply --typeset-caption;
+    color: var(--color-neutral);
+    caption-side: bottom;
+    text-align: left;
+    margin: 1rem 0;
   }
 
-  <span class="hljs-selector-tag">td</span>,
-  <span class="hljs-selector-tag">th</span> {
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$prose-color--rule</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25em</span> <span class="hljs-number">2em</span> <span class="hljs-number">0.25em</span> <span class="hljs-number">0.5em</span>; <span class="hljs-comment">// 4px 32px 4px 4px</span>
+  td,
+  th {
+    border-bottom: 1px solid var(--prose-color--rule);
+    padding: 0.25em 2em 0.25em 0.5em; /* 4px 32px 4px 4px */
   }
 
-  <span class="hljs-selector-tag">th</span> {
-    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.25</span>;
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$prose-color--background</span>;
+  th {
+    line-height: 1.25;
+    background-color: var(--prose-color--background);
   }
 
-  <span class="hljs-comment">// Represents key press within user input sequence</span>
-  <span class="hljs-selector-tag">kbd</span> &gt; <span class="hljs-selector-tag">kbd</span> {
-    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">90%</span>;
-    <span class="hljs-attribute">background-color</span>: white;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0.125rem</span>;
-    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$prose-color--shadow</span>;
-    <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">$border-radius-default</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25rem</span> <span class="hljs-number">0.5rem</span>; <span class="hljs-comment">// 4px 8px</span>
-    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$prose-color--shadow</span>;
+  /* Represents key press within user input sequence. */
+  kbd &gt; kbd {
+    font-size: 90%;
+    background-color: white;
+    margin: 0 0.125rem;
+    border: 1px solid var(--prose-color--shadow);
+    border-radius: map(borders, radius-default);
+    padding: 0.25rem 0.5rem; /* 4px 8px */
+    box-shadow: 0 1px 0 var(--prose-color--shadow);
   }
 
-  <span class="hljs-comment">// Represents menu selection within user input sequence</span>
-  <span class="hljs-selector-tag">kbd</span> &gt; <span class="hljs-selector-tag">samp</span> {
-    <span class="hljs-attribute">font-family</span>: inherit;
-    <span class="hljs-attribute">background-color</span>: white;
-    <span class="hljs-attribute">margin</span>: -<span class="hljs-number">0.375rem</span> -<span class="hljs-number">0.625rem</span>; <span class="hljs-comment">// -6px -10px</span>
-    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.375rem</span> <span class="hljs-number">0.625rem</span>; <span class="hljs-comment">// 6px 10px</span>
-    <span class="hljs-attribute">box-shadow</span>: none;
+  /* Represents menu selection within user input sequence. */
+  kbd &gt; samp {
+    font-family: inherit;
+    background-color: white;
+    margin: -0.375rem -0.625rem; /* -6px -10px */
+    border-radius: 0;
+    padding: 0.375rem 0.625rem; /* 6px 10px */
+    box-shadow: none;
   }
 }
 </pre>
@@ -574,15 +622,15 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/prose/prose.scss"><span>/components/raw/prose/prose.scss</span></a></span>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/prose/prose.css"><span>/components/raw/prose/prose.css</span></a></span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/scopes/prose/prose.scss</span>
+                    <span class="Meta-value">src/components/scopes/prose/prose.css</span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">4.6 KB</span>
+                    <span class="Meta-value">4.7 KB</span>
                 </li>
             </ul>
         </div>
@@ -696,30 +744,6 @@
             
             
             
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="activity" data-pjax>
-                <span>Activity</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
     
         
         
@@ -1514,21 +1538,10 @@
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-article-template">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="article-template" data-pjax>
                 <span>Article Template</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--default" data-pjax>
-                <span>Default</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1545,35 +1558,6 @@
 
 
             </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--comments" data-pjax>
-                <span>Comments</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     
@@ -1887,21 +1871,10 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Helpers</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/sass" data-pjax>
-                <span>Sass helpers</span>
+            <a class="Tree-entityLink" href="../../docs/styleguide" data-pjax>
+                <span>Styleguide</span>
                 
             </a>
         </li>
@@ -1910,61 +1883,10 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/tokens" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/tokens" data-pjax>
                 <span>Design tokens</span>
                 
             </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-styleguide">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Styleguide</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/colour" data-pjax>
-                <span>Colour</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/typography" data-pjax>
-                <span>Typography</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/iconography" data-pjax>
-                <span>Iconography</span>
-                
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     

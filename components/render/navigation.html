@@ -16,7 +16,19 @@
 
   </a></div>
 
-<div class="c-navigation__drawer" id="navigation__drawer"><ul class="c-topics-nav"><li class="c-topics-nav__item">
+<div class="c-navigation__drawer" id="navigation__drawer"><form class="c-search" role="search" id="search" action="/pages/search/">
+  <fieldset class="c-field">
+    <legend class="u-hidden">Search 24 ways</legend>
+    <label class="u-hidden" for="q">Keywords</label>
+    <input class="c-field__input" type="search" id="q" name="q" placeholder="e.g. CSS, Design, Research&#8230;"/>
+    <button class="c-field__button" type="submit"><svg class="c-field__icon" width="20" height="20" viewBox="0 0 200 200" role="img" aria-labelledby="c-field__icon--search">
+  <title id="c-field__icon--search">Search</title>
+  <path role="presentation" d="M129 121C136 113 140 102 140 90c0-28-22-50-50-50S40 63 40 90s22 50 50 50c12 0 24-4 32-12L158 164l7-7-36-36zM90 130c-22 0-40-18-40-40s18-40 40-40 40 18 40 40-18 40-40 40z"/>
+</svg>
+</button>
+  </fieldset>
+</form>
+<ul class="c-topics-nav"><li class="c-topics-nav__item">
     <a class="c-topics-nav__label" href="/topics/business/">
       
       <svg width="24" height="24" viewBox="0 0 240 240" role="img">
@@ -71,24 +83,9 @@
       UX
     </a>
   </li></ul>
-<form class="c-search" role="search" id="search" action="/pages/search/">
-  <fieldset class="c-field">
-    <legend class="u-hidden">Search 24 ways</legend>
-    <label class="u-hidden" for="q">Keywords</label>
-    <input class="c-field__input" type="search" id="q" name="q" placeholder="e.g. CSS, Design, Research&#8230;"/>
-    <button class="c-field__button" type="submit"><svg class="c-field__icon" width="20" height="20" viewBox="0 0 200 200" role="img" aria-labelledby="c-field__icon--search">
-  <title id="c-field__icon--search">Search</title>
-  <path role="presentation" d="M129 121C136 113 140 102 140 90c0-28-22-50-50-50S40 63 40 90s22 50 50 50c12 0 24-4 32-12L158 164l7-7-36-36zM90 130c-22 0-40-18-40-40s18-40 40-40 40 18 40 40-18 40-40 40z"/>
-</svg>
-</button>
-  </fieldset>
-</form>
-</div><ul class="c-site-nav">
+<ul class="c-site-nav">
   <li class="c-site-nav__item">
     <a class="c-site-nav__label" href="/archives/">Archives</a>
-  </li>
-  <li class="c-site-nav__item">
-    <a class="c-site-nav__label" href="/topics/">Topics</a>
   </li>
   <li class="c-site-nav__item">
     <a class="c-site-nav__label" href="/authors/">Authors</a>
@@ -97,5 +94,6 @@
     <a class="c-site-nav__label" href="/about/">About <span class="u-hidden">24 ways</span></a>
   </li>
 </ul>
+</div>
 </nav>
 

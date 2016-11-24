@@ -9,8 +9,7 @@
     <link rel="dns-prefetch" href="//media.24ways.org"/>
 
     <script>
-      var docEl = document.documentElement;
-      docEl.className = docEl.className.replace('no-js', 'has-js');
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js');
 
       function downloadJSAtOnload() {
         var element = document.createElement("script");
@@ -19,13 +18,7 @@
         document.body.dataset.menuExpanded = 'false';
       }
 
-      if (document.querySelector && docEl.classList && window.addEventListener) {
-        docEl.className += ' js-enhanced';
-        var enhanced = true;
-        window.addEventListener("load", downloadJSAtOnload, false);
-      } else {
-        var enhanced = false;
-      }
+      window.addEventListener("load", downloadJSAtOnload, false);
     </script>
 
     <link rel="shortcut icon" href="../../assets/icons/icon.ico" type="image/ico"/>
@@ -36,6 +29,16 @@
     <link rel="alternate" href="https://feeds.feedburner.com/24ways" type="application/rss+xml"/>
     <link rel="stylesheet" href="../../assets/styles/app.css"/>
 
+    <style>
+      :root {
+        --color-year: hsl(304, 100%, 16%);
+        --color-year--dark: hsl(304, 100%, 8%);
+        --color-day: hsl(283, 80%, 60%);
+        --color-day--dark: hsl(283, 100%, 24%);
+        --color-day--light: hsl(283, 60%, 96%);
+      }
+    </style>
+
     <meta charset="utf-8"/>
     <meta name="robots" content="index, follow"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -45,18 +48,72 @@
     <meta name="twitter:creator" content="@24ways"/>
     <meta name="twitter:card" content="summary"/>
 
-    <title>Comments &#9670; 24 ways</title>
+    <title>2 Comments &#9670; 24 ways</title>
   </head>
 
-  <body class="t-year-2015">
+  <body>
     <section class="c-section" id="comments">
   <header class="c-section__header">
-    <h1 class="c-section__title">Comments</h1>
+    <h1 class="c-section__title">2 Comments</h1>
   </header>
   <div class="c-section__main"><div class="s-prose">
-      <p><a class="c-continue" href="/components/preview/article-template--comments" data-replace data-interaction data-target="#comments">View 11 readers’ comments</a></p>
+      <p>Comments are ordered by helpfulness, as indicated by you. Help us pick out the gems and discourage asshattery by voting on notable comments.</p>
+<p><a class="c-continue" href="#comment-form">Got something to add? Leave a comment below</a></p>
 
-    </div></div>
+    </div><article class="c-comment h-entry" id="c0001">
+  <header class="c-comment__header">
+    <h1 class="c-comment__title  p-name h-card">
+      <a class="p-author u-url" href="https://adactio.com/">
+        <img class="c-avatar  u-photo" src="https://www.gravatar.com/avatar/5ad82c5ba0264363974af89deb743c20?s=96" width="64" height="64" alt=""/>
+
+        Jeremy Keith
+      </a>
+    </h1>
+    <p class="c-comment__meta">
+      <a class="c-comment__permalink" rel="bookmark" href="#c0001" title="Permalink to this comment"><time class="dt-published" datetime="2012-12-01T12:24:48-00:00">1 December 2012</time></a>
+    </p>
+  </header>
+  <div class="c-comment__main s-prose  e-content">
+    <p>This is great stuff! I’m terrible at regular expressions—my brain just doesn’t seem to want to remember any of it—but this article contains the clearest description of regular expressions I’ve come across.</p>
+<p>I thought I’d share a useful little rewrite rule that I use for cache-busting JavaScript and CSS files. You know the story: you make a change in your JavaScript or CSS and you want to let the browser know that it should grab the new version instead of using what it’s got in its cache.</p>
+<p>Now, I could potentially just use a query string when I point to my JS and CSS files ( e.g. /js/myscript.js?20131201 ) …but that can cause issues with proxy servers.</p>
+<p>Instead what I what I do is point to files like this: <code>/js/myscript.20131201.js</code></p>
+<p>Then I need to tell the server to look for the <strong>actual</strong> file in <code>/js/myscript.js</code></p>
+<p>Here’s the rewrite rule I’m using:</p>
+<pre><code>RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
+</code></pre>
+<p>It’s basically telling the server that, if the JS or CSS file doesn’t actually exist and it matches the pattern of having two dots before the file extension (with only numbers after the first dot), to look at the bit before the first dot, and look at the bit after the second dot, but to ignore the bit in between (the numbers).</p>
+<p>The server serves up the right file, but browsers fetch the new version because, as far as they’re concerned, this looks like a brand new file that they haven’t got in their cache.</p>
+<p>That was a terrible explanation, wasn’t it? I now have even more appreciation for how clearly and concise this article is.</p>
+
+  </div>
+  <footer class="c-comment__footer">
+    <p>This comment was <a href="/vote/up/c0001/">helpful</a> / <a href="/vote/down/c0001/">unhelpful</a></p>
+  </footer>
+</article>
+<article class="c-comment c-comment--unhelpful h-entry" id="c0002">
+  <header class="c-comment__header">
+    <h1 class="c-comment__title  p-name h-card">
+      <a class="p-author u-url" href="https://paulrobertlloyd.com/">
+        <img class="c-avatar  u-photo" src="https://www.gravatar.com/avatar/15091a37bacfa4bdd011282627eaca2b?s=96" width="64" height="64" alt=""/>
+
+        Paul Robert Lloyd
+      </a>
+    </h1>
+    <p class="c-comment__meta">
+      <a class="c-comment__permalink" rel="bookmark" href="#c0002" title="Permalink to this comment"><time class="dt-published" datetime="2012-12-12T12:24:48-00:00">12 December 2012</time></a>
+    </p>
+  </header>
+  <div class="c-comment__main s-prose  e-content">
+    <p>You fool! Everything you’ve written here is wrong!</p>
+
+  </div>
+  <footer class="c-comment__footer">
+    <p>This comment was <a href="/vote/up/c0002/">helpful</a> / <a href="/vote/down/c0002/">unhelpful</a></p>
+  </footer>
+</article>
+</div>
 </section>
 
   </body>

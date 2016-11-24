@@ -319,15 +319,235 @@
             <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
             <select class="FileBrowser-select" id="filebrowser-select">
                 
-                <option value="file-a9435db9f8173a578ecac8e57691c2a9">summary.js</option>
+                <option value="file-31fa778e173389605ea5f6f24d786081">summary.css</option>
                 
-                <option value="file-b11f7a51c1519f91e4234c426beacb71">summary.scss</option>
+                <option value="file-a9435db9f8173a578ecac8e57691c2a9">summary.js</option>
                 
             </select>
         </div>
 
         
-        <div class="FileBrowser-item is-active" id="file-a9435db9f8173a578ecac8e57691c2a9" data-role="resource-preview">
+        <div class="FileBrowser-item is-active" id="file-31fa778e173389605ea5f6f24d786081" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-CSS FileBrowser-code">
+                                <pre>:root {
+  --summary__author-size: map(sizes, xlarge);
+}
+
+.c-summary {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  padding: map(spaces, medium) calc(map(spaces, large) - map(spaces, xsmall));
+  background-color: white;
+  box-shadow: 1px 1px 0 var(--prose-color--shadow);
+
+  @media print {
+    padding-bottom: 0;
+    height: auto !important;
+    min-height: 12em;
+    page-break-inside: avoid;
+  }
+
+  a {
+    position: relative;
+    z-index: calc(map(layers, default) + 1);
+  }
+
+  a.c-summary__link {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: map(layers, default);
+    white-space: nowrap;
+    text-indent: 200%;
+  }
+}
+
+.c-summary__header {
+  margin-bottom: map(spaces, large);
+
+  @media print {
+    border-top: 1px solid black;
+    padding-top: map(spaces, medium);
+  }
+}
+
+.c-summary__title {
+  @apply --typeset-summary-title;
+  padding-right: calc(var(--summary__author-size) - map(spaces, medium));
+}
+
+.c-summary__main {
+  @apply --typeset-prose;
+  margin-bottom: map(spaces, medium);
+  font-size: 0.875rem;
+
+  a {
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: inherit;
+  }
+}
+
+.c-summary__footer {
+  @media screen {
+    margin-top: auto;
+  }
+}
+
+.c-summary__meta {
+  @apply --typeset-label;
+  color: var(--color-neutral--dark);
+
+  .dt-published {
+    margin-right: map(spaces, medium);
+  }
+}
+
+.c-summary__author {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &amp;::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: map(layers, default);
+    border: solid calc(var(--summary__author-size) / 2);
+    border-color: transparent transparent white white;
+  }
+
+  &amp;::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: var(--summary__author-size);
+    width: var(--summary__author-size);
+    background: inline('corner.svg') -0.5em 0 no-repeat;
+    background-size: size('corner.svg');
+  }
+
+  @media print {
+    display: none;
+  }
+
+  a {
+    position: static;
+  }
+
+  img {
+    display: block;
+    height: var(--summary__author-size);
+    width: var(--summary__author-size);
+  }
+
+  span {
+    @apply --hidden;
+  }
+}
+
+@keyframes corner-forward {
+  from {
+    z-index: map(layers, default);
+    background-position: -0.5em;
+  }
+
+  to {
+    z-index: calc(map(layers, default) + 1);
+    background-position: -50.5em;
+  }
+}
+
+@keyframes corner-reverse {
+  from {
+    z-index: calc(map(layers, default) + 1);
+    background-position: -50.5em;
+  }
+
+  to {
+    z-index: map(layers, default);
+    background-position: -0.5em;
+  }
+}
+
+.c-summary:hover {
+  .c-summary__author {
+    &amp;::after {
+      z-index: calc(map(layers, default) + 1);
+      animation: corner-forward 0.15s steps(10);
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+&amp;.js-mouseout {
+  .c-summary__author {
+    &amp;::before {
+      z-index: map(layers, default);
+      animation: corner-reverse 0.15s steps(10);
+    }
+  }
+}
+
+.c-summary--countdown {
+  .c-summary__header {
+    padding-left: calc(map(spaces, large) + map(spaces, xsmall));
+  }
+
+  .dt-published {
+    @apply --typeset-summary-title;
+    font-weight: 400;
+    position: absolute;
+    top: map(spaces, medium);
+    left: calc(map(spaces, medium) + map(spaces, xsmall));
+
+    @media print {
+      top: 1.75rem;
+    }
+
+    span {
+      @apply --hidden;
+    }
+  }
+}
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/summary/summary.css"><span>/components/raw/summary/summary.css</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/common/summary/summary.css</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">3.4 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-a9435db9f8173a578ecac8e57691c2a9" data-role="resource-preview">
             <ul class="Meta">
                 <li class="Meta-item">
                     <strong class="Meta-key">Content:</strong>
@@ -338,7 +558,7 @@
                                 <pre>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 <span class="hljs-meta">  'use strict'</span>;
 
-  <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">document</span>.querySelector || !<span class="hljs-built_in">window</span>.addEventListener || !<span class="hljs-built_in">document</span>.documentElement.classList) {
+  <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">document</span>.documentElement.classList) {
     <span class="hljs-keyword">return</span>;
   }
 
@@ -375,223 +595,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">608 Bytes</span>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="FileBrowser-item" id="file-b11f7a51c1519f91e4234c426beacb71" data-role="resource-preview">
-            <ul class="Meta">
-                <li class="Meta-item">
-                    <strong class="Meta-key">Content:</strong>
-                    <span class="Meta-value">
-                        <div class="FileBrowser-itemPreview">
-                            
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre>$_summary__author-size: <span class="hljs-variable">$size-xlarge</span>;
-
-<span class="hljs-selector-class">.c-summary</span> {
-  <span class="hljs-attribute">display</span>: flex;
-  <span class="hljs-attribute">flex-direction</span>: column;
-  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
-  <span class="hljs-attribute">position</span>: relative;
-  <span class="hljs-attribute">padding</span>: (<span class="hljs-variable">$space-large</span> - <span class="hljs-variable">$space-xsmall</span>);
-  <span class="hljs-attribute">background-color</span>: white;
-  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">1px</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$prose-color--shadow</span>;
-
-  @<span class="hljs-keyword">media</span> print {
-    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">height</span>: auto <span class="hljs-meta">!important</span>;
-    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">12em</span>;
-    <span class="hljs-attribute">page-break-inside</span>: avoid;
-  }
-
-  <span class="hljs-selector-tag">a</span> {
-    <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
-  }
-
-  <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.c-summary__link</span> {
-    <span class="hljs-attribute">overflow</span>: hidden;
-    <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
-    <span class="hljs-attribute">white-space</span>: nowrap;
-    <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">200%</span>;
-  }
-}
-
-<span class="hljs-selector-class">.c-summary__header</span> {
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-large</span>;
-
-  @<span class="hljs-keyword">media</span> print {
-    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">1px</span> solid black;
-    <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$space-medium</span>;
-  }
-}
-
-<span class="hljs-selector-class">.c-summary__title</span> {
-  @<span class="hljs-keyword">include</span> typeset(title, 1);
-  <span class="hljs-attribute">padding-right</span>: $_summary__author-size;
-}
-
-<span class="hljs-selector-class">.c-summary__main</span> {
-  @<span class="hljs-keyword">include</span> typeset(prose, 1);
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-medium</span>;
-
-  <span class="hljs-selector-tag">a</span> {
-    <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.025em</span>;
-    <span class="hljs-attribute">text-transform</span>: uppercase;
-    <span class="hljs-attribute">color</span>: inherit;
-  }
-}
-
-<span class="hljs-selector-class">.c-summary__footer</span> {
-  @<span class="hljs-keyword">media</span> screen {
-    <span class="hljs-attribute">margin-top</span>: auto;
-  }
-}
-
-<span class="hljs-selector-class">.c-summary__meta</span> {
-  @<span class="hljs-keyword">include</span> typeset(label, 1);
-  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color-neutral--dark</span>;
-
-  <span class="hljs-selector-class">.dt-published</span> {
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$space-medium</span>;
-  }
-}
-
-<span class="hljs-selector-class">.c-summary__author</span> {
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">position</span>: absolute;
-  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-
-  &amp;::before {
-    <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
-    <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
-    <span class="hljs-attribute">border</span>: solid ($_summary__author-size / <span class="hljs-number">2</span>);
-    <span class="hljs-attribute">border-color</span>: transparent transparent white white;
-  }
-
-  &amp;::after {
-    <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
-    <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">height</span>: $_summary__author-size;
-    <span class="hljs-attribute">width</span>: $_summary__author-size;
-    <span class="hljs-attribute">background</span>: inline(<span class="hljs-string">'corner.svg'</span>) -<span class="hljs-number">0.5em</span> <span class="hljs-number">0</span> no-repeat;
-    <span class="hljs-attribute">background-size</span>: size(<span class="hljs-string">'corner.svg'</span>);
-  }
-
-  @<span class="hljs-keyword">media</span> print {
-    <span class="hljs-attribute">display</span>: none;
-  }
-
-  <span class="hljs-selector-tag">a</span> {
-    <span class="hljs-attribute">position</span>: static;
-  }
-
-  <span class="hljs-selector-tag">img</span> {
-    <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">height</span>: $_summary__author-size;
-    <span class="hljs-attribute">width</span>: $_summary__author-size;
-  }
-
-  <span class="hljs-selector-tag">span</span> {
-    @<span class="hljs-keyword">include</span> hidden();
-  }
-}
-
-@keyframes corner-forward {
-  from {
-    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">0.5em</span>;
-  }
-
-  to {
-    <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">50.5em</span>;
-  }
-}
-
-@keyframes corner-reverse {
-  from {
-    <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">50.5em</span>;
-  }
-
-  to {
-    <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
-    <span class="hljs-attribute">background-position</span>: -<span class="hljs-number">0.5em</span>;
-  }
-}
-
-<span class="hljs-selector-class">.c-summary</span>:hover {
-  <span class="hljs-selector-class">.c-summary__author</span> {
-    &amp;::after {
-      <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-default</span> + <span class="hljs-number">1</span>);
-      <span class="hljs-attribute">animation</span>: corner-forward <span class="hljs-number">0.15s</span> steps(<span class="hljs-number">10</span>);
-      <span class="hljs-attribute">animation-fill-mode</span>: forwards;
-    }
-  }
-}
-
-&amp;<span class="hljs-selector-class">.js-mouseout</span> {
-  <span class="hljs-selector-class">.c-summary__author</span> {
-    &amp;::before {
-      <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-default</span>;
-      <span class="hljs-attribute">animation</span>: corner-reverse <span class="hljs-number">0.15s</span> steps(<span class="hljs-number">10</span>);
-    }
-  }
-}
-
-<span class="hljs-selector-class">.c-summary--countdown</span> {
-  <span class="hljs-selector-class">.c-summary__header</span> {
-    <span class="hljs-attribute">padding-left</span>: (<span class="hljs-variable">$space-large</span> + <span class="hljs-variable">$space-xsmall</span>);
-  }
-
-  <span class="hljs-selector-class">.dt-published</span> {
-    @<span class="hljs-keyword">include</span> typeset(title, 1, initial);
-    <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">top</span>: (<span class="hljs-variable">$space-medium</span> + <span class="hljs-variable">$space-xsmall</span>);
-    <span class="hljs-attribute">left</span>: (<span class="hljs-variable">$space-medium</span> + <span class="hljs-variable">$space-xsmall</span>);
-
-    @<span class="hljs-keyword">media</span> print {
-      <span class="hljs-attribute">top</span>: <span class="hljs-number">1.75rem</span>;
-    }
-
-    <span class="hljs-selector-tag">span</span> {
-      @<span class="hljs-keyword">include</span> hidden();
-    }
-  }
-}
-</pre>
-                            </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/summary/summary.scss"><span>/components/raw/summary/summary.scss</span></a></span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/common/summary/summary.scss</span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.2 KB</span>
+                    <span class="Meta-value">553 Bytes</span>
                 </li>
             </ul>
         </div>
@@ -696,30 +700,6 @@
             
             
             
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="activity" data-pjax>
-                <span>Activity</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
     
         
         
@@ -1514,21 +1494,10 @@
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-article-template">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="article-template" data-pjax>
                 <span>Article Template</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--default" data-pjax>
-                <span>Default</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1545,35 +1514,6 @@
 
 
             </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--comments" data-pjax>
-                <span>Comments</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     
@@ -1887,21 +1827,10 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Helpers</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/sass" data-pjax>
-                <span>Sass helpers</span>
+            <a class="Tree-entityLink" href="../../docs/styleguide" data-pjax>
+                <span>Styleguide</span>
                 
             </a>
         </li>
@@ -1910,61 +1839,10 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/tokens" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/tokens" data-pjax>
                 <span>Design tokens</span>
                 
             </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-styleguide">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Styleguide</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/colour" data-pjax>
-                <span>Colour</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/typography" data-pjax>
-                <span>Typography</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/iconography" data-pjax>
-                <span>Iconography</span>
-                
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     

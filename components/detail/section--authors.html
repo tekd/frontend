@@ -271,13 +271,19 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span>
     {%- if component -%}
       {% render "@" + component, config %}
-    {%- else -%}
+    {%- endif -%}
     {%- if icon -%}
       {% include icon + ".svg" %}
     {%- endif -%}
+    {%- if content -%}
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
       {{ content | markdown }}
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    {%- endif -%}
+    {%- if comments -%}
+      {%- for comment in comments -%}
+        {% render "<a href="comment">@comment</a>", comment %}
+      {%- endfor -%}
     {%- endif -%}
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
@@ -300,6 +306,52 @@
     <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
     <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
     <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  },
+  <span class="hljs-attr">"theme"</span>: {
+    <span class="hljs-attr">"year"</span>: [
+      <span class="hljs-number">348</span>,
+      <span class="hljs-number">344</span>,
+      <span class="hljs-number">340</span>,
+      <span class="hljs-number">336</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">328</span>,
+      <span class="hljs-number">324</span>,
+      <span class="hljs-number">320</span>,
+      <span class="hljs-number">316</span>,
+      <span class="hljs-number">312</span>,
+      <span class="hljs-number">308</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">300</span>,
+      <span class="hljs-number">296</span>,
+      <span class="hljs-number">292</span>,
+      <span class="hljs-number">288</span>
+    ],
+    <span class="hljs-attr">"day"</span>: [
+      <span class="hljs-number">360</span>,
+      <span class="hljs-number">353</span>,
+      <span class="hljs-number">346</span>,
+      <span class="hljs-number">339</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">325</span>,
+      <span class="hljs-number">318</span>,
+      <span class="hljs-number">311</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">397</span>,
+      <span class="hljs-number">290</span>,
+      <span class="hljs-number">283</span>,
+      <span class="hljs-number">276</span>,
+      <span class="hljs-number">269</span>,
+      <span class="hljs-number">262</span>,
+      <span class="hljs-number">255</span>,
+      <span class="hljs-number">248</span>,
+      <span class="hljs-number">241</span>,
+      <span class="hljs-number">234</span>,
+      <span class="hljs-number">227</span>,
+      <span class="hljs-number">220</span>,
+      <span class="hljs-number">213</span>,
+      <span class="hljs-number">206</span>,
+      <span class="hljs-number">199</span>
+    ]
   }
 }</pre>
     </code>
@@ -317,174 +369,117 @@
             <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
             <select class="FileBrowser-select" id="filebrowser-select">
                 
-                <option value="file-6aec81858022ee2cfc081f6754ead5ce">section.js</option>
-                
-                <option value="file-9ac1ffc066ba271123eb02de197ed41f">section.scss</option>
+                <option value="file-16a856f66064574b701304fa2a638d4b">section.css</option>
                 
             </select>
         </div>
 
         
-        <div class="FileBrowser-item is-active" id="file-6aec81858022ee2cfc081f6754ead5ce" data-role="resource-preview">
+        <div class="FileBrowser-item is-active" id="file-16a856f66064574b701304fa2a638d4b" data-role="resource-preview">
             <ul class="Meta">
                 <li class="Meta-item">
                     <strong class="Meta-key">Content:</strong>
                     <span class="Meta-value">
                         <div class="FileBrowser-itemPreview">
                             
-                            <code class="Code Code--lang-JavaScript FileBrowser-code">
-                                <pre><span class="hljs-comment">//</span>
-<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Refactor</span>
-<span class="hljs-comment">// Can this functionality be achieved without a jQuery/ajaxInclude dependancy?</span>
-<span class="hljs-comment">//</span>
+                            <code class="Code Code--lang-CSS FileBrowser-code">
+                                <pre>.c-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">  'use strict'</span>;
-
-  <span class="hljs-keyword">if</span> (enhanced === <span class="hljs-literal">false</span>) <span class="hljs-keyword">return</span>;
-
-  <span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">document</span>.querySelector.bind(<span class="hljs-built_in">document</span>);
-  <span class="hljs-keyword">var</span> $$ = <span class="hljs-built_in">document</span>.querySelectorAll.bind(<span class="hljs-built_in">document</span>);
-  <span class="hljs-keyword">var</span> opts = {
-    <span class="hljs-attr">continueClass</span>: <span class="hljs-string">'c-continue--ajax'</span>,
-    <span class="hljs-attr">loadingClass</span>: <span class="hljs-string">'c-section--loading'</span>,
-    <span class="hljs-attr">interactionLink</span>: <span class="hljs-string">'a[data-interaction]'</span>
-  };
-
-  <span class="hljs-comment">// $(opts.interactionLink).classList.add(opts.continueClass);</span>
-  <span class="hljs-comment">//</span>
-  <span class="hljs-comment">// $(opts.interactionLink).addEventListener('click', function(e) {</span>
-  <span class="hljs-comment">//   $('#comments').classList.add(opts.loadingClass);</span>
-  <span class="hljs-comment">//   $(this).removeAttr('data-interaction').ajaxInclude();</span>
-  <span class="hljs-comment">//   e.preventDefault();</span>
-  <span class="hljs-comment">// });</span>
-}());
-</pre>
-                            </code>
-                            
-                        </div>
-                    </span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/section/section.js"><span>/components/raw/section/section.js</span></a></span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/common/section/section.js</span>
-                </li>
-                <li class="Meta-item">
-                    <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">712 Bytes</span>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="FileBrowser-item" id="file-9ac1ffc066ba271123eb02de197ed41f" data-role="resource-preview">
-            <ul class="Meta">
-                <li class="Meta-item">
-                    <strong class="Meta-key">Content:</strong>
-                    <span class="Meta-value">
-                        <div class="FileBrowser-itemPreview">
-                            
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre><span class="hljs-selector-class">.c-section</span> {
-  <span class="hljs-attribute">display</span>: flex;
-  <span class="hljs-attribute">flex-direction</span>: column;
-  <span class="hljs-attribute">justify-content</span>: space-between;
-
-  @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-    <span class="hljs-attribute">flex-direction</span>: row;
+  @media (--from-large-screen) {
+    flex-direction: row;
   }
 }
 
-<span class="hljs-selector-class">.c-section__header</span> {
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-variable">$space-large</span>;
+.c-section__header {
+  padding: map(spaces, medium) map(spaces, large);
 
-  @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">20%</span>;
-    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$prose-color--rule</span>;
-    <span class="hljs-attribute">text-align</span>: right;
+  @media (--from-large-screen) {
+    flex: 1 0 20%;
+    padding-right: 0;
+    box-shadow: 0 -1px 0 var(--prose-color--rule);
+    text-align: right;
   }
 
-  @<span class="hljs-keyword">media</span> print {
-    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">2px</span> solid black;
-    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">0</span>;
-  }
-}
-
-<span class="hljs-selector-class">.c-section__title</span> {
-  @<span class="hljs-keyword">include</span> typeset(label, 2);
-  <span class="hljs-attribute">text-transform</span>: uppercase;
-}
-
-<span class="hljs-selector-class">.c-section__main</span> {
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-large</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-variable">$space-large</span>;
-  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$prose-color--rule</span>;
-
-  @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">75%</span>;
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">5%</span>;
-    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">5%</span>;
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
-  }
-
-  @<span class="hljs-keyword">media</span> screen and (min-width: 60em) {
-    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">15%</span>;
-  }
-
-  @<span class="hljs-keyword">media</span> screen and (min-width: 80em) {
-    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">25%</span>;
+  @media print {
+    border-top: 2px solid black;
+    padding-bottom: 0;
   }
 }
 
-<span class="hljs-comment">// Section - Sponsor</span>
-<span class="hljs-selector-class">.c-article</span> <span class="hljs-selector-class">.c-section--sponsor</span> {
-  @<span class="hljs-keyword">media</span> screen and (min-width: 50em) {
-    <span class="hljs-attribute">flex-direction</span>: column;
-    <span class="hljs-attribute">position</span>: absolute;
-    <span class="hljs-attribute">top</span>: <span class="hljs-number">56rem</span>;
-    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">20%</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+.c-section__title {
+  @apply --typeset-ui;
+  text-transform: uppercase;
+}
 
-    <span class="hljs-selector-class">.c-section__title</span> {
-      @<span class="hljs-keyword">include</span> typeset(label, 2);
+.c-section__main {
+  margin-bottom: map(spaces, large);
+  padding: map(spaces, medium) map(spaces, large);
+  box-shadow: 0 -1px 0 var(--prose-color--rule);
+
+  @media (--from-large-screen) {
+    flex: 1 0 75%;
+    margin-left: 5%;
+    padding-right: 5%;
+    padding-left: 0;
+  }
+
+  @media (--from-xlarge-screen) {
+    padding-right: 15%;
+  }
+
+  @media (--from-max-screen) {
+    padding-right: 25%;
+  }
+}
+
+/* Section - Sponsor */
+.c-article .c-section--sponsor {
+  @media (--from-large-screen) {
+    flex-direction: column;
+    position: absolute;
+    top: 56rem;
+    left: 0;
+    width: 20%;
+    padding: 0;
+
+    .c-section__title {
+      @apply --typeset-ui;
     }
 
-    <span class="hljs-selector-class">.c-section__main</span> {
-      <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">box-shadow</span>: none;
+    .c-section__main {
+      padding-right: 0;
+      box-shadow: none;
     }
 
-    <span class="hljs-selector-class">.c-promo</span> {
-      @<span class="hljs-keyword">include</span> typeset(caption);
-      <span class="hljs-attribute">text-align</span>: right;
+    .c-promo {
+      @apply --typeset-caption;
+      text-align: right;
     }
   }
 }
 
-<span class="hljs-comment">// Section - Topic</span>
-<span class="hljs-selector-class">.c-section--topic</span> {
-  <span class="hljs-selector-class">.c-section__main</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">flex-direction</span>: row;
+/* Section - Topic */
+.c-section--topic {
+  .c-section__main {
+    display: flex;
+    flex-direction: row;
   }
 
   svg {
-    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$size-xlarge</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-variable">$size-xlarge</span>;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$space-small</span> <span class="hljs-variable">$space-large</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+    flex-shrink: 0;
+    width: map(sizes, xlarge);
+    height: map(sizes, xlarge);
+    margin: map(spaces, small) map(spaces, large) 0 0;
   }
 }
 
-<span class="hljs-comment">// Section - Related</span>
-<span class="hljs-selector-class">.c-section--related</span> {
-  <span class="hljs-selector-class">.c-section__main</span> {
-    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;
+/* Section - Related */
+.c-section--related {
+  .c-section__main {
+    padding-right: 0;
   }
 }
 </pre>
@@ -495,11 +490,11 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/section/section.scss"><span>/components/raw/section/section.scss</span></a></span>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/section/section.css"><span>/components/raw/section/section.css</span></a></span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/common/section/section.scss</span>
+                    <span class="Meta-value">src/components/common/section/section.css</span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
@@ -525,7 +520,7 @@
         
         
         <li class="Meta-item">
-            <strong class="Meta-key">Variants <em class="Meta-count">(8)</em>:</strong>
+            <strong class="Meta-key">Variants <em class="Meta-count">(7)</em>:</strong>
             <span class="Meta-value Meta-value--linkList">
             
                 <a href="section--topic"><span>topic</span></a>, 
@@ -540,9 +535,7 @@
             
                 <a href="section--related"><span>related</span></a>, 
             
-                <a href=""><span>authors</span></a>, 
-            
-                <a href="section--loading"><span>loading</span></a>
+                <a href=""><span>authors</span></a>
             
             </span>
         </li>
@@ -568,6 +561,15 @@
             <strong class="Meta-key">Filesystem Path:</strong>
             <span class="Meta-value">src/components/common/section/section.html</span>
         </li>
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">References <em class="Meta-count">(1)</em>:</strong>
+            <span class="Meta-value Meta-value--linkList">
+            
+                <a href="comment">@<span>comment</span></a>
+            
+            </span>
+        </li class="Meta-item">
         
         
     </ul>
@@ -620,30 +622,6 @@
             
             
             
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="activity" data-pjax>
-                <span>Activity</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
     
         
         
@@ -1438,21 +1416,10 @@
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-article-template">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="article-template" data-pjax>
                 <span>Article Template</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--default" data-pjax>
-                <span>Default</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1469,35 +1436,6 @@
 
 
             </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--comments" data-pjax>
-                <span>Comments</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     
@@ -1811,21 +1749,10 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Helpers</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/sass" data-pjax>
-                <span>Sass helpers</span>
+            <a class="Tree-entityLink" href="../../docs/styleguide" data-pjax>
+                <span>Styleguide</span>
                 
             </a>
         </li>
@@ -1834,61 +1761,10 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/tokens" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/tokens" data-pjax>
                 <span>Design tokens</span>
                 
             </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-styleguide">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Styleguide</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/colour" data-pjax>
-                <span>Colour</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/typography" data-pjax>
-                <span>Typography</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/iconography" data-pjax>
-                <span>Iconography</span>
-                
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     

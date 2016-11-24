@@ -9,8 +9,7 @@
     <link rel="dns-prefetch" href="//media.24ways.org"/>
 
     <script>
-      var docEl = document.documentElement;
-      docEl.className = docEl.className.replace('no-js', 'has-js');
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js');
 
       function downloadJSAtOnload() {
         var element = document.createElement("script");
@@ -19,13 +18,7 @@
         document.body.dataset.menuExpanded = 'false';
       }
 
-      if (document.querySelector && docEl.classList && window.addEventListener) {
-        docEl.className += ' js-enhanced';
-        var enhanced = true;
-        window.addEventListener("load", downloadJSAtOnload, false);
-      } else {
-        var enhanced = false;
-      }
+      window.addEventListener("load", downloadJSAtOnload, false);
     </script>
 
     <link rel="shortcut icon" href="../../assets/icons/icon.ico" type="image/ico"/>
@@ -35,6 +28,16 @@
     <link rel="manifest" href="/manifest.json"/>
     <link rel="alternate" href="https://feeds.feedburner.com/24ways" type="application/rss+xml"/>
     <link rel="stylesheet" href="../../assets/styles/app.css"/>
+
+    <style>
+      :root {
+        --color-year: hsl(304, 100%, 16%);
+        --color-year--dark: hsl(304, 100%, 8%);
+        --color-day: hsl(283, 80%, 60%);
+        --color-day--dark: hsl(283, 100%, 24%);
+        --color-day--light: hsl(283, 60%, 96%);
+      }
+    </style>
 
     <meta charset="utf-8"/>
     <meta name="robots" content="index, follow"/>
@@ -48,7 +51,7 @@
     <title> &#9670; 24 ways</title>
   </head>
 
-  <body class="t-year-2015">
+  <body>
     <form class="c-search" role="search" id="search" action="/pages/search/">
   <fieldset class="c-field">
     <legend class="u-hidden">Search 24 ways</legend>

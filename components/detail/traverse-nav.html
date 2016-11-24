@@ -290,6 +290,52 @@
     <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
     <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
     <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  },
+  <span class="hljs-attr">"theme"</span>: {
+    <span class="hljs-attr">"year"</span>: [
+      <span class="hljs-number">348</span>,
+      <span class="hljs-number">344</span>,
+      <span class="hljs-number">340</span>,
+      <span class="hljs-number">336</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">328</span>,
+      <span class="hljs-number">324</span>,
+      <span class="hljs-number">320</span>,
+      <span class="hljs-number">316</span>,
+      <span class="hljs-number">312</span>,
+      <span class="hljs-number">308</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">300</span>,
+      <span class="hljs-number">296</span>,
+      <span class="hljs-number">292</span>,
+      <span class="hljs-number">288</span>
+    ],
+    <span class="hljs-attr">"day"</span>: [
+      <span class="hljs-number">360</span>,
+      <span class="hljs-number">353</span>,
+      <span class="hljs-number">346</span>,
+      <span class="hljs-number">339</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">325</span>,
+      <span class="hljs-number">318</span>,
+      <span class="hljs-number">311</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">397</span>,
+      <span class="hljs-number">290</span>,
+      <span class="hljs-number">283</span>,
+      <span class="hljs-number">276</span>,
+      <span class="hljs-number">269</span>,
+      <span class="hljs-number">262</span>,
+      <span class="hljs-number">255</span>,
+      <span class="hljs-number">248</span>,
+      <span class="hljs-number">241</span>,
+      <span class="hljs-number">234</span>,
+      <span class="hljs-number">227</span>,
+      <span class="hljs-number">220</span>,
+      <span class="hljs-number">213</span>,
+      <span class="hljs-number">206</span>,
+      <span class="hljs-number">199</span>
+    ]
   }
 }</pre>
     </code>
@@ -307,96 +353,98 @@
             <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
             <select class="FileBrowser-select" id="filebrowser-select">
                 
-                <option value="file-7201e4a963c5216bcde2340c0425fe63">traverse-nav.scss</option>
+                <option value="file-29893de6a4dc788dbe303a73a7219422">traverse-nav.css</option>
                 
             </select>
         </div>
 
         
-        <div class="FileBrowser-item is-active" id="file-7201e4a963c5216bcde2340c0425fe63" data-role="resource-preview">
+        <div class="FileBrowser-item is-active" id="file-29893de6a4dc788dbe303a73a7219422" data-role="resource-preview">
             <ul class="Meta">
                 <li class="Meta-item">
                     <strong class="Meta-key">Content:</strong>
                     <span class="Meta-value">
                         <div class="FileBrowser-itemPreview">
                             
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre>$_traverse-nav__label-<span class="hljs-attribute">width</span>: <span class="hljs-number">18rem</span>; <span class="hljs-comment">// 288px</span>
+                            <code class="Code Code--lang-CSS FileBrowser-code">
+                                <pre>:root {
+  --traverse-nav__label-width: 18rem; /* 288px */
+}
 
-<span class="hljs-selector-class">.c-traverse-nav</span> {
-  <span class="hljs-attribute">display</span>: none;
+.c-traverse-nav {
+  display: none;
 
-  @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
-    <span class="hljs-attribute">display</span>: initial;
-    <span class="hljs-attribute">position</span>: fixed;
-    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">top</span>: <span class="hljs-variable">$banner-height--large</span>;
-    <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-modal</span> + <span class="hljs-number">1</span>);
-    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$navigation-width--large</span>;
+  @media (--from-medium-screen) {
+    display: initial;
+    position: fixed;
+    right: 0;
+    top: var(--banner-height--large);
+    z-index: calc(map(layers, modal) + 1);
+    width: var(--navigation-width--large);
   }
 }
 
-<span class="hljs-selector-class">.c-traverse-nav__item</span> {
-  @<span class="hljs-keyword">include</span> ui-link(<span class="hljs-variable">$background</span>: true);
-  <span class="hljs-attribute">display</span>: block;
-  <span class="hljs-attribute">position</span>: relative;
-  <span class="hljs-attribute">width</span>: auto;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span>;
-  <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-variable">$navigation-color--offset</span>;
+.c-traverse-nav__item {
+  @apply --ui-link;
+  display: block;
+  position: relative;
+  width: auto;
+  padding: map(spaces, medium);
+  box-shadow: inset 0 -1px 0 var(--navigation-color--offset);
 
-  &amp;<span class="hljs-selector-attr">[rel=prev]</span>::after {
-    <span class="hljs-attribute">content</span>: <span class="hljs-string">'Previously: \A'</span> attr(data-sequence-title);
+  &amp;[rel=prev]::after {
+    content: 'Previously: \A' attr(data-sequence-title);
   }
 
-  &amp;<span class="hljs-selector-attr">[rel=next]</span>::after {
-    <span class="hljs-attribute">content</span>: <span class="hljs-string">'Next: \A'</span> attr(data-sequence-title);
+  &amp;[rel=next]::after {
+    content: 'Next: \A' attr(data-sequence-title);
   }
 
-  @<span class="hljs-keyword">media</span> screen and (min-width: 31.5em) {
+  @media (--from-medium-screen) {
     &amp;::before,
     &amp;::after {
-      <span class="hljs-attribute">position</span>: absolute;
-      <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
 
     &amp;::before {
-      <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
-      <span class="hljs-attribute">z-index</span>: <span class="hljs-variable">$z-index-underlay</span>;
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$navigation-color</span>;
+      content: '';
+      z-index: map(layers, underlay);
+      background-color: var(--navigation-color);
     }
 
     &amp;::after {
-      @<span class="hljs-keyword">include</span> typeset(label, 1);
-      <span class="hljs-attribute">z-index</span>: (<span class="hljs-variable">$z-index-underlay</span> - <span class="hljs-number">1</span>);
-      <span class="hljs-attribute">width</span>: $_traverse-nav__label-width;
-      <span class="hljs-attribute">overflow</span>: hidden;
-      <span class="hljs-attribute">background-color</span>: rgba(palette(primary, dark), <span class="hljs-number">0.8</span>);
-      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-xsmall</span> <span class="hljs-variable">$space-small</span>;
-      <span class="hljs-attribute">white-space</span>: pre-wrap;
-      <span class="hljs-attribute">color</span>: white;
-      <span class="hljs-attribute">transition</span>: all <span class="hljs-number">0.3s</span> ease-out;
+      @apply --typeset-label;
+      z-index: calc(map(layers, underlay) - 1);
+      width: var(--traverse-nav__label-width);
+      overflow: hidden;
+      background-color: color(var(--color-year--dark) a(75%));
+      padding: map(spaces, xsmall) map(spaces, small);
+      white-space: pre-wrap;
+      color: white;
+      transition: all 0.3s ease-out;
     }
 
     &amp;:hover {
       &amp;::after {
-        <span class="hljs-attribute">left</span>: ($_traverse-nav__label-width * -<span class="hljs-number">1</span>);
+        left: calc(var(--traverse-nav__label-width) * -1);
       }
     }
   }
 
-  <span class="hljs-selector-attr">[data-menu-expanded=true]</span> &amp; {
+  [data-menu-expanded=true] &amp; {
     &amp;::after {
-      <span class="hljs-attribute">display</span>: none;
+      display: none;
     }
   }
 }
 
-<span class="hljs-selector-class">.c-traverse-nav__icon</span> {
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">2.5rem</span>;
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">2.5rem</span>;
+.c-traverse-nav__icon {
+  height: 2.5rem;
+  width: 2.5rem;
 }
 </pre>
                             </code>
@@ -406,15 +454,15 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/traverse-nav/traverse-nav.scss"><span>/components/raw/traverse-nav/traverse-nav.scss</span></a></span>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/traverse-nav/traverse-nav.css"><span>/components/raw/traverse-nav/traverse-nav.css</span></a></span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/global/traverse-nav/traverse-nav.scss</span>
+                    <span class="Meta-value">src/components/global/traverse-nav/traverse-nav.css</span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.5 KB</span>
+                    <span class="Meta-value">1.6 KB</span>
                 </li>
             </ul>
         </div>
@@ -517,30 +565,6 @@
             
             
             
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="activity" data-pjax>
-                <span>Activity</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
     
         
         
@@ -1335,21 +1359,10 @@
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-article-template">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="article-template" data-pjax>
                 <span>Article Template</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--default" data-pjax>
-                <span>Default</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1366,35 +1379,6 @@
 
 
             </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--comments" data-pjax>
-                <span>Comments</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     
@@ -1708,21 +1692,10 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Helpers</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/sass" data-pjax>
-                <span>Sass helpers</span>
+            <a class="Tree-entityLink" href="../../docs/styleguide" data-pjax>
+                <span>Styleguide</span>
                 
             </a>
         </li>
@@ -1731,61 +1704,10 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/tokens" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/tokens" data-pjax>
                 <span>Design tokens</span>
                 
             </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-styleguide">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Styleguide</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/colour" data-pjax>
-                <span>Colour</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/typography" data-pjax>
-                <span>Typography</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/iconography" data-pjax>
-                <span>Iconography</span>
-                
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     

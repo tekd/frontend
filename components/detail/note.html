@@ -255,6 +255,52 @@
     <span class="hljs-attr">"description"</span>: <span class="hljs-string">"24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."</span>,
     <span class="hljs-attr">"feed"</span>: <span class="hljs-string">"https://feeds.feedburner.com/24ways"</span>,
     <span class="hljs-attr">"theme_color"</span>: <span class="hljs-string">"#f04"</span>
+  },
+  <span class="hljs-attr">"theme"</span>: {
+    <span class="hljs-attr">"year"</span>: [
+      <span class="hljs-number">348</span>,
+      <span class="hljs-number">344</span>,
+      <span class="hljs-number">340</span>,
+      <span class="hljs-number">336</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">328</span>,
+      <span class="hljs-number">324</span>,
+      <span class="hljs-number">320</span>,
+      <span class="hljs-number">316</span>,
+      <span class="hljs-number">312</span>,
+      <span class="hljs-number">308</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">300</span>,
+      <span class="hljs-number">296</span>,
+      <span class="hljs-number">292</span>,
+      <span class="hljs-number">288</span>
+    ],
+    <span class="hljs-attr">"day"</span>: [
+      <span class="hljs-number">360</span>,
+      <span class="hljs-number">353</span>,
+      <span class="hljs-number">346</span>,
+      <span class="hljs-number">339</span>,
+      <span class="hljs-number">332</span>,
+      <span class="hljs-number">325</span>,
+      <span class="hljs-number">318</span>,
+      <span class="hljs-number">311</span>,
+      <span class="hljs-number">304</span>,
+      <span class="hljs-number">397</span>,
+      <span class="hljs-number">290</span>,
+      <span class="hljs-number">283</span>,
+      <span class="hljs-number">276</span>,
+      <span class="hljs-number">269</span>,
+      <span class="hljs-number">262</span>,
+      <span class="hljs-number">255</span>,
+      <span class="hljs-number">248</span>,
+      <span class="hljs-number">241</span>,
+      <span class="hljs-number">234</span>,
+      <span class="hljs-number">227</span>,
+      <span class="hljs-number">220</span>,
+      <span class="hljs-number">213</span>,
+      <span class="hljs-number">206</span>,
+      <span class="hljs-number">199</span>
+    ]
   }
 }</pre>
     </code>
@@ -272,31 +318,30 @@
             <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
             <select class="FileBrowser-select" id="filebrowser-select">
                 
-                <option value="file-cdd4d75f374c10040312d087a39dc2fe">note.scss</option>
+                <option value="file-05c3a72bdd67f877697f624193551d25">note.css</option>
                 
             </select>
         </div>
 
         
-        <div class="FileBrowser-item is-active" id="file-cdd4d75f374c10040312d087a39dc2fe" data-role="resource-preview">
+        <div class="FileBrowser-item is-active" id="file-05c3a72bdd67f877697f624193551d25" data-role="resource-preview">
             <ul class="Meta">
                 <li class="Meta-item">
                     <strong class="Meta-key">Content:</strong>
                     <span class="Meta-value">
                         <div class="FileBrowser-itemPreview">
                             
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre><span class="hljs-selector-class">.s-note</span> {
-  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.25</span>;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$space-large</span>;
-  <span class="hljs-attribute">border</span>: solid <span class="hljs-variable">$prose-color--rule</span>;
-  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">1px</span> <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$space-medium</span> <span class="hljs-number">0</span>;
+                            <code class="Code Code--lang-CSS FileBrowser-code">
+                                <pre>.s-note {
+  @apply --typeset-caption;
+  margin-bottom: map(spaces, large);
+  border: solid var(--prose-color--rule);
+  border-width: 1px 0;
+  padding: map(spaces, medium) 0;
 
-  <span class="hljs-selector-tag">p</span>:not(:last-child) {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$space-medium</span>;
-    <span class="hljs-attribute">color</span>: lighten(<span class="hljs-variable">$color-text</span>, <span class="hljs-number">10%</span>);
-    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
+  p:not(:last-child) {
+    margin: map(spaces, medium);
+    font-size: 1rem;
   }
 }
 </pre>
@@ -307,15 +352,15 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">URL:</strong>
-                    <span class="Meta-value"><a data-no-pjax href="../raw/note/note.scss"><span>/components/raw/note/note.scss</span></a></span>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/note/note.css"><span>/components/raw/note/note.css</span></a></span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Filesystem Path:</strong>
-                    <span class="Meta-value">src/components/scopes/note/note.scss</span>
+                    <span class="Meta-value">src/components/scopes/note/note.css</span>
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">265 Bytes</span>
+                    <span class="Meta-value">258 Bytes</span>
                 </li>
             </ul>
         </div>
@@ -418,30 +463,6 @@
             
             
             
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="activity" data-pjax>
-                <span>Activity</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
     
         
         
@@ -1236,21 +1257,10 @@
             
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-article-template">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="article-template" data-pjax>
                 <span>Article Template</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--default" data-pjax>
-                <span>Default</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1267,35 +1277,6 @@
 
 
             </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="article-template--comments" data-pjax>
-                <span>Comments</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     
@@ -1609,21 +1590,10 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-helpers">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Helpers</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/sass" data-pjax>
-                <span>Sass helpers</span>
+            <a class="Tree-entityLink" href="../../docs/styleguide" data-pjax>
+                <span>Styleguide</span>
                 
             </a>
         </li>
@@ -1632,61 +1602,10 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/helpers/tokens" data-pjax>
+            <a class="Tree-entityLink" href="../../docs/tokens" data-pjax>
                 <span>Design tokens</span>
                 
             </a>
-        </li>
-        
-    
-
-            </ul>
-        </li>
-        
-    
-        
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-styleguide">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Styleguide</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
-            
-            
-            
-            
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/colour" data-pjax>
-                <span>Colour</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/typography" data-pjax>
-                <span>Typography</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="../../docs/styleguide/iconography" data-pjax>
-                <span>Iconography</span>
-                
-            </a>
-        </li>
-        
-    
-
-            </ul>
         </li>
         
     

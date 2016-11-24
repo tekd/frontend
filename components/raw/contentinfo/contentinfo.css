@@ -1,0 +1,38 @@
+.c-contentinfo {
+  @apply --typeset-label;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: map(spaces, small) map(spaces, medium);
+
+  @media (--from-medium-screen) {
+    margin-right: var(--navigation-width--large);
+  }
+
+  a {
+    @apply --ui-link;
+
+    @media print {
+      display: none;
+    }
+  }
+
+  > * {
+    @media (--upto-medium-screen) {
+      line-height: 2;
+    }
+  }
+}
+
+.c-contentinfo__copyright {
+  order: -1;
+
+  @media (--upto-medium-screen) {
+    order: 0;
+  }
+}
+
+.c-contentinfo__copyright,
+.c-contentinfo__social a:not(:last-child) {
+  margin-right: map(spaces, medium);
+}
