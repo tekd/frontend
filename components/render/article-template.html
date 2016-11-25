@@ -22,12 +22,12 @@
 
 <main class="c-main" role="main">
 
-<article class="c-article  h-entry">
+  <article class="c-article  h-entry">
   <header class="c-article__header">
-    <h1 class="c-article__title  p-name">Starting Your <abbr>HTML5</abbr> Project on the Right Foot (and Keeping It There)</h1>
+    <h1 class="c-article__title  p-name">Starting Your HTML5 Project on the Right Foot (and Keeping It There)</h1>
     <p class="c-article__byline  p-author h-card">
       <a class="u-url" href="#author">
-        <img class="c-avatar  u-photo" src="https://cloud.24ways.org/authors/drewmclellan280.jpg" width="160" height="160" alt=""/>
+        <img class="c-avatar  u-photo" src="https://cloud.24ways.org/authors/drewmclellan280.jpg" width="280" height="280" alt="Drew McLellan"/>
 
         <span class="p-name">Drew McLellan</span>
       </a>
@@ -80,10 +80,74 @@
   <figcaption>Example of responsive video embed.</figcaption>
 </figure>
 <p>Now that video is just a native object in the <span class="caps">DOM</span>, just like an image, why not do the same? Stack the videos up with the opening bumper on top, listen for the video’s <code>onended</code> event, and fade it out to reveal the main feature behind. Good idea, right?</p>
+<table>
+<thead>
+<tr>
+<th>The Very Best Eggnog</th>
+<th>Serves 12</th>
+<th>Serves 24</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Milk</td>
+<td>1 quart</td>
+<td>2 quart</td>
+</tr>
+<tr>
+<td>Cinnamon Sticks</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Vanilla Bean, Split</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Cloves</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Mace</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Egg Yolks</td>
+<td>12</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Cups Sugar</td>
+<td>1 ½ cups</td>
+<td>3 cups</td>
+</tr>
+<tr>
+<td>Dark Rum</td>
+<td>1 ½ cups</td>
+<td>3 cups</td>
+</tr>
+<tr>
+<td>Brandy</td>
+<td>1 ½ cups</td>
+<td>3 cups</td>
+</tr>
+<tr>
+<td>Vanilla</td>
+<td>1 tbsp</td>
+<td>2 tbsp</td>
+</tr>
+<tr>
+<td>Light Cream</td>
+<td>1 quart</td>
+<td>2 quart</td>
+</tr>
+</tbody>
+</table>
 <p>Remember that this is the web. It’s never going to be that easy. The problem here is that many non-desktop devices use native, dedicated video players. Think about watching a video on a mobile phone – when you play the video, the phone often goes full-screen in its native player, leaving the web page behind. There’s no opportunity to fade or switch <code>z-index</code>, as the video isn’t being viewed in the page. Your page is left powerless. Powerless!</p>
-<figure>
-  <img src="http://media.24ways.org/2012/mclellan/media-player.jpg" alt="iOS full-screen media player" />
-</figure>
+<img src="http://media.24ways.org/2012/mclellan/media-player.jpg" alt="iOS full-screen media player" />
 <p>So what can we do? What can we control?</p>
 <hr />
 <p>Those of us with particularly long memories might recall a time before <abbr title="Cascading Style Sheets">CSS</abbr>, when we’d have to use JavaScript to perform image rollovers. As <abbr title="Cascading Style Sheets">CSS</abbr> background images weren’t a practical reality, we would use lots of <code>&lt;img&gt;</code> elements, and perform a rollover by modifying the <code>src</code> attribute of the image.</p>
@@ -261,11 +325,12 @@
 </div>
 </section>
 
-  <section class="c-section c-section--related" id="related">
+  
+    <section class="c-section c-section--related" id="related">
   <header class="c-section__header">
     <h1 class="c-section__title">Related articles</h1>
   </header>
-  <div class="c-section__main"><ol class="c-grid"><li class="c-grid__item"><article class="c-summary h-entry day-15">
+  <div class="c-section__main"><ol class="l-grid"><li class="l-grid__item"><article class="c-summary h-entry day-15">
   <header class="c-summary__header">
     <h1 class="c-summary__title  p-name">
       <a class="u-url" rel="bookmark" href="/2015/grid-flexbox-box-alignment-our-new-system-for-layout/">Grid, Flexbox, Box Alignment: Our New System for Layout</a>
@@ -288,7 +353,7 @@
     </p>
   </footer>
 </article>
-</li><li class="c-grid__item"><article class="c-summary h-entry day-15">
+</li><li class="l-grid__item"><article class="c-summary h-entry day-15">
   <header class="c-summary__header">
     <h1 class="c-summary__title  p-name">
       <a class="u-url" rel="bookmark" href="/2015/grid-flexbox-box-alignment-our-new-system-for-layout/">Grid, Flexbox, Box Alignment: Our New System for Layout</a>
@@ -311,7 +376,7 @@
     </p>
   </footer>
 </article>
-</li><li class="c-grid__item"><article class="c-summary h-entry day-15">
+</li><li class="l-grid__item"><article class="c-summary h-entry day-15">
   <header class="c-summary__header">
     <h1 class="c-summary__title  p-name">
       <a class="u-url" rel="bookmark" href="/2015/grid-flexbox-box-alignment-our-new-system-for-layout/">Grid, Flexbox, Box Alignment: Our New System for Layout</a>
@@ -338,7 +403,9 @@
 </div>
 </section>
 
-  <section class="c-section" id="comments">
+  
+  
+    <section class="c-section" id="comments">
   <header class="c-section__header">
     <h1 class="c-section__title">2 Comments</h1>
   </header>
@@ -402,7 +469,7 @@ RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
 </div>
 </section>
 
-  <form id="comment-form" method="post">
+    <form id="comment-form" method="post">
   <fieldset>
     <div class="c-section">
       <legend class="c-section__header">
@@ -438,7 +505,9 @@ RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
   </fieldset>
 </form>
 
+  
 </article>
+
 
 </main>
 

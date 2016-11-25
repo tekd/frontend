@@ -1,13 +1,12 @@
 
 
 <!DOCTYPE html>
-<html lang="en-gb" dir="ltr" class="no-js">
+<!--
+    PHP: Check if fonts-loaded cookie has been set.
+    If so, add the `fonts-loaded` class to the `html` element.
+-->
+<html lang="en-gb" dir="ltr" prefix="og: http://ogp.me/ns#" class="no-js fonts-loaded">
   <head>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
-    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
-    <link rel="dns-prefetch" href="//cloud.24ways.org"/>
-    <link rel="dns-prefetch" href="//media.24ways.org"/>
-
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js');
 
@@ -21,6 +20,10 @@
       window.addEventListener("load", downloadJSAtOnload, false);
     </script>
 
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
+    <link rel="dns-prefetch" href="//cloud.24ways.org"/>
+    <link rel="dns-prefetch" href="//media.24ways.org"/>
     <link rel="shortcut icon" href="../../assets/icons/icon.ico" type="image/ico"/>
     <link rel="apple-touch-icon" href="../../assets/icons/icon.png" type="image/png"/>
     <link rel="mask-icon" href="../../assets/icons/icon.svg" color="#f04"/>
@@ -29,6 +32,15 @@
     <link rel="alternate" href="https://feeds.feedburner.com/24ways" type="application/rss+xml"/>
     <link rel="stylesheet" href="../../assets/styles/app.css"/>
 
+    <meta charset="utf-8"/>
+    <meta name="referrer" content="origin"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="A"/><meta property="og:description" content="24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."/><meta property="og:url" content="https://24ways.org"/><meta property="og:image" content="../../assets/icons/icon.png"/><meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@24ways"/>
+
+    <!--
+      PHP: Get correct hue value for year and day from array.
+    -->
     <style>
       :root {
         --color-year: hsl(304, 100%, 16%);
@@ -41,15 +53,6 @@
       }
     </style>
 
-    <meta charset="utf-8"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="twitter:site" content="@24ways"/>
-    <meta name="twitter:title" content="24 ways"/>
-    <meta name="twitter:description" content="24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."/>
-    <meta name="twitter:creator" content="@24ways"/>
-    <meta name="twitter:card" content="summary"/>
-
     <title>A &#9670; 24 ways</title>
   </head>
 
@@ -58,19 +61,19 @@
   <header class="c-section__header">
     <h1 class="c-section__title">A</h1>
   </header>
-  <div class="c-section__main"><ol class="c-grid c-grid--authors"><li class="c-grid__item"><a class="c-author  h-card u-url" href="/authors/drewmclellan/">
+  <div class="c-section__main"><ol class="l-grid l-grid--authors"><li class="l-grid__item"><a class="c-author  h-card u-url" href="/authors/drewmclellan/">
   <img class="c-author__image  u-photo" src="http://media.24ways.org/authors/drewmclellan160.jpg" width="160" height="160" alt=""/>
   <span class="c-author__meta  p-name">Drew McLellan</span>
 </a>
-</li><li class="c-grid__item"><a class="c-author  h-card u-url" href="/authors/briansuda/">
+</li><li class="l-grid__item"><a class="c-author  h-card u-url" href="/authors/briansuda/">
   <img class="c-author__image  u-photo" src="http://media.24ways.org/authors/briansuda160.jpg" width="160" height="160" alt=""/>
   <span class="c-author__meta  p-name">Brian Suda</span>
 </a>
-</li><li class="c-grid__item"><a class="c-author  h-card u-url" href="/authors/annadebenham/">
+</li><li class="l-grid__item"><a class="c-author  h-card u-url" href="/authors/annadebenham/">
   <img class="c-author__image  u-photo" src="http://media.24ways.org/authors/annadebenham160.jpg" width="160" height="160" alt=""/>
   <span class="c-author__meta  p-name">Anna Debenham</span>
 </a>
-</li><li class="c-grid__item"><a class="c-author  h-card u-url" href="/authors/owengregory/">
+</li><li class="l-grid__item"><a class="c-author  h-card u-url" href="/authors/owengregory/">
   <img class="c-author__image  u-photo" src="http://media.24ways.org/authors/owengregory160.jpg" width="160" height="160" alt=""/>
   <span class="c-author__meta  p-name">Owen Gregory</span>
 </a>

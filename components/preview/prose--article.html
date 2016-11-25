@@ -1,13 +1,12 @@
 
 
 <!DOCTYPE html>
-<html lang="en-gb" dir="ltr" class="no-js">
+<!--
+    PHP: Check if fonts-loaded cookie has been set.
+    If so, add the `fonts-loaded` class to the `html` element.
+-->
+<html lang="en-gb" dir="ltr" prefix="og: http://ogp.me/ns#" class="no-js fonts-loaded">
   <head>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
-    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
-    <link rel="dns-prefetch" href="//cloud.24ways.org"/>
-    <link rel="dns-prefetch" href="//media.24ways.org"/>
-
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js');
 
@@ -21,6 +20,10 @@
       window.addEventListener("load", downloadJSAtOnload, false);
     </script>
 
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
+    <link rel="dns-prefetch" href="//cloud.24ways.org"/>
+    <link rel="dns-prefetch" href="//media.24ways.org"/>
     <link rel="shortcut icon" href="../../assets/icons/icon.ico" type="image/ico"/>
     <link rel="apple-touch-icon" href="../../assets/icons/icon.png" type="image/png"/>
     <link rel="mask-icon" href="../../assets/icons/icon.svg" color="#f04"/>
@@ -29,6 +32,15 @@
     <link rel="alternate" href="https://feeds.feedburner.com/24ways" type="application/rss+xml"/>
     <link rel="stylesheet" href="../../assets/styles/app.css"/>
 
+    <meta charset="utf-8"/>
+    <meta name="referrer" content="origin"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="24 ways"/><meta property="og:description" content="24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."/><meta property="og:url" content="https://24ways.org"/><meta property="og:image" content="../../assets/icons/icon.png"/><meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@24ways"/>
+
+    <!--
+      PHP: Get correct hue value for year and day from array.
+    -->
     <style>
       :root {
         --color-year: hsl(304, 100%, 16%);
@@ -40,15 +52,6 @@
         --color-day--dark-alpha: hsla(234, 100%, 24%, 0.33);
       }
     </style>
-
-    <meta charset="utf-8"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="twitter:site" content="@24ways"/>
-    <meta name="twitter:title" content="24 ways"/>
-    <meta name="twitter:description" content="24 ways is the advent calendar for web geeks. Each day throughout December we publish a daily dose of web design and development goodness to bring you all a little Christmas cheer."/>
-    <meta name="twitter:creator" content="@24ways"/>
-    <meta name="twitter:card" content="summary"/>
 
     <title> &#9670; 24 ways</title>
   </head>
@@ -89,10 +92,74 @@
   <figcaption>Example of responsive video embed.</figcaption>
 </figure>
 <p>Now that video is just a native object in the <span class="caps">DOM</span>, just like an image, why not do the same? Stack the videos up with the opening bumper on top, listen for the video’s <code>onended</code> event, and fade it out to reveal the main feature behind. Good idea, right?</p>
+<table>
+<thead>
+<tr>
+<th>The Very Best Eggnog</th>
+<th>Serves 12</th>
+<th>Serves 24</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Milk</td>
+<td>1 quart</td>
+<td>2 quart</td>
+</tr>
+<tr>
+<td>Cinnamon Sticks</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Vanilla Bean, Split</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Cloves</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Mace</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Egg Yolks</td>
+<td>12</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Cups Sugar</td>
+<td>1 ½ cups</td>
+<td>3 cups</td>
+</tr>
+<tr>
+<td>Dark Rum</td>
+<td>1 ½ cups</td>
+<td>3 cups</td>
+</tr>
+<tr>
+<td>Brandy</td>
+<td>1 ½ cups</td>
+<td>3 cups</td>
+</tr>
+<tr>
+<td>Vanilla</td>
+<td>1 tbsp</td>
+<td>2 tbsp</td>
+</tr>
+<tr>
+<td>Light Cream</td>
+<td>1 quart</td>
+<td>2 quart</td>
+</tr>
+</tbody>
+</table>
 <p>Remember that this is the web. It’s never going to be that easy. The problem here is that many non-desktop devices use native, dedicated video players. Think about watching a video on a mobile phone – when you play the video, the phone often goes full-screen in its native player, leaving the web page behind. There’s no opportunity to fade or switch <code>z-index</code>, as the video isn’t being viewed in the page. Your page is left powerless. Powerless!</p>
-<figure>
-  <img src="http://media.24ways.org/2012/mclellan/media-player.jpg" alt="iOS full-screen media player" />
-</figure>
+<img src="http://media.24ways.org/2012/mclellan/media-player.jpg" alt="iOS full-screen media player" />
 <p>So what can we do? What can we control?</p>
 <hr />
 <p>Those of us with particularly long memories might recall a time before <abbr title="Cascading Style Sheets">CSS</abbr>, when we’d have to use JavaScript to perform image rollovers. As <abbr title="Cascading Style Sheets">CSS</abbr> background images weren’t a practical reality, we would use lots of <code>&lt;img&gt;</code> elements, and perform a rollover by modifying the <code>src</code> attribute of the image.</p>
