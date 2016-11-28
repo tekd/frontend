@@ -344,6 +344,11 @@
 <p>Of course, this code works fine for demonstrating the principle, but it’s very procedural. Nothing wrong with that, but to do something similar in production, you’d probably want to make the code more modular to ease maintainability. Besides, you may want to use a framework, rather than basic JavaScript.</p>
 <h2>The end credits</h2>
 <p>One really important principle here is that of <strong>progressive enhancement</strong>. If the browser doesn’t support JavaScript, the user won’t see your bumper, but they will get the main video. If the browser supports JavaScript but doesn’t allow you to modify the <code>src</code> (as was the case with older versions of iOS), the user won’t see your bumper, but they will get the main video.</p>
+<p>At Twitter, <em>every commit</em> gets a code review. We do a lot of reviewing, so small efficiency and effectiveness improvements make a big difference. Over time we’ve learnt a few things:</p>
+<ul>
+<li>Don’t review for <em>more than hour</em><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li>Keep reviews <em>smaller than ~400 lines</em><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+</ul>
 <p>If a search engine or social media bot grabs your page and looks for content, they won’t see your bumper, but they will get the main video – which is absolutely what you want.</p>
 <p>This means that if the bumper is absolutely crucial, you may still need to cook it into the video. However, for many applications, running it dynamically can work quite well.</p>
 <p>As always, it comes down to three things:</p>
@@ -353,6 +358,15 @@
 <li>Plan for failure: it’s the web and that’s how things work 'round these parts</li>
 </ol>
 <p>But most of all <strong>play around with it, have fun and build something awesome</strong>.</p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Dunsmore et al. 2000. Object-Oriented Inspection in the Face of Delocalisation. Beverly, MA: SmartBear Software. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Cohen, Jason. 2006. Best Kept Secrets of Peer Code Review. <em>Proceedings of the 22nd ICSE 2000</em>: 467-476. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
 </div>
 
