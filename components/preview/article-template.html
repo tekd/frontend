@@ -46,10 +46,10 @@
         --color-year: hsl(304, 100%, 16%);
         --color-year--dark: hsl(304, 100%, 8%);
         --color-year--dark-alpha: hsla(304, 100%, 8%, 0.8);
-        --color-day: hsl(234, 80%, 60%);
-        --color-day--light: hsl(234, 60%, 98%);
-        --color-day--dark: hsl(234, 100%, 24%);
-        --color-day--dark-alpha: hsla(234, 100%, 24%, 0.33);
+        --color-day: hsl(283, 80%, 60%);
+        --color-day--light: hsl(283, 60%, 98%);
+        --color-day--dark: hsl(283, 100%, 24%);
+        --color-day--dark-alpha: hsla(283, 100%, 24%, 0.33);
       }
     </style>
 
@@ -259,6 +259,20 @@
 <li>Add an event listener so we can detect the end of the bumper playing, and load the original video back in</li>
 </ul>
 <p>As we need to loop through the videos this time to add the event listener, I’ve moved the <code>.load()</code> call into that loop. It’s a bit more efficient to call it only once after modifying all the video’s sources.</p>
+<ul>
+<li><strong>Raspberry Pi</strong> any of the following models :
+<ul>
+<li>Zero (will need straight male header pins soldered2 and Micro USB OTG adaptor),
+<ul>
+<li>A+, B+, 2 or 3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Micro SD card</strong> at least 4Gb Class 10 speed3</li>
+<li><strong>Micro USB power supply</strong> at least 2A</li>
+<li><strong>USB Wifi dongle</strong> (unless you have a Pi 3 - that has wifi built in).</li>
+</ul>
 <pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>script</span><span class="token punctuation" >></span></span><span class="token script language-javascript" >
   <span class="token keyword keyword-var" >var</span> videos<span class="token punctuation" >,</span> sources<span class="token punctuation" >,</span> i<span class="token punctuation" >,</span> l<span class="token punctuation" >,</span> orig<span class="token punctuation" >;</span>
   sources <span class="token operator" >=</span> document<span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'source'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
