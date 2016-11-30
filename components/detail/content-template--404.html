@@ -223,7 +223,7 @@
 
 <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-main"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"main"</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-preface__title"</span>&gt;</span>404
             <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
@@ -378,7 +378,7 @@
     <code class="Code Code--lang-">
         <pre>{% extends "<a href="page">@page</a>" %}
 {% block main %}
-<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-content"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
   {% include "<a href="preface">@preface</a>" %}
   {%- for section in sections -%}
     {% render "<a href="section">@section</a>", section %}
