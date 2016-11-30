@@ -362,12 +362,17 @@
                             <code class="Code Code--lang-CSS FileBrowser-code">
                                 <pre>.c-preface {
   overflow: hidden;
-  min-height: 9rem;
-  padding: map(spaces, xlarge) map(spaces, large) map(spaces, medium);
+  display: flex;
+  flex-direction: column;
+  padding: map(spaces, medium) map(spaces, large);
   background-color: $color-year;
   background-color: var(--color-year, $color-year);
   background-image: inline('diamond.svg');
   background-repeat: repeat;
+
+  @media (--from-medium-screen) {
+    min-height: 9rem;
+  }
 
   @media (--from-large-screen) {
     padding-left: 25%;
@@ -379,7 +384,7 @@
   display: flex;
   align-items: flex-start;
   position: relative;
-  margin-bottom: map(spaces, small);
+  margin-top: auto;
   color: map(colors, primary, light);
 
   svg {
@@ -391,6 +396,7 @@
 
 .c-preface__main {
   position: relative;
+  margin-top: map(spaces, small);
   color: color(white a(75%));
 
   .s-prose p:first-of-type {
@@ -435,7 +441,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.1 KB</span>
+                    <span class="Meta-value">1.2 KB</span>
                 </li>
             </ul>
         </div>
