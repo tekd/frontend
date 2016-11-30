@@ -119,40 +119,40 @@
 <p>Turns out, this old trick of modifying the source can help us out with video, too. In most cases, modifying the <code>src</code> attribute of a <code>&lt;video&gt;</code> element, or perhaps more likely the <code>src</code> attribute of a <code>source</code> element, will swap from one video to another.</p>
 <h2>Swappin’ it</h2>
 <p>Let’s take a deliberately simple example of a super-basic video tag:</p>
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>video</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>mycat.webm<span class="token punctuation" >"</span></span> <span class="token attr-name" >controls</span><span class="token punctuation" >></span></span>no fallback coz i is lame, innit.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>video</span><span class="token punctuation" >></span></span>
+<pre><code class="language-html">&lt;video src=&quot;mycat.webm&quot; controls&gt;no fallback coz i is lame, innit.&lt;/video&gt;
 </code></pre>
 <p>We could very simply write a script to find all video tags and give them a new <code>src</code> to show our bumper.</p>
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>script</span><span class="token punctuation" >></span></span><span class="token script language-javascript" >
-  <span class="token keyword keyword-var" >var</span> videos<span class="token punctuation" >,</span> i<span class="token punctuation" >,</span> l<span class="token punctuation" >;</span>
-  videos <span class="token operator" >=</span> document<span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'video'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<pre><code class="language-html">&lt;script&gt;
+  var videos, i, l;
+  videos = document.getElementsByTagName('video');
 
-  <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>videos<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    videos<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >,</span> <span class="token string" >'bumper-in.webm'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token punctuation" >}</span>
-</span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>script</span><span class="token punctuation" >></span></span>
+  for(i=0, l=videos.length; i&lt;l; i++) {
+    videos[i].setAttribute('src', 'bumper-in.webm');
+  }
+&lt;/script&gt;
 </code></pre>
 <p><a href="http://media.24ways.org/2012/mclellan/examples/1.html">View the example</a> in a browser with WebM support. You’ll see that the video is swapped out for the opening bumper. Great!</p>
 <h2>Beefing it up</h2>
 <p>Of course, we can’t just publish video in one format. In practical use, you need a <code>&lt;video&gt;</code> element with multiple <code>&lt;source&gt;</code> elements containing your different source formats.</p>
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>video</span> <span class="token attr-name" >controls</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>source</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>mycat.mp4<span class="token punctuation" >"</span></span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>video/mp4<span class="token punctuation" >"</span></span> <span class="token punctuation" >/></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>source</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>mycat.webm<span class="token punctuation" >"</span></span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>video/webm<span class="token punctuation" >"</span></span> <span class="token punctuation" >/></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>source</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>mycat.ogv<span class="token punctuation" >"</span></span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>video/ogg<span class="token punctuation" >"</span></span> <span class="token punctuation" >/></span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>video</span><span class="token punctuation" >></span></span>
+<pre><code class="language-html">&lt;video controls&gt;
+  &lt;source src=&quot;mycat.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+  &lt;source src=&quot;mycat.webm&quot; type=&quot;video/webm&quot; /&gt;
+  &lt;source src=&quot;mycat.ogv&quot; type=&quot;video/ogg&quot; /&gt;
+&lt;/video&gt;
 </code></pre>
 <p>This time, our script needs to loop through the sources, not the videos. We’ll use a regular expression replacement to swap out the file name while maintaining the correct file extension.</p>
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>script</span><span class="token punctuation" >></span></span><span class="token script language-javascript" >
-  <span class="token keyword keyword-var" >var</span> sources<span class="token punctuation" >,</span> i<span class="token punctuation" >,</span> l<span class="token punctuation" >,</span> orig<span class="token punctuation" >;</span>
-  sources <span class="token operator" >=</span> document<span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'source'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<pre><code class="language-html">&lt;script&gt;
+  var sources, i, l, orig;
+  sources = document.getElementsByTagName('source');
 
-  <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>sources<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    orig <span class="token operator" >=</span> sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >getAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >,</span> orig<span class="token punctuation" >.</span><span class="token function" >replace</span><span class="token punctuation" >(</span><span class="token regex" >/(w+).(w+)/</span><span class="token punctuation" >,</span> <span class="token string" >'bumper-in.$2'</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  for(i=0, l=sources.length; i&lt;l; i++) {
+    orig = sources[i].getAttribute('src');
+    sources[i].setAttribute('src', orig.replace(/(w+).(w+)/, 'bumper-in.$2'));
 
-    <span class="token comment" spellcheck="true">// Reload the video</span>
-    sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span>parentNode<span class="token punctuation" >.</span><span class="token function" >load</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token punctuation" >}</span>
-</span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>script</span><span class="token punctuation" >></span></span>
+    // Reload the video
+    sources[i].parentNode.load();
+  }
+&lt;/script&gt;
 </code></pre>
 <p>The difference this time is that when changing the <code>src</code> of a <code>&lt;source&gt;</code> we need to call the <code>.load()</code> method on the video to get it to acknowledge the change.</p>
 <p><a href="http://media.24ways.org/2012/mclellan/examples/2.html">See the code in action</a>, this time in a wider range of browsers.</p>
@@ -181,34 +181,34 @@
 <li><strong>Micro USB power supply</strong> at least 2A</li>
 <li><strong>USB Wifi dongle</strong> (unless you have a Pi 3 - that has wifi built in).</li>
 </ul>
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>script</span><span class="token punctuation" >></span></span><span class="token script language-javascript" >
-  <span class="token keyword keyword-var" >var</span> videos<span class="token punctuation" >,</span> sources<span class="token punctuation" >,</span> i<span class="token punctuation" >,</span> l<span class="token punctuation" >,</span> orig<span class="token punctuation" >;</span>
-  sources <span class="token operator" >=</span> document<span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'source'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<pre><code class="language-html">&lt;script&gt;
+  var videos, sources, i, l, orig;
+  sources = document.getElementsByTagName('source');
 
-  <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>sources<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    orig <span class="token operator" >=</span> sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >getAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'data-orig'</span><span class="token punctuation" >,</span> orig<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >,</span> orig<span class="token punctuation" >.</span><span class="token function" >replace</span><span class="token punctuation" >(</span><span class="token regex" >/(w+).(w+)/</span><span class="token punctuation" >,</span> <span class="token string" >'bumper-in.$2'</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token punctuation" >}</span>
+  for(i=0, l=sources.length; i&lt;l; i++) {
+    orig = sources[i].getAttribute('src');
+    sources[i].setAttribute('data-orig', orig);
+    sources[i].setAttribute('src', orig.replace(/(w+).(w+)/, 'bumper-in.$2'));
+  }
 
-  videos <span class="token operator" >=</span> document<span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'video'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  videos = document.getElementsByTagName('video');
 
-  <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>videos<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    videos<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >load</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    videos<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >addEventListener</span><span class="token punctuation" >(</span><span class="token string" >'ended'</span><span class="token punctuation" >,</span> <span class="token keyword keyword-function" >function</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >{</span>
-      sources <span class="token operator" >=</span> <span class="token keyword keyword-this" >this</span><span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'source'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-      <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>sources<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-        orig <span class="token operator" >=</span> sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >getAttribute</span><span class="token punctuation" >(</span><span class="token string" >'data-orig'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-        <span class="token keyword keyword-if" >if</span> <span class="token punctuation" >(</span>orig<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-          sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >,</span> orig<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-        <span class="token punctuation" >}</span>
-        sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'data-orig'</span><span class="token punctuation" >,</span><span class="token string" >''</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-      <span class="token punctuation" >}</span>
-      <span class="token keyword keyword-this" >this</span><span class="token punctuation" >.</span><span class="token function" >load</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-      <span class="token keyword keyword-this" >this</span><span class="token punctuation" >.</span><span class="token function" >play</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token punctuation" >}</span>
-</span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>script</span><span class="token punctuation" >></span></span>
+  for(i=0, l=videos.length; i&lt;l; i++) {
+    videos[i].load();
+    videos[i].addEventListener('ended', function(){
+      sources = this.getElementsByTagName('source');
+      for(i=0, l=sources.length; i&lt;l; i++) {
+        orig = sources[i].getAttribute('data-orig');
+        if (orig) {
+          sources[i].setAttribute('src', orig);
+        }
+        sources[i].setAttribute('data-orig','');
+      }
+      this.load();
+      this.play();
+    });
+  }
+&lt;/script&gt;
 </code></pre>
 <p>Again, <a href="http://media.24ways.org/2012/mclellan/examples/3.html">view the example</a> to see the bumper play, followed by our spectacular main feature. (That’s my cat, Widget. His interests include sleeping and internet marketing.)</p>
 <h2>Tidying things up</h2>
@@ -217,50 +217,50 @@
 <li>We need to keep track of whether the <code>src</code> has been changed, so we only play the video if it’s changed. I’ve added the <code>modified</code> variable to track this, and it stops us getting into a situation where the video just loops forever.</li>
 <li>Add an <code>else</code> to the event listener, for when the <code>orig</code> is false (so the main feature has been playing) to load in the end bumper. We also check that we’re not already playing the end bumper. Because looping.</li>
 </ol>
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>script</span><span class="token punctuation" >></span></span><span class="token script language-javascript" >
-  <span class="token keyword keyword-var" >var</span> videos<span class="token punctuation" >,</span> sources<span class="token punctuation" >,</span> i<span class="token punctuation" >,</span> l<span class="token punctuation" >,</span> orig<span class="token punctuation" >,</span> current<span class="token punctuation" >,</span> modified<span class="token punctuation" >;</span>
-  sources <span class="token operator" >=</span> document<span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'source'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<pre><code class="language-html">&lt;script&gt;
+  var videos, sources, i, l, orig, current, modified;
+  sources = document.getElementsByTagName('source');
 
-  <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>sources<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    orig <span class="token operator" >=</span> sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >getAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'data-orig'</span><span class="token punctuation" >,</span> orig<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >,</span> orig<span class="token punctuation" >.</span><span class="token function" >replace</span><span class="token punctuation" >(</span><span class="token regex" >/(w+).(w+)/</span><span class="token punctuation" >,</span> <span class="token string" >'bumper-in.$2'</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token punctuation" >}</span>
+  for(i=0, l=sources.length; i&lt;l; i++) {
+    orig = sources[i].getAttribute('src');
+    sources[i].setAttribute('data-orig', orig);
+    sources[i].setAttribute('src', orig.replace(/(w+).(w+)/, 'bumper-in.$2'));
+  }
 
-  videos <span class="token operator" >=</span> document<span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'video'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  videos = document.getElementsByTagName('video');
 
-  <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>videos<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    videos<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >load</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-    modified <span class="token operator" >=</span> <span class="token boolean" >false</span><span class="token punctuation" >;</span>
+  for(i=0, l=videos.length; i&lt;l; i++) {
+    videos[i].load();
+    modified = false;
 
-    videos<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >addEventListener</span><span class="token punctuation" >(</span><span class="token string" >'ended'</span><span class="token punctuation" >,</span> <span class="token keyword keyword-function" >function</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >{</span>
-      sources <span class="token operator" >=</span> <span class="token keyword keyword-this" >this</span><span class="token punctuation" >.</span><span class="token function" >getElementsByTagName</span><span class="token punctuation" >(</span><span class="token string" >'source'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    videos[i].addEventListener('ended', function(){
+      sources = this.getElementsByTagName('source');
 
-      <span class="token keyword keyword-for" >for</span><span class="token punctuation" >(</span>i<span class="token operator" >=</span><span class="token number" >0</span><span class="token punctuation" >,</span> l<span class="token operator" >=</span>sources<span class="token punctuation" >.</span>length<span class="token punctuation" >;</span> i<span class="token operator" >&lt;</span>l<span class="token punctuation" >;</span> i<span class="token operator" >++</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-        orig <span class="token operator" >=</span> sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >getAttribute</span><span class="token punctuation" >(</span><span class="token string" >'data-orig'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-        <span class="token keyword keyword-if" >if</span> <span class="token punctuation" >(</span>orig<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-          sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >,</span> orig<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-          modified <span class="token operator" >=</span> <span class="token boolean" >true</span><span class="token punctuation" >;</span>
-        <span class="token punctuation" >}</span> <span class="token keyword keyword-else" >else</span> <span class="token punctuation" >{</span>
-          current <span class="token operator" >=</span> sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >getAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-          <span class="token keyword keyword-if" >if</span> <span class="token punctuation" >(</span>current<span class="token punctuation" >.</span><span class="token function" >indexOf</span><span class="token punctuation" >(</span><span class="token string" >'bumper-out'</span><span class="token punctuation" >)</span><span class="token operator" >==</span><span class="token operator" >-</span><span class="token number" >1</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-            sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'src'</span><span class="token punctuation" >,</span> current<span class="token punctuation" >.</span><span class="token function" >replace</span><span class="token punctuation" >(</span><span class="token regex" >/([w]+).(w+)/</span><span class="token punctuation" >,</span> <span class="token string" >'bumper-out.$2'</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-            modified <span class="token operator" >=</span> <span class="token boolean" >true</span><span class="token punctuation" >;</span>
-          <span class="token punctuation" >}</span> <span class="token keyword keyword-else" >else</span> <span class="token punctuation" >{</span>
-            <span class="token keyword keyword-this" >this</span><span class="token punctuation" >.</span><span class="token function" >pause</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-            modified <span class="token operator" >=</span> <span class="token boolean" >false</span><span class="token punctuation" >;</span>
-          <span class="token punctuation" >}</span>
-        <span class="token punctuation" >}</span>
-        sources<span class="token punctuation" >[</span>i<span class="token punctuation" >]</span><span class="token punctuation" >.</span><span class="token function" >setAttribute</span><span class="token punctuation" >(</span><span class="token string" >'data-orig'</span><span class="token punctuation" >,</span><span class="token string" >''</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-      <span class="token punctuation" >}</span>
+      for(i=0, l=sources.length; i&lt;l; i++) {
+        orig = sources[i].getAttribute('data-orig');
+        if (orig) {
+          sources[i].setAttribute('src', orig);
+          modified = true;
+        } else {
+          current = sources[i].getAttribute('src');
+          if (current.indexOf('bumper-out')==-1) {
+            sources[i].setAttribute('src', current.replace(/([w]+).(w+)/, 'bumper-out.$2'));
+            modified = true;
+          } else {
+            this.pause();
+            modified = false;
+          }
+        }
+        sources[i].setAttribute('data-orig','');
+      }
 
-      <span class="token keyword keyword-if" >if</span> <span class="token punctuation" >(</span>modified<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-        <span class="token keyword keyword-this" >this</span><span class="token punctuation" >.</span><span class="token function" >load</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-        <span class="token keyword keyword-this" >this</span><span class="token punctuation" >.</span><span class="token function" >play</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-      <span class="token punctuation" >}</span>
-    <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token punctuation" >}</span>
-</span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>script</span><span class="token punctuation" >></span></span>
+      if (modified) {
+        this.load();
+        this.play();
+      }
+    });
+  }
+&lt;/script&gt;
 </code></pre>
 <p>Yo ho ho, that’s a lot of JavaScript. <a href="http://media.24ways.org/2012/mclellan/examples/4.html">See it in action</a> – you should get a bumper, the cat video, and an end bumper.</p>
 <p>Of course, this code works fine for demonstrating the principle, but it’s very procedural. Nothing wrong with that, but to do something similar in production, you’d probably want to make the code more modular to ease maintainability. Besides, you may want to use a framework, rather than basic JavaScript.</p>

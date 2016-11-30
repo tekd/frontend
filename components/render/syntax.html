@@ -1,31 +1,31 @@
 
 
 
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>video</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>mycat.webm<span class="token punctuation" >"</span></span> <span class="token attr-name" >controls</span><span class="token punctuation" >></span></span>no fallback coz i is lame, innit.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>video</span><span class="token punctuation" >></span></span>
+<pre><code class="language-html">&lt;video src=&quot;mycat.webm&quot; controls&gt;no fallback coz i is lame, innit.&lt;/video&gt;
 </code></pre>
-<pre><code class="language-css"><span class="token selector" >selector</span> <span class="token punctuation" >{</span>
-  <span class="token property" >property</span><span class="token punctuation" >:</span> value<span class="token punctuation" >;</span>
-<span class="token punctuation" >}</span>
+<pre><code class="language-css">selector {
+  property: value;
+}
 </code></pre>
-<pre><code class="language-js"><span class="token keyword keyword-import" >import</span> express <span class="token keyword keyword-from" >from</span> <span class="token string" >'express'</span><span class="token punctuation" >;</span>
-<span class="token keyword keyword-import" >import</span> http <span class="token keyword keyword-from" >from</span> <span class="token string" >'http'</span><span class="token punctuation" >;</span>
+<pre><code class="language-js">import express from 'express';
+import http from 'http';
 
-<span class="token keyword keyword-const" >const</span> app <span class="token operator" >=</span> <span class="token function" >express</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+const app = express();
 
-app<span class="token punctuation" >.</span><span class="token function" >use</span><span class="token punctuation" >(</span>express<span class="token punctuation" >.</span><span class="token keyword keyword-static" >static</span><span class="token punctuation" >(</span><span class="token string" >'public'</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+app.use(express.static('public'));
 
-app<span class="token punctuation" >.</span><span class="token keyword keyword-set" >set</span><span class="token punctuation" >(</span><span class="token string" >'view engine'</span><span class="token punctuation" >,</span> <span class="token string" >'ejs'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+app.set('view engine', 'ejs');
 
-app<span class="token punctuation" >.</span><span class="token keyword keyword-get" >get</span><span class="token punctuation" >(</span><span class="token string" >'*'</span><span class="token punctuation" >,</span> <span class="token punctuation" >(</span>req<span class="token punctuation" >,</span> res<span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >{</span>
-  res<span class="token punctuation" >.</span><span class="token function" >render</span><span class="token punctuation" >(</span><span class="token string" >'index'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+app.get('*', (req, res) =&gt; {
+  res.render('index');
+});
 
-<span class="token keyword keyword-const" >const</span> server <span class="token operator" >=</span> http<span class="token punctuation" >.</span><span class="token function" >createServer</span><span class="token punctuation" >(</span>app<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+const server = http.createServer(app);
 
-server<span class="token punctuation" >.</span><span class="token function" >listen</span><span class="token punctuation" >(</span><span class="token number" >3003</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-server<span class="token punctuation" >.</span><span class="token function" >on</span><span class="token punctuation" >(</span><span class="token string" >'listening'</span><span class="token punctuation" >,</span> <span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >{</span>
-  console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span><span class="token string" >'Listening on 3003'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+server.listen(3003);
+server.on('listening', () =&gt; {
+  console.log('Listening on 3003');
+});
 </code></pre>
 
 
