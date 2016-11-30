@@ -72,210 +72,279 @@
     
     
     <p><a href="https://medium.com/eightshapes-llc/25dd82d58421">Design tokens</a> are named entities that store visual design information. These are used in place of hard-coded values (such as hex values for color or pixels for spacing) in order to maintain a scalable, consistent system for UI development.</p>
+<h2 id="colour-palettes">Colour Palettes</h2>
+<p><strong>Primary</strong> palette values. Accessed via <code>map(colors, primary, &lt;key&gt;)</code></p>
+<div class="palette">
+<div class="color" style="color: #f04">
+    <span>#f04</span>
+    <code>light</code>
+  </div>
+<div class="color color--base" style="color: #c02">
+    <span>#c02</span>
+    <code>base</code>
+  </div>
+<div class="color" style="color: #601">
+    <span>#601</span>
+    <code>dark</code>
+  </div>
+</div>
+
+
+<p><strong>Secondary</strong> palette values. Accessed via <code>map(colors, secondary, &lt;key&gt;)</code></p>
+<div class="palette">
+<div class="color" style="color: #3be">
+    <span>#3be</span>
+    <code>light</code>
+  </div>
+<div class="color color--base" style="color: #269">
+    <span>#269</span>
+    <code>base</code>
+  </div>
+<div class="color" style="color: #257">
+    <span>#257</span>
+    <code>dark</code>
+  </div>
+</div>
+
+
+<p><strong>Neutral</strong> palette values. Accessed via <code>map(colors, neutral, &lt;key&gt;)</code></p>
+<div class="palette">
+<div class="color" style="color: #efeff0">
+    <span>#efeff0</span>
+    <code>lightest</code>
+  </div>
+<div class="color" style="color: #b9b9c0">
+    <span>#b9b9c0</span>
+    <code>lighter</code>
+  </div>
+<div class="color" style="color: #8c8c9c">
+    <span>#8c8c9c</span>
+    <code>light</code>
+  </div>
+<div class="color color--base" style="color: #778">
+    <span>#778</span>
+    <code>base</code>
+  </div>
+<div class="color" style="color: #636373">
+    <span>#636373</span>
+    <code>dark</code>
+  </div>
+<div class="color" style="color: #3f3f46">
+    <span>#3f3f46</span>
+    <code>darker</code>
+  </div>
+<div class="color" style="color: #1f1f20">
+    <span>#1f1f20</span>
+    <code>darkest</code>
+  </div>
+</div>
+
+
+
 <h2 id="borders">Borders</h2>
-<p>Width and radii tokens are used to style element borders.</p>
+<p>Width and radii tokens are used to style element borders. Accessed via <code>map(borders, &lt;key&gt;)</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
+<th>Key</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>$width-thin</code></td>
+<td><code>width-thin</code></td>
 <td>1px</td>
 </tr>
 <tr>
-<td><code>$width-thick</code></td>
+<td><code>width-thick</code></td>
 <td>2px</td>
 </tr>
 <tr>
-<td><code>$width-thicker</code></td>
+<td><code>width-thicker</code></td>
 <td>4px</td>
 </tr>
 <tr>
-<td><code>$width-thickest</code></td>
+<td><code>width-thickest</code></td>
 <td>8px</td>
 </tr>
 <tr>
-<td><code>$radius-small</code></td>
+<td><code>radius-small</code></td>
 <td>0.125rem</td>
 </tr>
 <tr>
-<td><code>$radius-default</code></td>
+<td><code>radius-default</code></td>
 <td>0.25rem</td>
 </tr>
 <tr>
-<td><code>$radius-circle</code></td>
+<td><code>radius-circle</code></td>
 <td>50%</td>
 </tr>
 </tbody>
 </table>
 <h2 id="breakpoints">Breakpoints</h2>
-<p>Breakpoint tokens are used within <code>@media</code> queries.</p>
+<p>Breakpoint tokens are used within <code>@media</code> queries. Accessed via <code>map(breakpoints, &lt;key&gt;)</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
+<th>Key</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>$min</code></td>
+<td><code>min</code></td>
 <td>280px</td>
 </tr>
 <tr>
-<td><code>$xsmall</code></td>
+<td><code>xsmall</code></td>
 <td>360px</td>
 </tr>
 <tr>
-<td><code>$small</code></td>
+<td><code>small</code></td>
 <td>480px</td>
 </tr>
 <tr>
-<td><code>$medium</code></td>
+<td><code>medium</code></td>
 <td>504px</td>
 </tr>
 <tr>
-<td><code>$large</code></td>
+<td><code>large</code></td>
 <td>800px</td>
 </tr>
 <tr>
-<td><code>$xlarge</code></td>
+<td><code>xlarge</code></td>
 <td>960px</td>
 </tr>
 <tr>
-<td><code>$max</code></td>
+<td><code>max</code></td>
 <td>1280px</td>
 </tr>
 </tbody>
 </table>
 <h2 id="font-families">Font families</h2>
-<p>Font family tokens are used for typographic styling.</p>
+<p>Font family tokens are used for typographic styling. Accessed via <code>map(fonts, &lt;key&gt;)</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
+<th>Key</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>$family-sans</code></td>
-<td>‘Source Sans Pro’, sans-serif</td>
+<td><code>family-sans</code></td>
+<td><span style="font: 1.25em/1 'Source Sans Pro', sans-serif">‘Source Sans Pro’, sans-serif</span></td>
 </tr>
 <tr>
-<td><code>$family-serif</code></td>
-<td>‘Source Serif Pro’, serif</td>
+<td><code>family-serif</code></td>
+<td><span style="font: 1.25em/1 'Source Serif Pro', serif">‘Source Serif Pro’, serif</span></td>
 </tr>
 <tr>
-<td><code>$family-monospace</code></td>
-<td>‘Source Code Pro’, monospace</td>
+<td><code>family-monospace</code></td>
+<td><span style="font: 1.25em/1 'Source Code Pro', monospace">‘Source Code Pro’, monospace</span></td>
 </tr>
 <tr>
-<td><code>$family-system</code></td>
-<td>-apple-system, BlinkMacSystemFont, ‘Segoe UI’, Roboto, Oxygen, Ubuntu, Cantarell, ‘Open Sans’, ‘Helvetica Neue’, sans-serif</td>
+<td><code>family-system</code></td>
+<td><span style="font: 1.25em/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">-apple-system, BlinkMacSystemFont, ‘Segoe UI’, Roboto, Oxygen, Ubuntu, Cantarell, ‘Open Sans’, ‘Helvetica Neue’, sans-serif</span></td>
 </tr>
 </tbody>
 </table>
 <h2 id="layers">Layers</h2>
-<p>Layering tokens set the <code>z-index</code> layer value for elements.</p>
+<p>Layering tokens set the <code>z-index</code> layer value for elements. Accessed via <code>map(layers, &lt;key&gt;)</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
+<th>Key</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>$modal</code></td>
+<td><code>modal</code></td>
 <td>9000</td>
 </tr>
 <tr>
-<td><code>$backdrop</code></td>
+<td><code>backdrop</code></td>
 <td>8000</td>
 </tr>
 <tr>
-<td><code>$overlay</code></td>
+<td><code>overlay</code></td>
 <td>1000</td>
 </tr>
 <tr>
-<td><code>$default</code></td>
+<td><code>default</code></td>
 <td>1</td>
 </tr>
 <tr>
-<td><code>$underlay</code></td>
+<td><code>underlay</code></td>
 <td>-1</td>
 </tr>
 </tbody>
 </table>
 <h2 id="sizes">Sizes</h2>
-<p>Sizing tokens describe the dimensions of elements.</p>
+<p>Sizing tokens describe the dimensions of elements. Accessed via <code>map(sizes, &lt;key&gt;)</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
+<th>Key</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>$xsmall</code></td>
+<td><code>xsmall</code></td>
 <td>0.25rem</td>
 </tr>
 <tr>
-<td><code>$small</code></td>
+<td><code>small</code></td>
 <td>0.75rem</td>
 </tr>
 <tr>
-<td><code>$medium</code></td>
+<td><code>medium</code></td>
 <td>1.5rem</td>
 </tr>
 <tr>
-<td><code>$large</code></td>
+<td><code>large</code></td>
 <td>3rem</td>
 </tr>
 <tr>
-<td><code>$xlarge</code></td>
+<td><code>xlarge</code></td>
 <td>4.5rem</td>
 </tr>
 </tbody>
 </table>
 <h2 id="spacing">Spacing</h2>
-<p>Spacing tokens describe the distance between elements.</p>
+<p>Spacing tokens describe the distance between elements. Accessed via <code>map(spaces, &lt;key&gt;)</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
+<th>Key</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>$xsmall</code></td>
+<td><code>xsmall</code></td>
 <td>0.25rem</td>
 </tr>
 <tr>
-<td><code>$small</code></td>
+<td><code>small</code></td>
 <td>0.5rem</td>
 </tr>
 <tr>
-<td><code>$medium</code></td>
+<td><code>medium</code></td>
 <td>1rem</td>
 </tr>
 <tr>
-<td><code>$large</code></td>
+<td><code>large</code></td>
 <td>1.5rem</td>
 </tr>
 <tr>
-<td><code>$xlarge</code></td>
+<td><code>xlarge</code></td>
 <td>3rem</td>
 </tr>
 <tr>
-<td><code>$xxlarge</code></td>
+<td><code>xxlarge</code></td>
 <td>4.5rem</td>
 </tr>
 </tbody>
@@ -909,16 +978,6 @@
 <div class="Tree" data-behaviour="tree" id="tree-docs">
     <h3 class="Tree-title">Documentation</h3>
     <ul class="Tree-items Tree-depth-1">
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="styleguide" data-pjax>
-                <span>Styleguide</span>
-                
-            </a>
-        </li>
         
     
         
