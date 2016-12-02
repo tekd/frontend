@@ -426,9 +426,10 @@
                             <code class="Code Code--lang-CSS FileBrowser-code">
                                 <pre>.c-navigation {
   z-index: map(layers, modal);
+  overflow: hidden;
   background-color: $navigation-color;
 
-  [data-menu-expanded] &amp; {
+  .has-js &amp; {
     position: fixed;
     transition-duration: $navigation-duration;
     transition-timing-function: ease-out;
@@ -439,9 +440,9 @@
   }
 
   @media (--upto-medium-screen) {
-    [data-menu-expanded] &amp; {
-      overflow: hidden;
+    .has-js &amp; {
       top: $banner-height--small;
+      max-height: 0;
       width: 100%;
       transition-property: max-height;
     }
@@ -461,11 +462,12 @@
       margin-right: $navigation-width--large;
     }
 
-    [data-menu-expanded] &amp; {
+    .has-js &amp; {
       top: 0;
       right: 0;
       bottom: 0;
       padding: 0 $navigation-width--large 0 0;
+      width: $navigation-width--large;
       transition-property: width;
     }
 
@@ -488,7 +490,7 @@
   display: flex;
   flex-direction: column;
 
-  [data-menu-expanded] &amp; {
+  .has-js &amp; {
     overflow: hidden;
   }
 
