@@ -462,27 +462,32 @@
 
   <span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">document</span>.querySelector.bind(<span class="hljs-built_in">document</span>);
   <span class="hljs-keyword">var</span> menuToggleEl = $(<span class="hljs-string">'[href="#navigation"]'</span>);
+  <span class="hljs-keyword">var</span> menuButton = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
   <span class="hljs-keyword">var</span> navigationDrawerID = <span class="hljs-string">'navigation__drawer'</span>;
   <span class="hljs-keyword">var</span> navigationDrawerEl = $(<span class="hljs-string">'#navigation__drawer'</span>);
 
+  <span class="hljs-comment">// Replace menu link with a `button`</span>
+  menuButton.classList = menuToggleEl.classList;
+  menuButton.innerHTML = menuToggleEl.innerHTML;
+  <span class="hljs-built_in">document</span>.body.replaceChild(menuButton, menuToggleEl)
+
   <span class="hljs-keyword">var</span> toggleMenu = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state</span>) </span>{
-    menuToggleEl.setAttribute(<span class="hljs-string">'aria-expanded'</span>, state);
+    menuButton.setAttribute(<span class="hljs-string">'aria-expanded'</span>, state);
     <span class="hljs-built_in">document</span>.body.setAttribute(<span class="hljs-string">'data-menu-expanded'</span>, state);
     navigationDrawerEl.setAttribute(<span class="hljs-string">'aria-hidden'</span>, !state);
   };
 
   <span class="hljs-keyword">if</span> (menuToggleEl) {
-    <span class="hljs-comment">// Setup menu button</span>
-    menuToggleEl.setAttribute(<span class="hljs-string">'role'</span>, <span class="hljs-string">'button'</span>);
-    menuToggleEl.setAttribute(<span class="hljs-string">'aria-controls'</span>, navigationDrawerID);
-    menuToggleEl.setAttribute(<span class="hljs-string">'aria-expanded'</span>, <span class="hljs-literal">false</span>);
+    <span class="hljs-comment">// Setup menu button ARIA attributes</span>
+    menuButton.setAttribute(<span class="hljs-string">'aria-controls'</span>, navigationDrawerID);
+    menuButton.setAttribute(<span class="hljs-string">'aria-expanded'</span>, <span class="hljs-literal">false</span>);
 
     <span class="hljs-comment">// Setup navigation drawer</span>
     navigationDrawerEl.setAttribute(<span class="hljs-string">'aria-hidden'</span>, <span class="hljs-literal">true</span>);
 
     <span class="hljs-comment">// Toggle menu expanded/collapsed</span>
-    menuToggleEl.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
-      <span class="hljs-keyword">var</span> state = menuToggleEl.getAttribute(<span class="hljs-string">'aria-expanded'</span>) === <span class="hljs-string">'false'</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+    menuButton.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+      <span class="hljs-keyword">var</span> state = menuButton.getAttribute(<span class="hljs-string">'aria-expanded'</span>) === <span class="hljs-string">'false'</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
 
       toggleMenu(state);
 
@@ -513,7 +518,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.2 KB</span>
+                    <span class="Meta-value">1.4 KB</span>
                 </li>
             </ul>
         </div>
