@@ -338,6 +338,7 @@
                             
                             <code class="Code Code--lang-CSS FileBrowser-code">
                                 <pre>.c-menu {
+  @apply --focusable;
   display: block;
   position: fixed;
   z-index: calc(map(layers, modal) + 1);
@@ -457,24 +458,71 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-JavaScript FileBrowser-code">
-                                <pre>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">  'use strict'</span>;
+                                <pre><span class="hljs-meta">'use strict'</span>;
 
-  <span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">document</span>.querySelector.bind(<span class="hljs-built_in">document</span>);
-  <span class="hljs-keyword">var</span> menuToggleEl = $(<span class="hljs-string">'[href="#navigation"]'</span>);
-  <span class="hljs-keyword">var</span> menuButton = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
-  <span class="hljs-keyword">var</span> navigationDrawerID = <span class="hljs-string">'navigation__drawer'</span>;
-  <span class="hljs-keyword">var</span> navigationDrawerEl = $(<span class="hljs-string">'#navigation__drawer'</span>);
+(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, factory</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-built_in">module</span>.exports) {
+    <span class="hljs-built_in">module</span>.exports = factory(<span class="hljs-built_in">require</span>(<span class="hljs-string">'../../src/assets/scripts/utils/selection'</span>).$);
+    <span class="hljs-built_in">module</span>.exports = factory(<span class="hljs-built_in">require</span>(<span class="hljs-string">'../../src/assets/scripts/utils/focusing'</span>).$);
+  } <span class="hljs-keyword">else</span> {
+    root.menu = factory(root.selection.$, root.focusing);
+  }
+}(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">$, focusing</span>) </span>{
+  <span class="hljs-keyword">const</span> doc = <span class="hljs-keyword">this</span>.document;
+  <span class="hljs-keyword">const</span> menuToggleEl = $(<span class="hljs-string">'[href="#navigation"]'</span>);
+  <span class="hljs-keyword">const</span> menuButton = doc.createElement(<span class="hljs-string">'button'</span>);
+  <span class="hljs-keyword">const</span> navigationDrawerEl = $(<span class="hljs-string">'#navigation__drawer'</span>);
+  <span class="hljs-keyword">const</span> navigationDrawerID = navigationDrawerEl.id;
+  <span class="hljs-keyword">const</span> focusRegion = navigationDrawerEl;
+
+  <span class="hljs-keyword">var</span> previousFocusedElement;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleKeypress</span>(<span class="hljs-params">e</span>) </span>{
+    focusing.bindKeypress(<span class="hljs-literal">true</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      handleRemoveFocus();
+    }, focusRegion, e);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleMaintainFocus</span>(<span class="hljs-params">e</span>) </span>{
+    focusing.maintainFocus(<span class="hljs-literal">true</span>, focusRegion, e);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleSetFocus</span>(<span class="hljs-params">e</span>) </span>{
+    previousFocusedElement = focusing.safeActiveElement();
+    focusing.setInitialFocus(focusRegion);
+    doc.addEventListener(<span class="hljs-string">'keydown'</span>, handleKeypress);
+    doc.body.addEventListener(<span class="hljs-string">'focus'</span>, handleMaintainFocus, <span class="hljs-literal">true</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleRemoveFocus</span>(<span class="hljs-params">e</span>) </span>{
+    doc.removeEventListener(<span class="hljs-string">'keydown'</span>, handleKeypress);
+    doc.body.removeEventListener(<span class="hljs-string">'focus'</span>, handleMaintainFocus, <span class="hljs-literal">true</span>);
+    focusing.removeFocus(focusRegion);
+    previousFocusedElement &amp;&amp; previousFocusedElement.focus();
+  }
 
   <span class="hljs-comment">// Replace menu link with a `button`</span>
   menuButton.classList = menuToggleEl.classList;
   menuButton.innerHTML = menuToggleEl.innerHTML;
-  <span class="hljs-built_in">document</span>.body.replaceChild(menuButton, menuToggleEl)
+  doc.body.replaceChild(menuButton, menuToggleEl);
 
-  <span class="hljs-keyword">var</span> toggleMenu = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state</span>) </span>{
+  <span class="hljs-comment">// Correct role for navigation drawer</span>
+  navigationDrawerEl.setAttribute(<span class="hljs-string">'role'</span>, <span class="hljs-string">'dialog'</span>);
+  navigationDrawerEl.setAttribute(<span class="hljs-string">'aria-labelledby'</span>, <span class="hljs-string">'navigation__title'</span>);
+  navigationDrawerEl.hidden = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-keyword">const</span> toggleMenu = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state</span>) </span>{
     menuButton.setAttribute(<span class="hljs-string">'aria-expanded'</span>, state);
-    <span class="hljs-built_in">document</span>.body.setAttribute(<span class="hljs-string">'data-menu-expanded'</span>, state);
+    doc.body.setAttribute(<span class="hljs-string">'data-menu-expanded'</span>, state);
     navigationDrawerEl.setAttribute(<span class="hljs-string">'aria-hidden'</span>, !state);
+
+    <span class="hljs-keyword">if</span> (state === <span class="hljs-string">'true'</span>) {
+      handleSetFocus();
+      navigationDrawerEl.hidden = <span class="hljs-literal">false</span>;
+    } <span class="hljs-keyword">else</span> {
+      handleRemoveFocus();
+      navigationDrawerEl.hidden = <span class="hljs-literal">true</span>;
+    }
   };
 
   <span class="hljs-keyword">if</span> (menuToggleEl) {
@@ -486,8 +534,8 @@
     navigationDrawerEl.setAttribute(<span class="hljs-string">'aria-hidden'</span>, <span class="hljs-literal">true</span>);
 
     <span class="hljs-comment">// Toggle menu expanded/collapsed</span>
-    menuButton.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
-      <span class="hljs-keyword">var</span> state = menuButton.getAttribute(<span class="hljs-string">'aria-expanded'</span>) === <span class="hljs-string">'false'</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+    menuButton.addEventListener(<span class="hljs-string">'click'</span>, (e) =&gt; {
+      <span class="hljs-keyword">const</span> state = menuButton.getAttribute(<span class="hljs-string">'aria-expanded'</span>) === <span class="hljs-string">'false'</span> ? <span class="hljs-string">'true'</span> : <span class="hljs-string">'false'</span>;
 
       toggleMenu(state);
 
@@ -495,13 +543,14 @@
     });
 
     <span class="hljs-comment">// Close menu if escape key is pressed</span>
-    <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'keyup'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
-      <span class="hljs-keyword">if</span> (e.keyCode == <span class="hljs-number">27</span>) {
+    <span class="hljs-keyword">this</span>.addEventListener(<span class="hljs-string">'keyup'</span>, (e) =&gt; {
+      <span class="hljs-keyword">if</span> (e.keyCode === <span class="hljs-number">27</span>) {
         toggleMenu(<span class="hljs-literal">false</span>);
+        handleRemoveFocus();
       }
     });
   }
-}());
+}));
 </pre>
                             </code>
                             
@@ -518,7 +567,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.4 KB</span>
+                    <span class="Meta-value">2.9 KB</span>
                 </li>
             </ul>
         </div>
