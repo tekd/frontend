@@ -18,8 +18,8 @@ $summary__author-size: map(sizes, xlarge);
 }
 
 .c-summary__header {
-  min-height: 2em;
-  margin-bottom: map(spaces, large);
+  /*min-height: 2em;*/
+  margin-bottom: map(spaces, medium);
 
   @media print {
     border-top: 1px solid black;
@@ -29,6 +29,7 @@ $summary__author-size: map(sizes, xlarge);
 
 .c-summary__title {
   @apply --typeset-summary-title;
+
   padding-right: calc($summary__author-size - map(spaces, medium));
 
   a::before {
@@ -55,15 +56,15 @@ $summary__author-size: map(sizes, xlarge);
 
 .c-summary__main {
   @apply --typeset-prose;
+
+  max-width: 75ch;
   margin-bottom: map(spaces, medium);
   font-size: 0.875rem;
 
-  a {
-    position: relative;
-    z-index: calc(map(layers, default) + 1);
-    letter-spacing: 0.025em;
+  em {
     text-transform: uppercase;
-    color: inherit;
+    font-style: normal;
+    letter-spacing: 0.025em;
   }
 }
 
@@ -80,6 +81,7 @@ $summary__author-size: map(sizes, xlarge);
 
 .c-summary__meta {
   @apply --typeset-label;
+
   color: map(colors, neutral, dark);
 
   .dt-published {
@@ -176,15 +178,6 @@ $summary__author-size: map(sizes, xlarge);
   }
 }
 
-&.js-mouseout {
-  .c-summary__author {
-    &::before {
-      z-index: map(layers, default);
-      animation: corner-reverse 0.15s steps(10);
-    }
-  }
-}
-
 .c-summary--countdown {
   .c-summary__header {
     padding-left: calc(map(spaces, large) + map(spaces, xsmall));
@@ -192,10 +185,12 @@ $summary__author-size: map(sizes, xlarge);
 
   .dt-published {
     @apply --typeset-summary-title;
+
     font-weight: 400;
     position: absolute;
     top: map(spaces, medium);
     left: calc(map(spaces, medium) + map(spaces, xsmall));
+    z-index: 0;
 
     @media print {
       top: 2rem;

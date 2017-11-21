@@ -1,12 +1,12 @@
 .c-author {
   display: block;
-  flex: 1;
   position: relative;
   overflow: hidden;
 }
 
 .c-author__meta {
   @apply --typeset-label;
+
   position: absolute;
   right: 0;
   bottom: 0;

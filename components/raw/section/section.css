@@ -26,6 +26,7 @@
 
 .c-section__title {
   @apply --typeset-ui;
+
   text-transform: uppercase;
 }
 
@@ -37,16 +38,16 @@
   @media (--from-large-screen) {
     flex: 1 0 75%;
     margin-left: 5%;
-    padding-right: 5%;
+    /*padding-right: 5%;*/
     padding-left: 0;
   }
 
   @media (--from-xlarge-screen) {
-    padding-right: 15%;
+    /*padding-right: 15%;*/
   }
 
   @media (--from-max-screen) {
-    padding-right: 25%;
+    /*padding-right: 25%;*/
   }
 }
 
@@ -71,6 +72,7 @@
 
     .c-promo {
       @apply --typeset-caption;
+
       text-align: right;
     }
   }
