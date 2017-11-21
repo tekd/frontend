@@ -154,6 +154,7 @@
     <code class="Code Code--lang-html">
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"top"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__skip"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#main"</span>&gt;</span>Skip to content<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__title"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__home"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pages/"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"home"</span>&gt;</span>24 ways <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>to impress your friends<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
@@ -166,6 +167,7 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-48fdd1700a4bbcdb26eea67e9f307e1a-panel-view">
     <code class="Code Code--lang-html">
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"top"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__skip"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#main"</span>&gt;</span>Skip to content<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__title"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-banner__home"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pages/"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"home"</span>&gt;</span>24 ways <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>to impress your friends<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
@@ -343,6 +345,36 @@
     color: map(colors, primary, light);
   }
 }
+
+.c-banner__skip {
+  @apply --typeset-ui;
+
+  position: fixed;
+  top: 0;
+  left: map(spaces, medium);
+  z-index: map(layers, overlay);
+  display: block;
+  background-color: $navigation-color;
+  box-shadow: 0 8px 8px 0 $navigation-color--shadow;
+  padding: map(spaces, xlarge) map(spaces, small) map(spaces, xsmall);
+  color: $navigation-color--text;
+  transform: translateY(0);
+
+  &amp;:hover {
+    color: $color-ui-link--hover;
+  }
+
+  &amp;:active {
+    color: $color-ui-link--active;
+  }
+
+  &amp;:not(:focus) {
+    @apply --hidden;
+
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-out;
+  }
+}
 </pre>
                             </code>
                             
@@ -359,7 +391,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.5 KB</span>
+                    <span class="Meta-value">2.1 KB</span>
                 </li>
             </ul>
         </div>
@@ -727,16 +759,6 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="menu" data-pjax>
                 <span>Menu</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="navigation" data-pjax>
-                <span>Navigation</span>
                 
             </a>
         </li>

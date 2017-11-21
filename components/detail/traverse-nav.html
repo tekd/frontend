@@ -153,20 +153,18 @@
 <div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-a5a4ef0432cae89a8b1cf5aff2df24ad-panel-html">
     <code class="Code Code--lang-html">
         
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"prev"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/how-tabs-should-work/"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"How Tabs Should Work"</span>&gt;</span>
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Article navigation"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"prev"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/how-tabs-should-work/"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Previous: How Tabs Should Work"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__icon"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 200 200"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M50 100l85 85 7-7-78-78 78-78-7-7"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Previous article<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"next"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/solve-the-hard-problems/"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"Solve the Hard Problems"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Next article<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"next"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/solve-the-hard-problems/"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Next: Solve the Hard Problems"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__icon"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 200 200"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M150 100l-85 85-7-7 78-78-78-78 7-7"</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></pre>
         
     </code>
 </div>
@@ -175,20 +173,18 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-a5a4ef0432cae89a8b1cf5aff2df24ad-panel-view">
     <code class="Code Code--lang-html">
         <pre>{% if traverse %}
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"{{ traverse.type | capitalize }} navigation"</span>&gt;</span>
   {%- if traverse.prev -%}
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"prev"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ traverse.prev.url }}"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"{{ traverse.prev.title }}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"prev"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ traverse.prev.url }}"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Previous: {{ traverse.prev.title }}"</span>&gt;</span>
     {% include "prev.svg" %}
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Previous {{ traverse.type }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   {%- endif -%}
   {%- if traverse.next -%}
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"next"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ traverse.next.url }}"</span> <span class="hljs-attr">data-sequence-title</span>=<span class="hljs-string">"{{ traverse.next.title }}"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-hidden"</span>&gt;</span>Next {{ traverse.type }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-traverse-nav__item"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"next"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ traverse.next.url }}"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Next: {{ traverse.next.title }}"</span>&gt;</span>
     {% include "next.svg" %}
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   {%- endif -%}
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 {% endif %}</pre>
     </code>
 </div>
@@ -320,12 +316,8 @@
   padding: map(spaces, medium);
   box-shadow: inset 0 -1px 0 $navigation-color--offset;
 
-  &amp;[rel=prev]::after {
-    content: 'Previously: \A' attr(data-sequence-title);
-  }
-
-  &amp;[rel=next]::after {
-    content: 'Next: \A' attr(data-sequence-title);
+  &amp;[rel]::after {
+    content: attr(aria-label);
   }
 
   @media (--from-medium-screen) {
@@ -393,7 +385,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.7 KB</span>
+                    <span class="Meta-value">1.6 KB</span>
                 </li>
             </ul>
         </div>
@@ -442,7 +434,7 @@
             <strong class="Meta-key">Referenced by <em class="Meta-count">(1)</em>:</strong>
             <span class="Meta-value Meta-value--linkList">
             
-                <a href="navigation">@<span>navigation</span></a>
+                <a href="page">@<span>page</span></a>
             
             </span>
         </li>
@@ -761,16 +753,6 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="menu" data-pjax>
                 <span>Menu</span>
-                
-            </a>
-        </li>
-        
-    
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="navigation" data-pjax>
-                <span>Navigation</span>
                 
             </a>
         </li>
