@@ -459,7 +459,7 @@
     }
   }
 
-  .c-menu__button[aria-expanded=false] ~ &amp; {
+  [data-menu-expanded=false] &amp; {
     @media (--upto-medium-screen) {
       transform: translateY(-100%);
     }
@@ -469,7 +469,7 @@
     }
   }
 
-  .c-menu__button[aria-expanded=true] ~ &amp; {
+  [data-menu-expanded=true] &amp; {
     @media (--upto-medium-screen) {
       transform: translateY(0);
     }
