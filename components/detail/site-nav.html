@@ -290,13 +290,15 @@
   display: flex;
   flex-direction: row;
 
-  @media (--from-medium-screen) {
-    flex-direction: column;
+  .has-js &amp; {
+    @media (--from-medium-screen) {
+      flex-direction: column;
+    }
   }
 }
 
 .c-site-nav__item {
-  flex: 1;
+  flex: 1 0 33.3334%;
 }
 
 .c-site-nav__label {
@@ -338,7 +340,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">724 Bytes</span>
+                    <span class="Meta-value">759 Bytes</span>
                 </li>
             </ul>
         </div>

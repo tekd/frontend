@@ -157,18 +157,6 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-gb"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span> <span class="hljs-attr">prefix</span>=<span class="hljs-string">"og: http://ogp.me/ns#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-js fonts-loaded"</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-        <span class="hljs-built_in">document</span>.documentElement.className = <span class="hljs-built_in">document</span>.documentElement.className.replace(<span class="hljs-string">'no-js'</span>, <span class="hljs-string">'has-js'</span>);
-
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downloadJSAtOnload</span>(<span class="hljs-params"></span>) </span>{
-            <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);
-            element.src = <span class="hljs-string">"../../assets/scripts/app.js"</span>;
-            <span class="hljs-built_in">document</span>.body.appendChild(element);
-            <span class="hljs-built_in">document</span>.body.dataset.menuExpanded = <span class="hljs-string">'false'</span>;
-        }
-        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"load"</span>, downloadJSAtOnload, <span class="hljs-literal">false</span>);
-    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.gstatic.com"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cloud.24ways.org"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://media.24ways.org"</span> /&gt;</span>
@@ -181,6 +169,8 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"manifest"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/manifest.json"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"alternate"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://feeds.feedburner.com/24ways"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/rss+xml"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/humans.txt"</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../../assets/scripts/app.js"</span> <span class="hljs-attr">async</span> <span class="hljs-attr">defer</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"referrer"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"origin"</span> /&gt;</span>
@@ -231,19 +221,6 @@
 --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-gb"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"ltr"</span> <span class="hljs-attr">prefix</span>=<span class="hljs-string">"og: http://ogp.me/ns#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-js fonts-loaded"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-      <span class="hljs-built_in">document</span>.documentElement.className = <span class="hljs-built_in">document</span>.documentElement.className.replace(<span class="hljs-string">'no-js'</span>, <span class="hljs-string">'has-js'</span>);
-
-      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downloadJSAtOnload</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);
-        element.src = <span class="hljs-string">"{{ '/assets/scripts/app.js' | path }}"</span>;
-        <span class="hljs-built_in">document</span>.body.appendChild(element);
-        <span class="hljs-built_in">document</span>.body.dataset.menuExpanded = <span class="hljs-string">'false'</span>;
-      }
-
-      <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"load"</span>, downloadJSAtOnload, <span class="hljs-literal">false</span>);
-    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.gstatic.com"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cloud.24ways.org"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://media.24ways.org"</span>/&gt;</span>
@@ -256,6 +233,8 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"manifest"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/manifest.json"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"alternate"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ site.feed }}"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/rss+xml"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/humans.txt"</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"{{ '/assets/scripts/app.js' | path }}"</span> <span class="hljs-attr">async</span> <span class="hljs-attr">defer</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"referrer"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"origin"</span>/&gt;</span>

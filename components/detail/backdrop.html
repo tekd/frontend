@@ -265,12 +265,10 @@
   z-index: map(layers, backdrop);
   transition: opacity $navigation-duration ease-in;
   background-color: $backdrop-color;
-  backdrop-filter: blur(0);
   opacity: 0;
   pointer-events: none;
 
   [data-menu-expanded=true] &amp; {
-    backdrop-filter: blur(2px);
     opacity: 1;
     pointer-events: fill;
   }
@@ -291,7 +289,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">381 Bytes</span>
+                    <span class="Meta-value">321 Bytes</span>
                 </li>
             </ul>
         </div>

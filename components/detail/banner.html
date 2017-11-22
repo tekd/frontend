@@ -267,52 +267,34 @@
                             
                             <code class="Code Code--lang-CSS FileBrowser-code">
                                 <pre>.c-banner {
-  padding: map(spaces, medium) map(spaces, large);
   background-color: $color-year--dark;
   background-color: var(--color-year--dark, $color-year--dark);
-
-  .has-js &amp; {
-    transition-duration: $banner-duration;
-    transition-timing-function: ease-out;
-  }
-
-  [data-menu-expanded=false] &amp; {
-    transition-delay: $navigation-duration;
-  }
-
-  @media (--upto-medium-screen) {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: calc(map(layers, modal) + 1);
-
-    .has-js &amp; {
-      transition-property: background-color;
-    }
-
-    [data-menu-expanded=true] &amp; {
-      background-color: white;
-    }
-  }
-
-  @media (--from-medium-screen) {
-    margin-right: $navigation-width--large;
-    padding: map(spaces, large);
-  }
-
-  @media (--from-large-screen) {
-    padding-left: calc(25% - 1rem);
-  }
 }
 
 .c-banner__title {
+  padding: map(spaces, medium) map(spaces, large);
   font-size: 1.25em;
   line-height: calc(16 / 20);
 
+  .has-js &amp; {
+    @media (--upto-medium-screen) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: calc(map(layers, modal) + 1);
+      margin-right: map(sizes, large);
+    }
+  }
+
   @media (--from-medium-screen) {
+    padding: map(spaces, large);
     font-size: 1.5em;
     line-height: calc(24 / 24);
+  }
+
+  @media (--from-large-screen) {
+    padding-left: 25%;
   }
 }
 
@@ -324,25 +306,15 @@
     color: white;
   }
 
-  @media (--upto-medium-screen) {
-    .has-js &amp; {
-      transition: color $banner-duration ease-out;
-    }
-
-    [data-menu-expanded=true] &amp; {
-      color: $navigation-color--text;
-    }
-
-    [data-menu-expanded=false] &amp; {
-      transition-delay: $navigation-duration;
-    }
-  }
-
   span {
     font-size: 0.6667em;
     text-transform: lowercase;
     white-space: nowrap;
     color: map(colors, primary, light);
+
+    @media (--upto-xsmall-screen) {
+      @apply --hidden;
+    }
   }
 }
 
@@ -391,7 +363,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">2.1 KB</span>
+                    <span class="Meta-value">1.5 KB</span>
                 </li>
             </ul>
         </div>

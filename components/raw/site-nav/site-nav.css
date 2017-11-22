@@ -8,13 +8,15 @@
   display: flex;
   flex-direction: row;
 
-  @media (--from-medium-screen) {
-    flex-direction: column;
+  .has-js & {
+    @media (--from-medium-screen) {
+      flex-direction: column;
+    }
   }
 }
 
 .c-site-nav__item {
-  flex: 1;
+  flex: 1 0 33.3334%;
 }
 
 .c-site-nav__label {

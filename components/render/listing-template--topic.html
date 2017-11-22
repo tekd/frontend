@@ -7,8 +7,8 @@
   </h1>
 </header>
 
-<div class="c-menu" id="navigation">
-  <button class="c-menu__button" id="menu__button" aria-controls="menu__drawer" aria-expanded="true" aria-label"Navigation menu">
+<div class="c-menu no-transition">
+  <button class="c-menu__button" id="menu__button" aria-controls="menu__drawer" aria-expanded="true" aria-label="Navigation menu">
     <svg class="c-menu__icon" width="20" height="20" viewBox="0 0 200 200" role="img">
   <rect class="c-menu__line" width="120" height="10" x="40" y="45"/>
   <rect class="c-menu__line" width="120" height="10" x="40" y="70"/>
@@ -19,7 +19,7 @@
 </svg>
 
   </button>
-  <div class="c-menu__drawer" id="menu__drawer" aria-labelledby="menu__button"><form class="c-search" role="search" id="search" action="/pages/search/">
+  <div class="c-menu__drawer" id="menu__drawer" role="region" aria-labelledby="menu__button"><form class="c-search" role="search" id="search" action="/pages/search/">
   <fieldset class="c-field">
     <legend class="u-hidden">Search 24 ways</legend>
     <label class="u-hidden" for="q">Keywords</label>
