@@ -411,8 +411,9 @@
     top: 0;
     right: 0;
     z-index: map(layers, default);
-    border: solid calc($summary__author-size / 2);
-    border-color: transparent transparent white white;
+    height: $summary__author-size;
+    width: $summary__author-size;
+    background-image: linear-gradient(to top right, white, white 50%, transparent 50%, transparent);
   }
 
   &amp;::after {
@@ -485,7 +486,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.6 KB</span>
+                    <span class="Meta-value">3.7 KB</span>
                 </li>
             </ul>
         </div>

@@ -264,13 +264,20 @@
   font-weight: 700;
 
   &amp;::after {
-    content: ' \203A';
+    display: inline-block;
+    vertical-align: middle;
+    height: 0.375em;
+    width: 0.375em;
+    border: 0.1875em solid;
+    border-color: currentColor currentColor transparent transparent;
+    transform: rotate(45deg);
+    content: '';
   }
 }
 
 .c-continue--ajax {
   &amp;::after {
-    content: ' \2026';
+    content: '\2026';
   }
 }
 </pre>
@@ -289,7 +296,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">164 Bytes</span>
+                    <span class="Meta-value">380 Bytes</span>
                 </li>
             </ul>
         </div>
