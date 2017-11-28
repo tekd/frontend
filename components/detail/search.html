@@ -276,10 +276,13 @@
                                 <pre>.c-search {
   .c-field__input {
     width: 100%;
-    border: 1px solid transparent; /* Windows high contrast mode */
     box-shadow: inset 0 -1px 0 $navigation-color--offset;
     padding-left: map(spaces, xlarge);
     background-color: $navigation-color--offset;
+
+    @media (-ms-high-contrast:active) {
+      border: 1px solid;
+    }
 
     &amp;:not(:focus) {
       box-shadow: none;
@@ -323,7 +326,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">708 Bytes</span>
+                    <span class="Meta-value">712 Bytes</span>
                 </li>
             </ul>
         </div>
