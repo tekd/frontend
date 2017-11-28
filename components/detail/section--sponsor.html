@@ -155,7 +155,7 @@
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section c-section--sponsor"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sponsor"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__header"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span>Brought to you by<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span>Brought to you by<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-promo"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://grabaperch.com/?ref=24w01"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-promo__image"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/images/logo-perch.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Perch - A really little CMS"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"152"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"64"</span>/&gt;</span>
@@ -173,7 +173,7 @@
     <code class="Code Code--lang-html">
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section{% for mod in mods %} c-section--{{ mod }}{% endfor %}"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"{{ id }}"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__header"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span>{{ title | markdownInline }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span>{{ title | markdownInline }}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span>
     {%- if component -%}

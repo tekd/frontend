@@ -155,9 +155,9 @@
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary c-summary--countdown h-entry day-15"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__header"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__title  p-name"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__title  p-name"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-url"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2010/real-animation-using-javascript-css3-and-html5-video/"</span>&gt;</span>Real Animation Using JavaScript, CSS3, and HTML5 Video<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author  p-author h-card"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author-url  u-url"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/authors/danmall/"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-photo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cloud.24ways.org/authors/danmall160.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>/&gt;</span>
@@ -186,9 +186,9 @@
     <code class="Code Code--lang-html">
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary{% for mod in mods %} c-summary--{{ mod }}{% endfor %} h-entry {{ theme if theme }}"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__header"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__title  p-name"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__title  p-name"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-url"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ href }}"</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author  p-author h-card"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author-url  u-url"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/authors/{{ author | slugify }}/"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-photo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cloud.24ways.org/authors/{{ author | slugify }}160.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>/&gt;</span>
@@ -354,9 +354,9 @@
 
   a,
   em {
-    text-transform: uppercase;
+    font-family: map(fonts, family-sans);
     font-style: normal;
-    letter-spacing: 0.025em;
+    font-weight: 700;
     color: inherit;
   }
 }

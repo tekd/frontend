@@ -155,13 +155,13 @@
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment h-entry"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c0001"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__header"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__title  p-name h-card"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__title  p-name h-card"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-author u-url"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://adactio.com/"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-avatar  u-photo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.gravatar.com/avatar/5ad82c5ba0264363974af89deb743c20?s=96"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"64"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"64"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>/&gt;</span>
 
         Jeremy Keith
       <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__meta"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__permalink"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#c0001"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Permalink to this comment"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dt-published"</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2012-12-01T12:24:48-00:00"</span>&gt;</span>1 December 2012<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -196,12 +196,12 @@ RewriteRule ^(.).(d).(js|css)$ $1.$3 [L]
     <code class="Code Code--lang-html">
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment{% for mod in mods %} c-comment--{{ mod }}{% endfor %} h-entry"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"{{ id }}"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__header"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__title  p-name h-card"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__title  p-name h-card"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-author u-url"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ href }}"</span>&gt;</span>
         {% render "<a href="avatar">@avatar</a>", avatar %}
         {{ author | title }}
       <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__meta"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-comment__permalink"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#{{ id }}"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Permalink to this comment"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dt-published"</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"{{ datetime }}"</span>&gt;</span>{{ datetime | date('D MMMM YYYY') }}<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>

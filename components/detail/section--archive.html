@@ -155,7 +155,7 @@
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"2013"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__header"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2013/"</span>&gt;</span>2013<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2013/"</span>&gt;</span>2013<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"s-prose"</span>&gt;</span>
@@ -174,7 +174,7 @@
     <code class="Code Code--lang-html">
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section{% for mod in mods %} c-section--{{ mod }}{% endfor %}"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"{{ id }}"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__header"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span>{{ title | markdownInline }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__title"</span>&gt;</span>{{ title | markdownInline }}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-section__main"</span>&gt;</span>
     {%- if component -%}
