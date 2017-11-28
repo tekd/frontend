@@ -155,9 +155,7 @@
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary h-entry day-15"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__header"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__title  p-name"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-url"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/grid-flexbox-box-alignment-our-new-system-for-layout/"</span>&gt;</span>Grid, Flexbox, Box Alignment: Our New System for Layout<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__title  p-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-url"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/2015/grid-flexbox-box-alignment-our-new-system-for-layout/"</span>&gt;</span>Grid, Flexbox, Box Alignment: Our New System for Layout<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author  p-author h-card"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author-url  u-url"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/authors/rachelandrew/"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-photo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cloud.24ways.org/authors/rachelandrew160.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>/&gt;</span>
@@ -188,18 +186,25 @@
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary{% for mod in mods %} c-summary--{{ mod }}{% endfor %} h-entry {{ theme if theme }}"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__header"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__title  p-name"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-url"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ href }}"</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      {%- if href -%}
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-url"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"bookmark"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ href }}"</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      {%- else -%}
+        {{ title }}
+      {%- endif -%}
     <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    {%- if author -%}
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author  p-author h-card"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__author-url  u-url"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/authors/{{ author | slugify }}/"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-photo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cloud.24ways.org/authors/{{ author | slugify }}160.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"72"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>/&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-name"</span>&gt;</span>{{ author }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    {%- endif -%}
   <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__main"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-summary"</span>&gt;</span>{{ content | markdownInline }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  {%- if datetime -%}
   <span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__footer"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-summary__meta"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dt-published"</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"{{ datetime }}"</span>&gt;</span>
@@ -207,6 +212,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+  {%- endif -%}
 <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></pre>
     </code>
 </div>
@@ -347,7 +353,6 @@
   @apply --typeset-prose;
 
   max-width: 75ch;
-  margin-bottom: map(spaces, medium);
   font-size: 0.875rem;
 
   a,
@@ -362,6 +367,7 @@
 .c-summary__footer {
   @media screen {
     margin-top: auto;
+    padding-top: map(spaces, medium);
   }
 }
 
@@ -450,6 +456,10 @@
     padding-left: calc(map(spaces, large) + map(spaces, xsmall));
   }
 
+  .c-summary__footer {
+    padding-top: 0;
+  }
+
   .dt-published {
     @apply --typeset-summary-title;
 
@@ -468,6 +478,15 @@
     }
   }
 }
+
+.c-summary--taken {
+  .c-summary__title {
+    opacity: 0.66;
+    text-decoration: line-through;
+  }
+
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 4px, color(map(colors, neutral, lightest) a(75%)) 4px, color(map(colors, neutral, lightest) a(75%)) 8px);
+}
 </pre>
                             </code>
                             
@@ -484,7 +503,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.7 KB</span>
+                    <span class="Meta-value">4 KB</span>
                 </li>
             </ul>
         </div>
@@ -507,7 +526,7 @@
         
         
         <li class="Meta-item">
-            <strong class="Meta-key">Variants <em class="Meta-count">(3)</em>:</strong>
+            <strong class="Meta-key">Variants <em class="Meta-count">(5)</em>:</strong>
             <span class="Meta-value Meta-value--linkList">
             
                 <a href="">
@@ -520,6 +539,14 @@
             
                 <a href="summary--short">
                     <span>Short</span>
+                </a>, 
+            
+                <a href="summary--sponsored">
+                    <span>Sponsored</span>
+                </a>, 
+            
+                <a href="summary--sponsored-taken">
+                    <span>Sponsored Taken</span>
                 </a>
             
             </span>
@@ -1051,6 +1078,16 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="content-template--404" data-pjax>
                 <span>404</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="content-template--sponsorship" data-pjax>
+                <span>Sponsorship</span>
                 
             </a>
         </li>
