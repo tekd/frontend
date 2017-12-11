@@ -1,27 +1,29 @@
 {
-  "name": "24ways-frontend",
-  "version": "2016.0.0",
-  "description": "Bits, the front-end component library for 24 ways",
+  "name": "objectively-component-library",
+  "version": "1.0.0",
+  "description": "Objecively Components Library",
   "keywords": [
     "styleguide",
     "patterns",
     "library"
   ],
-  "homepage": "http://bits.24ways.org",
-  "bugs": "https://github.com/24ways/frontend/issues",
-  "license": "SEE LICENSE IN LICENSE",
-  "author": "Paul Robert Lloyd",
+  "homepage": "https://objectively.is/",
+  "bugs": {
+    "url": ""
+  },
+  "license": "",
+  "author": "",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/24ways/frontend.git"
+    "type": "",
+    "url": ""
   },
   "main": "fractal.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "node_modules/.bin/gulp start",
-    "build": "node_modules/.bin/gulp build",
-    "dev": "node_modules/.bin/gulp dev",
-    "publish": "node_modules/.bin/gulp publish",
+    "start": "gulp start",
+    "build": "gulp build",
+    "dev": "gulp dev",
+    "publish": "gulp publish",
     "test": "xo || stylelint src/**/*.css"
   },
   "browserslist": [

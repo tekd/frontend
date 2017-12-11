@@ -43,7 +43,7 @@ const nunjucks = require('@frctl/nunjucks')({
 });
 
 // Project config
-fractal.set('project.title', 'Bits of 24 ways');
+fractal.set('project.title', 'Objecively Components Library');
 
 // Components config
 fractal.components.engine(nunjucks);

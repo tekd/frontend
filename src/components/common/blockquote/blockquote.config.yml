@@ -1,0 +1,6 @@
+title: "A simple blockquote component"
+preview: "@preview-component"
+status: wip
+context:
+  text: "Blockquotes are cool"
+  citation: "Objectively docs"

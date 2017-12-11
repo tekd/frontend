@@ -102,7 +102,7 @@ function serve() {
   const server = fractal.web.server({
     sync: true,
     syncOptions: {
-      https: true
+      https: false
     }
   });
 

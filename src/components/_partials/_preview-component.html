@@ -1,0 +1,9 @@
+{% extends '@preview' %}
+{% block body %}
+<body>
+{{yield}}
+{% set component_path = _target.baseHandle + '/' +  _target.baseHandle + '.js'  %}
+<script type="text/javascript" src="{{'/components/raw/' + component_path | path}}"></script>
+
+</body>
+{% endblock %}

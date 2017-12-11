@@ -1,172 +1,54 @@
-.c-menu {
-  .has-js & {
-    position: fixed;
-    z-index: map(layers, modal);
 
-    /* Create ‘fake’ banner/sidebar, so drawer can slide from underneath it */
-    &::before {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: calc(map(layers, modal) + 1);
-      display: block;
-      content: '';
 
-      @media (--upto-medium-screen) {
-        left: 0;
-        background-color: $color-year--dark;
-        background-color: var(--color-year--dark, $color-year--dark);
-        height: $banner-height--small;
-        width: 100%;
-      }
+// breakpoints
 
-      @media (--from-medium-screen) {
-        background-color: white;
-        box-shadow: inset 1px 0 $navigation-color--offset;
+$small-only: screen and (max-width: 39.9375em);
+$touch: screen and (max-width: 64em);
+$medium: screen and (min-width: 40em);
+$medium-only: screen and (min-width: 40em) and (max-width: 63.9375em);
+$medium-down: (max-width 64em);
+$medium-up: (min-width 64em);
+$large: screen and (min-width: 64em);
+$large-up: (min-width 64.063em);
+
+$main-color: green;
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.top-bar {
+    background-color: $main-color;
+
+    text-align: center;
+    height: 50px;
+    display: flex;
+
+    &__button {
+        @extend .u-material-icons;
+        color: white;
+        padding: 12px 15px;
+        cursor: pointer;
+
+        &:hover { background-color: rgba(white, .1); }
+    }
+
+    &__logo {
+        flex: 1;
+        padding: 8px;
+        margin: 0;
+        display: inline-block;
         height: 100%;
-        width: $navigation-width--large;
-      }
-    }
-  }
-
-  &.no-transition * {
-    transition: none !important;
-  }
-
-  @media print {
-    display: none;
-  }
-}
-
-.c-menu__button {
-  @apply --focusable;
-
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: calc(map(layers, modal) + 1);
-
-  .no-js & {
-    @apply --hidden;
-  }
-
-  @media (-ms-high-contrast:active) {
-    border: 1px solid;
-  }
-
-  @media (--upto-medium-screen) {
-    padding: map(sizes, xsmall);
-    color: white;
-
-    &:hover,
-    &:active {
-      color: white;
-    }
-  }
-
-  @media (--from-medium-screen) {
-    @apply --navigation-link;
-
-    padding: map(spaces, medium);
-    box-shadow: inset 0 -1px 0 $navigation-color--offset;
-  }
-
-  @media print {
-    display: none;
-  }
-}
-
-.c-menu__drawer {
-  display: flex;
-  flex-direction: column;
-  background-color: $navigation-color;
-
-  [data-menu-expanded] & {
-    box-shadow: 0 8px 8px 0 $navigation-color--shadow;
-    transition: all $navigation-duration ease-in-out;
-
-    @media (--upto-medium-screen) {
-      width: 100vw;
     }
 
-    @media (--from-medium-screen) {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 18rem;
-    }
-  }
-
-  [data-menu-expanded=false] & {
-    @media (--upto-medium-screen) {
-      transform: translateY(-100%);
+    &__logo img {
+        height: 100%;
     }
 
-    @media (--from-medium-screen) {
-      transform: translateX(100%);
+    &--transparent {
+      background-color: rgba(black, .2);
+      position: relative;
+      z-index: 100;
     }
-  }
-
-  [data-menu-expanded=true] & {
-    @media (--upto-medium-screen) {
-      transform: translateY(0);
-    }
-
-    @media (--from-medium-screen) {
-      transform: translateX(calc($navigation-width--large * -1));
-    }
-  }
-}
-
-.c-menu__icon {
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
-.c-menu__line {
-  $lines-animation-duration: 0.2s;
-  $cross-animation-duration: 0.1s;
-
-  transform-origin: 50% 50%;
-
-  /* Transitions: ☰ */
-  &:nth-of-type(1),
-  &:nth-of-type(2),
-  &:nth-of-type(5),
-  &:nth-of-type(6) {
-    transform: translateY(0);
-    transition:
-      transform $lines-animation-duration cubic-bezier(0.8, 0, 0.4, 1.8) $cross-animation-duration,
-      opacity $lines-animation-duration cubic-bezier(1, 0, 1, 0);
-
-    [aria-expanded=true] & {
-      opacity: 0;
-      transition:
-        transform $lines-animation-duration ease-out,
-        opacity $lines-animation-duration cubic-bezier(1, 0, 1, 0);
-    }
-  }
-
-  /* Transitions: × */
-  &:nth-of-type(3),
-  &:nth-of-type(4) {
-    transform: rotate(0) scaleX(1);
-    transition: transform $cross-animation-duration ease-out;
-
-    [aria-expanded=true] & {
-      transition: transform $cross-animation-duration cubic-bezier(0.8, 0, 0.4, 1.8) $lines-animation-duration;
-    }
-  }
-
-  /* Transforms */
-  [aria-expanded=true] & {
-    &:nth-of-type(1) { transform: translateY(25%); }
-    &:nth-of-type(2) { transform: translateY(12.5%); }
-    &:nth-of-type(3) { transform: rotate(45deg) scaleX(1.3334); }
-    &:nth-of-type(4) { transform: rotate(-45deg) scaleX(1.3334); }
-    &:nth-of-type(5) { transform: translateY(-12.5%); }
-    &:nth-of-type(6) { transform: translateY(-25%); }
-  }
 }
