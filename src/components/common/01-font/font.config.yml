@@ -1,0 +1,14 @@
+title: "Fonts"
+preview: "@preview-component"
+status: wip
+context:
+  typefaces:
+    - id: sans
+      name: Montserrat
+      description: |
+        <p>The old posters and signs in the traditional Montserrat neighborhood of Buenos Aires inspired Julieta Ulanovsky to design this typeface and rescue the beauty of urban typography that emerged in the first half of the twentieth century. As urban development changes that place, it will never return to its original form and loses forever the designs that are so special and unique. The letters that inspired this project have work, dedication, care, color, contrast, light and life, day and night! These are the types that make the city look so beautiful. The Montserrat Project began with the idea to rescue what is in Montserrat and set it free under a libre license, the SIL Open Font License.</p>
+
+    - id: serif
+      name: Crimson Text
+      description: |
+        <p>Crimson Text is a font family for book production in the tradition of beautiful oldstyle typefaces.</p>

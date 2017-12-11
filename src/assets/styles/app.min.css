@@ -1,2 +1,2 @@
-blockquote{border-left:4px solid rgba(0,0,0,.2);margin-left:0;padding-left:1em}
+@import url("https://fonts.googleapis.com/css?family=Montserrat");@import url("https://fonts.googleapis.com/css?family=Crimson+Text");blockquote{border-left:4px solid rgba(0,0,0,.2);margin-left:0;padding-left:1em}.serif{font-family:Crimson Text,serif}.sans{font-family:Montserrat,sans-serif}
 /*# sourceMappingURL=app.min.css.map */

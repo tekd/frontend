@@ -209,11 +209,8 @@ function compileGlobalSass() {
     .pipe(sourcemaps.write('.'))
     // 5. write .min.css
     .pipe(gulp.dest(`${paths.src}/assets/styles`));
-
   return stream;
 }
-
-
 
 function styles() {
     return gulp.src(`${paths.src}/assets/styles/**/*.css`)
@@ -224,7 +221,7 @@ function styles() {
 
 }
 function vendor() {
-  return gulp.src(`${paths.src}/assets/styles/vendor/*.{css,scss}`)
+  return gulp.src(`${paths.src}/assets/vendor/**`)
     .pipe(gulp.dest(`${paths.dest}/assets/vendor`));
 }
 

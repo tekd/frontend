@@ -1,0 +1,15 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
+// Font Variables
+$serif: 'Crimson Text', serif;   
+$sans: 'Montserrat', sans-serif;
+
+.serif {
+  font-family: $serif;
+}
+
+.sans {
+  font-family: $sans;
+}
