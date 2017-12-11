@@ -1,17 +1,18 @@
 /* =====================================================
    Fractal UI styles
    ===================================================== */
+
 /* Theme overrides */
 a {
   color: purple;
-}
 
-a:hover {
-  color: rgba(128, 0, 128, 0.5);
-}
+  &:hover {
+    color: rgba(purple, 0.5);
+  }
 
-a:active {
-  color: pink;
+  &:active {
+    color: pink;
+  }
 }
 
 .Pen-previewLink svg {
@@ -23,12 +24,14 @@ a:active {
   color: purple;
 }
 
-.Prose tr td:first-child {
-  min-width: 12em;
-  padding-right: 1em;
-  white-space: nowrap;
-}
+.Prose {
+  tr td:first-child {
+    min-width: 12em;
+    padding-right: 1em;
+    white-space: nowrap;
+  }
 
-.Prose tr td:last-child {
-  width: 100%;
+  tr td:last-child {
+    width: 100%;
+  }
 }

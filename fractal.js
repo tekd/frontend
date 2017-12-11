@@ -43,7 +43,7 @@ const nunjucks = require('@frctl/nunjucks')({
 });
 
 // Project config
-fractal.set('project.title', 'Objecively Components Library');
+fractal.set('project.title', 'Objectively Components Library');
 
 // Components config
 fractal.components.engine(nunjucks);

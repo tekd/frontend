@@ -10,8 +10,11 @@ const util = require('gulp-util');
 
 // CSS
 const postcss = require('gulp-postcss');
+const postcssSass = require('postcss-scss');
+const sass = require('gulp-sass');
 const apply = require('postcss-apply');
 const assets = require('postcss-assets');
+const cssnano = require('gulp-cssnano');
 const autoprefixer = require('autoprefixer');
 const calc = require('postcss-calc');
 const colorFunction = require('postcss-color-function');
@@ -28,6 +31,7 @@ const simpleVars = require('postcss-simple-vars');
 const ghPages = require('gulp-gh-pages');
 const imagemin = require('gulp-imagemin');
 const sourcemaps = require('gulp-sourcemaps');
+const rename = require('gulp-rename');
 
 // JavaScript
 const rollup = require('./etc/gulp/rollup');
@@ -174,13 +178,54 @@ function scripts(callback) {
   rollup(modules, util, callback);
 }
 
+const STYLES_WATCHLIST = [
+  `${paths.src}/assets/styles/sass/**/*.{css,scss}`,
+  `${paths.src}/components/**/*.{css,scss}`
+];
+
 // Styles
+function compileGlobalSass() {
+  var stream = gulp.src(STYLES_WATCHLIST)
+    // 1. convert SCSS to CSS
+    .pipe(
+      sass({ outputStyle: 'expanded' })
+        .on('error', sass.logError)
+    )
+    .pipe(gulp.dest(`${paths.src}/assets/styles`));
+  // Minificiation
+  stream
+    // 1. initialize sourcemaps
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    // 2. minify with cssnano
+    .pipe(cssnano({
+      safe: true,
+      mergeRules: false,
+    }))
+    // 3. rename to .min.css
+    .pipe(rename({
+      suffix: '.min',
+    }))
+    // 4. write .min.css.map
+    .pipe(sourcemaps.write('.'))
+    // 5. write .min.css
+    .pipe(gulp.dest(`${paths.src}/assets/styles`));
+
+  return stream;
+}
+
+
+
 function styles() {
-  return gulp.src(`${paths.src}/assets/styles/*.css`)
+    return gulp.src(`${paths.src}/assets/styles/**/*.css`)
     .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(`${paths.dest}/assets/styles`));
+
+}
+function vendor() {
+  return gulp.src(`${paths.src}/assets/styles/vendor/*.{css,scss}`)
+    .pipe(gulp.dest(`${paths.dest}/assets/vendor`));
 }
 
 // Watch
@@ -190,13 +235,15 @@ function watch() {
   gulp.watch(`${paths.src}/assets/images`, images);
   gulp.watch(`${paths.src}/assets/vectors`, images);
   gulp.watch(`${paths.src}/**/*.js`, scripts);
-  gulp.watch(`${paths.src}/**/*.css`, styles);
+  gulp.watch(`${paths.src}/**/*.{scss}`, compileGlobalSass);
+  gulp.watch(`${paths.src}/**/*.{css}`, styles);
 }
 
 // Task sets
-const compile = gulp.series(clean, gulp.parallel(meta, icons, images, vectors, scripts, styles));
+const compile = gulp.series(clean, gulp.parallel(meta, icons, images, vectors, scripts, vendor, compileGlobalSass, styles));
 
 gulp.task('start', gulp.series(compile, serve));
 gulp.task('build', gulp.series(compile, build));
 gulp.task('dev', gulp.series(compile, watch));
 gulp.task('publish', gulp.series(build, deploy));
+
