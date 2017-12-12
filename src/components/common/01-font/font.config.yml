@@ -1,6 +1,6 @@
 title: "Fonts"
 preview: "@preview-component"
-status: wip
+status: ready
 context:
   typefaces:
     - id: sans
@@ -12,3 +12,13 @@ context:
       name: Crimson Text
       description: |
         <p>Crimson Text is a font family for book production in the tradition of beautiful oldstyle typefaces.</p>
+
+    - id: material-icons
+      name: Material Icons
+      description: |
+        <p>We use Google's <a href="https://material.io/icons/" target="_blank">Material Icons</a> as our base icon set.</p>
+
+    - id: fa
+      name: Font Awesome
+      description: |
+        <p>We use <a href="http://fontawesome.io/" target="_blank">Font Awesome</a> as our secondary icon set. We primarily use it for social media icons.</p>

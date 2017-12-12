@@ -13,3 +13,7 @@ $sans: 'Montserrat', sans-serif;
 .sans {
   font-family: $sans;
 }
+
+.material-icons {
+  @extend .u-material-icons;
+}

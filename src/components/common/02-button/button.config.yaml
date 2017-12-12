@@ -1,0 +1,106 @@
+--- 
+collated: true
+status: ready
+variants: 
+  - 
+    context: 
+      label: Button
+      mods: ~
+    name: default
+  - 
+    context: 
+      disabled: true
+      label: "Disabled button"
+      mods: 
+        - disabled
+    name: disabled
+  - 
+    context: 
+      href: "?page=2"
+      label: Outline
+      mods: 
+        - outline
+    name: Button
+  - 
+    context: 
+      href: "?page=2"
+      icon: close
+      label: Outline
+      mods: 
+        - outline
+    name: Button
+  - 
+    context: 
+      href: "?page=2"
+      label: "Read More"
+      mods: 
+        - purple
+    name: more
+  - 
+    context: 
+      href: "?page=2"
+      icon: arrow_forward
+      label: "Read More"
+      mods: 
+        - purple
+    name: more
+  - 
+    context: 
+      href: "?page=2"
+      label: Send
+      mods: 
+        - blue
+    name: Send
+  - 
+    context: 
+      href: "?page=2"
+      icon: send
+      label: Send
+      mods: 
+        - blue
+    name: Send
+  - 
+    context: 
+      href: "?page=2"
+      label: Confirm
+      mods: 
+        - teal
+    name: confirm
+  - 
+    context: 
+      href: "?page=2"
+      icon: check
+      label: Confirm
+      mods: 
+        - teal
+    name: confirm
+  - 
+    context: 
+      href: "?page=2"
+      label: Download
+      mods: 
+        - orange
+    name: Download
+  - 
+    context: 
+      href: "?page=2"
+      icon: file_download
+      label: Download
+      mods: 
+        - orange
+    name: Download
+  - 
+    context: 
+      href: "?page=2"
+      label: Button
+      mods: 
+        - naked
+    name: naked
+  - 
+    context: 
+      href: "?page=2"
+      icon: file_download
+      label: Button
+      mods: 
+        - naked
+    name: Download

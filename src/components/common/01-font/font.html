@@ -1,6 +1,6 @@
 {% for face in typefaces %}
 <section id="{{ face.id }}" class="row">
-  <h4 class="">{{ face.name }} (<tt>.{{ face.id }}</tt>)</h4>
+  <h4 class="typeface">{{ face.name }} (<tt>.{{ face.id }}</tt>)</h4>
   <div class="row">
     <div class="column large-6 medium-6 small-12">
       {{ face.description }}
@@ -11,6 +11,22 @@
         <p class="text-tiny">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
         <p class="text-tiny">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
         <p class="text-tiny">0 1 2 3 4 5 6 7 8 9</p>
+        <p class="icon-huge">account_balance assessment check_circle bug_report</p>
+        <p class="icon-tiny"> file_download error close arrow_forward add send check check_circle keyboard_arrow_left keyboard_arrow_right keyboard_arrow_up keyboard_arrow_down chevron_left chevron_right </p>
+        <div class="secondary-icons-huge">
+          <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-medium fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+        </div>
+        <div class="secondary-icons-tiny">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-medium" aria-hidden="true"></i>
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </div>
       </div>
     </div>
   </div> 
@@ -18,11 +34,35 @@
 {% endfor %}
 
 <style scoped>
-.text-huge {
-  font-size: 8rem;
-
-}
-.text-tiny {
-  font-size: 1rem;
-}
+  .text-huge,
+  .text-tiny,
+  .icon-tiny,
+  .icon-huge,
+  .secondary-icons-huge,
+  .secondary-icons-tiny {
+    display: none;
+  }
+  #sans .text-tiny, 
+  #serif .text-tiny,
+  #sans .text-huge,
+  #serif .text-huge {
+    display: block;
+  }
+  #material-icons .icon-huge, 
+  #material-icons .icon-tiny { 
+    display: block; 
+  }
+  #fa .secondary-icons-huge,
+  #fa .secondary-icons-tiny {
+    display: inline-block;
+  }
+  .text-huge {
+    font-size: 8rem;
+  }
+  .text-tiny {
+    font-size: 1rem;
+  }
+  .icon-huge {
+    font-size: 48px;
+  }
 </style>

@@ -1,0 +1,29 @@
+<div class="button-wrapper">
+  {%- if href -%}
+  <div class="button-container">
+    <a class="button {% for mod in mods %} button--{{ mod }}{% endfor %}" href="{{ href }}"> <span class="button__label">{{ label }}</span> {% if icon%} <i class="material-icons">{{ icon }}</i> {%endif%}</a>
+  </div>
+  {%- else -%}
+  <div class="button-container">
+    <button class="button{% for mod in mods %} button--{{ mod }}{% endfor %}"{{ " type=\"submit\"" if submit }}{{ " disabled" if disabled }}>{{ label }}</button>
+  </div>
+  {%- endif -%}
+</div>
+
+
+<style scoped>
+.button-wrapper {
+}
+.button-container {
+  float: left;
+  width: 50%;
+  display: block;
+  margin-bottom: 1rem;
+}
+@media (max-width: 500px) {
+  .button-container {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
