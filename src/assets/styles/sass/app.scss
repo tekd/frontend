@@ -6,10 +6,14 @@
 // @import 'base/**/*.scss';
 // @import '../../components/**/*.scss';
 
+// Foundation
+@import '../../../../node_modules/foundation/scss/foundation';
+
 @import 'helpers/variables';
 @import 'helpers/aux';
 @import 'helpers/colors';
 @import 'config/constants';
+@import 'base/fonts';
 
 // common
 @import '../../../components/common/blockquote/blockquote';

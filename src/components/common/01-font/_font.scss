@@ -1,10 +1,12 @@
 // Google Fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+@import url('https://fonts.googleapis.com/css?family=Questrial');
 
 // Font Variables
-$serif: 'Crimson Text', serif;   
+$serif: 'Crimson Text', serif;
 $sans: 'Montserrat', sans-serif;
+$o-font: 'Questrial', sans-serif;
 
 .serif {
   font-family: $serif;
@@ -12,6 +14,10 @@ $sans: 'Montserrat', sans-serif;
 
 .sans {
   font-family: $sans;
+}
+
+.o-font {
+  font-family: $o-font;
 }
 
 .material-icons {
