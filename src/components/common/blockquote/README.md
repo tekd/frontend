@@ -1,1 +1,1 @@
-Notes on Blockquotes
+Missing styles for breakpoints
